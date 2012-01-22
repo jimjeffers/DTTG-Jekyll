@@ -4,5 +4,5 @@ exclude: *.sass, *.scss, Gemfile, Gemfile.lock, Procfile, README.md, *.rb, *.yml
 # lsi: true
 # markdown: rdiscount
 paginate: 120
-# permalink: /:title
+permalink: /:title
 pygments: true
