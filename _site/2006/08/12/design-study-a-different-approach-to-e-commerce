@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Design Study: A Different Approach to E-Commerce | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2006-08-12" pubdate="pubdate">August 12, 2006</time>
+      <h1><a href="2006/08/12/design-study-a-different-approach-to-e-commerce" title="Permalink for Design Study: A Different Approach to E-Commerce">Design Study: A Different Approach to E-Commerce</a></h1>
+  </header>
+
+  <section id="content">
+    <p>Recently, I worked on a design to revamp the online retailer <a href="http://www.groupmobile.com">Group Mobile</a>.  I've never actually designed an e-commerce site before and overall I have discovered that I find the majority of e-commerce web sites to be lacking in innovation when it comes to design.  It's all the same thing again and again.  Typical <a href="http://www.newegg.com">uninspired page designs</a> utilizing big menus for <a href="http://www.outpost.com">every single product category</a> offered by the retailer each with hidden dropdown menus containing a list of equally long options.  I just don't see it as an effective solution for browsing.  Think about it when you goto these large e-tailer websites do you typically browse through them or do you just find a link directly to the product via a search on a site like <a href="http://www.pricegrabber.com">pricegrabber.com</a>?</p>
+<p>The fact of the matter is that these sites may be accessible from the perspective that there are no broken links.  This means every page is connected in someway so a bot could successfully browse through and index every product on the site.  And hopefully all of the product information on the website is up to date.  But at the end of the day it seems that the act of browsing through these large e-commerce sites was never a major consideration in the design.  If you're going to search you'd better know what you want and type in a direct product search.  Wandering through an e-commerce site like these is often a difficult, boring, and almost meaningless experience.</p>
+<p><a id="p48" rel="attachment" class="imagelink" href="http://www.donttrustthisguy.com/?attachment_id=48" title="Group Mobile Home Page"><img id="image48" src="http://www.donttrustthisguy.com/wp-content/uploads/2006/08/gm_mockup_home.jpg" alt="Group Mobile Home Page" height="96" width="109" /></a></p>
+<p><a id="p49" rel="attachment" class="imagelink" href="http://www.donttrustthisguy.com/?attachment_id=49" title="Group Mobile Browse Product Category"><img id="image49" src="http://www.donttrustthisguy.com/wp-content/uploads/2006/08/gm_mockup_browse.thumbnail.jpg" alt="Group Mobile Browse Product Category" height="96" width="81" /></a></p>
+<h3>A Shopping Consideration</h3>
+<p>When I started brainstorming a design for Group Mobile I thought about what you might do when you shop for a computer in a store.  There are normally two possible situations that typically occur:</p>
+<ul>
+<li>You know what you want and are just trying to find it.</li>
+<li>You have a vague idea of what you are looking for and are hoping to find items that might catch you're eye.</li>
+</ul>
+<h3>Half and Half Design</h3>
+<p>So with that being said I wanted the site to be easy to navigate manually but also have search accessibility.  My approach for the design was to cater to both.  One half of the page contains a search bar at the top of the page as well as the bottom.  This side also provides customers with content such as the product information for the current product you are browsing etc. etc.  Basically the right hand side of the page is the meat, it's what you found, it's what you are looking for.</p>
+<p>The left hand side of the page however is a bit different than most. I've dedicated nearly an entire half of the page to browsing the store.  If you click one one of the major product categories you get taken to a list page.  But not only does the menu button of the category you're browsing get highlighted as the present category; you also get a micro list of all of the products for that category which would have the current product you're browsing highlighted as well.  The idea here is that now when you shop you see every similar competitive product offering to the product you are considering along with it's price and photo.</p>
+<p><a class="imagelink" href="http://www.donttrustthisguy.com/wp-content/uploads/2006/08/microlist.jpg" title="GM Micro List View"><img id="image47" src="http://www.donttrustthisguy.com/wp-content/uploads/2006/08/microlist.jpg" alt="GM Micro List View" height="84" width="128" /></a></p>
+<p>The goal is to expose users to all product offerings rather than hiding them behind a meaningless list of names which may even be hidden behind a drop down menu.  Now without any extra clicks or steps I can see the alternative products and how much they all cost in a fraction of the page.  Of course there are some disadvantages to this approach.  If you have an abundance of products this micro-list would be overwhelming and take up the entire side bar.  Likewise, if you have an abundance of categories it could get cumbersome to have a vertical menu that is so long.  So these are considerations you would have to make when designing your navigation for an e-commerce site.  For Group Mobile I feel this style works because there will only be 6 major product categories (right now I only have three in the mockup) and not more than 10 products to a given category at most.</p>
+<h3>Dual Navigation</h3>
+<p>While you saw the actual shopping navigation was located on the left hand side of the page in a vertical menu.  There is also a separate nav on the top right hand side of the page dedicated to additional information related to Group Mobile the company as well as additional product information such as industry news, product FAQs, and general tools to help you become a better shopper.  These services offered by the site are some of which help it differentiate itself from basic e-commerce sites which simply show you the product but don't explain much about what to look for in the products themselves.  These value added services should not be hidden from the customer so we provide as clear, distinct, secondary navigation to expose customers to them as well.</p>
+<h3>Exposing Information</h3>
+<p>Ultimately, the thought process behind this layout was to expose the user to as much as possible while not getting too cluttered.  I'm not sure if I completely achieved this goal so I'm interested in hearing what your thoughts are.  Do you think it's overwhelming?  Do you think it's clear?  Would you be thrown off by the fact that there are two separate navigation elements on every page?  Let me know what you think I'm interested in getting as much feedback on this design as possible.</p>
+
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

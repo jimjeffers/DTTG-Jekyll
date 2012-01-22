@@ -1,0 +1,119 @@
+---
+layout: post
+author: Jim Jeffers
+permalink: 2006/09/02/ruby-working-with-files-and-directories
+title: "Ruby: Working with files and directories."
+excerpt:
+  I wrote this snippet today to cycle through the present working directory and do some cleaning up so to speak.  We got a ton of images from o
+---
+
+<p>I wrote this snippet today to cycle through the present working directory and do some cleaning up so to speak.  We got a ton of images from one of our clients and they all need to be setup as galleries for <a href="http://www.slideshowpro.com">slideshow pro</a> in flash.  So I needed a few things to be done.. first of all the images were all conveniently placed in their own directories for each album, however, the thumbnails were stored together with the large photo files so I needed to separate them from each other.  I wrote this snippet... my first time writing a ruby script to do some nifty stuff with directories and files quickly.  This will actually rename all of the directories to be more web friendly i.e. 'Bay Area' becomes 'bay_area' etc. etc. and then it will rename all of the images uniformly but place thumbnails in a tn subdirectory and large images in an lg subdirectory.  Finally, it also generates a SSP friendly XML doc for each directory.</p>
+<pre name="code" class="ruby">
+# Gallery creator..
+# This ruby file should be placed into the working directory
+# containing all of the directories you wish to be converted
+# into galleries.
+
+# USER DEFINED SETTINGS
+# ----------------------------
+
+# ignore:
+# Array of directories you wish to ignore.. i.e. parent, and current.
+ignore = ['.','..']
+
+# large_id:
+# A string used to identify images to be moved into the large directory.
+large_id = "555"
+
+# small_id:
+# A string used to identify images to be moved into the thumbnail directory.
+small_id = "72"
+
+# SCRIPT BEGINS:
+# Don't change unless you really want to.
+# ----------------------------
+
+# Initialize directory object...
+directory = Dir.new(Dir.pwd)
+
+# Cycle through directory
+directory.each do |d| 
+
+  # Only go through directories and ignore directories specified by user.
+  unless File.ftype(d) != "directory" or ignore.include?(d)
+
+    # Jump into directory and parse files.
+    Dir.chdir(d)
+    Dir.foreach(Dir.pwd) do |f|
+
+      # Create directories for thumbnails or large images.
+      %w(tn lg).each do |newdir|
+        unless File.exists?(newdir)
+          Dir.mkdir(newdir)
+        end
+      end  
+
+      # Cycle through files.
+      unless File.ftype(f) != "file"
+
+        # Create new file name and set target directory.
+        if f =~ /#{large_id}/
+          newname = f.split(large_id.to_s).each{|i| i.downcase!}.join("")
+          newdir = "lg"
+        elsif f =~ /#{small_id}/
+          newname = f.split(small_id.to_s).each{|i| i.downcase!}.join("")
+          newdir = "tn"
+        else
+          newdir = nil
+        end
+
+        # Open the old file...
+        oldfile = File.new(f)
+
+        # Jump to large directory if possible.
+        unless newdir.nil?
+          Dir.chdir(newdir)
+
+          # Write new file if it doesn't exist.
+          unless File.exists?(newname)
+            File.open(newname,"w+") do |n|
+              n.write(oldfile.read)
+            end
+          end
+
+          # Move back and delete the old file.
+          Dir.chdir("../")
+          File.delete(f)
+        end
+
+        # Log event.
+        puts "Renamed: #{f} to #{newname} moved to '#{newdir}'"
+
+      end
+    end
+
+    # Return to parent
+    Dir.chdir("../")
+
+    # Rename to web friendly urls.
+    newdir = d.split(" ").each{|i| i.downcase!}.join("_")
+    File.rename(d,newdir)
+
+    # Build the XML docs.
+    xml = "< ?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<gallery>\n<album id=\"#{d}\" title=\"#{d}\" lgPath=\"gallery/#{newdir}/lg/\" tnPath=\"gallery/#{newdir}/tn/\">\n"</album></gallery>
+
+    dir_for_xml = Dir.new("#{newdir}/lg/")
+    dir_for_xml.each do |filename|
+      unless ignore.include?(filename) then xml += "  <img src=\"#{filename}\" />\n" end
+    end
+
+    xml += "\n"
+
+    File.open("#{newdir}.xml","w") do |n|
+      n.write(xml)
+    end
+
+  end
+end
+</pre>
+<p>In my case it's important to note that the files were grouped together with names like: 'torrey-ridge555_1.jpg' and 'torrey-ridge72_1.jpg'.  Detecting the '555' or '72' safely solved the problem in my case ofcourse there could be some situations where something this easy could backfire.  To make the file names uniform I simply split the file by the identifier and joined it back together.</p>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ruby: Working with files and directories. | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2006-09-02" pubdate="pubdate">September 02, 2006</time>
+      <h1><a href="2006/09/02/ruby-working-with-files-and-directories" title="Permalink for Ruby: Working with files and directories.">Ruby: Working with files and directories.</a></h1>
+  </header>
+
+  <section id="content">
+    <p>I wrote this snippet today to cycle through the present working directory and do some cleaning up so to speak.  We got a ton of images from one of our clients and they all need to be setup as galleries for <a href="http://www.slideshowpro.com">slideshow pro</a> in flash.  So I needed a few things to be done.. first of all the images were all conveniently placed in their own directories for each album, however, the thumbnails were stored together with the large photo files so I needed to separate them from each other.  I wrote this snippet... my first time writing a ruby script to do some nifty stuff with directories and files quickly.  This will actually rename all of the directories to be more web friendly i.e. 'Bay Area' becomes 'bay_area' etc. etc. and then it will rename all of the images uniformly but place thumbnails in a tn subdirectory and large images in an lg subdirectory.  Finally, it also generates a SSP friendly XML doc for each directory.</p>
+<pre name="code" class="ruby">
+# Gallery creator..
+# This ruby file should be placed into the working directory
+# containing all of the directories you wish to be converted
+# into galleries.
+
+# USER DEFINED SETTINGS
+# ----------------------------
+
+# ignore:
+# Array of directories you wish to ignore.. i.e. parent, and current.
+ignore = ['.','..']
+
+# large_id:
+# A string used to identify images to be moved into the large directory.
+large_id = "555"
+
+# small_id:
+# A string used to identify images to be moved into the thumbnail directory.
+small_id = "72"
+
+# SCRIPT BEGINS:
+# Don't change unless you really want to.
+# ----------------------------
+
+# Initialize directory object...
+directory = Dir.new(Dir.pwd)
+
+# Cycle through directory
+directory.each do |d| 
+
+  # Only go through directories and ignore directories specified by user.
+  unless File.ftype(d) != "directory" or ignore.include?(d)
+
+    # Jump into directory and parse files.
+    Dir.chdir(d)
+    Dir.foreach(Dir.pwd) do |f|
+
+      # Create directories for thumbnails or large images.
+      %w(tn lg).each do |newdir|
+        unless File.exists?(newdir)
+          Dir.mkdir(newdir)
+        end
+      end  
+
+      # Cycle through files.
+      unless File.ftype(f) != "file"
+
+        # Create new file name and set target directory.
+        if f =~ /#{large_id}/
+          newname = f.split(large_id.to_s).each{|i| i.downcase!}.join("")
+          newdir = "lg"
+        elsif f =~ /#{small_id}/
+          newname = f.split(small_id.to_s).each{|i| i.downcase!}.join("")
+          newdir = "tn"
+        else
+          newdir = nil
+        end
+
+        # Open the old file...
+        oldfile = File.new(f)
+
+        # Jump to large directory if possible.
+        unless newdir.nil?
+          Dir.chdir(newdir)
+
+          # Write new file if it doesn't exist.
+          unless File.exists?(newname)
+            File.open(newname,"w+") do |n|
+              n.write(oldfile.read)
+            end
+          end
+
+          # Move back and delete the old file.
+          Dir.chdir("../")
+          File.delete(f)
+        end
+
+        # Log event.
+        puts "Renamed: #{f} to #{newname} moved to '#{newdir}'"
+
+      end
+    end
+
+    # Return to parent
+    Dir.chdir("../")
+
+    # Rename to web friendly urls.
+    newdir = d.split(" ").each{|i| i.downcase!}.join("_")
+    File.rename(d,newdir)
+
+    # Build the XML docs.
+    xml = "< ?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<gallery>\n<album id=\"#{d}\" title=\"#{d}\" lgPath=\"gallery/#{newdir}/lg/\" tnPath=\"gallery/#{newdir}/tn/\">\n"</album></gallery>
+
+    dir_for_xml = Dir.new("#{newdir}/lg/")
+    dir_for_xml.each do |filename|
+      unless ignore.include?(filename) then xml += "  <img src=\"#{filename}\" />\n" end
+    end
+
+    xml += "\n"
+
+    File.open("#{newdir}.xml","w") do |n|
+      n.write(xml)
+    end
+
+  end
+end
+</pre>
+<p>In my case it's important to note that the files were grouped together with names like: 'torrey-ridge555_1.jpg' and 'torrey-ridge72_1.jpg'.  Detecting the '555' or '72' safely solved the problem in my case ofcourse there could be some situations where something this easy could backfire.  To make the file names uniform I simply split the file by the identifier and joined it back together.</p>
+
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

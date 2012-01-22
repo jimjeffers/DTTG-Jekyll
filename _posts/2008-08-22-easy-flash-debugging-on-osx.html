@@ -1,0 +1,33 @@
+---
+layout: post
+author: Jim Jeffers
+permalink: 2008/08/22/easy-flash-debugging-on-osx
+title: "Easy Flash Debugging on OSX."
+excerpt:
+  I recently took on some contract development for another AS3 project and because I wasn't particularly happy with the way I debugged my flash
+---
+
+<p>I recently took on some contract development for another AS3 project and because I wasn't particularly happy with the way I debugged my flash work in the past I decided to come up with a better solution.  Not many traditional flash coders realize that they can view the output from their trace statements on a live compiled SWF.  The way you do that is fairly straightforward.
+</p>
+
+<!--more-->
+<ul>
+	<li><a href="http://www.adobe.com/support/flashplayer/downloads.html">Download the Flash Player Debugger version.</a></li>
+	<li>Create an alias in your profile to tail the flashlog.</li>
+</ul>
+
+<h3>Creating an Alias Command</h3>
+
+<p>Once you install the debug player, any movie you open in your browser will output it's trace commands to a flashlog.txt file.  This is normally located in the Library directory for your user.  So we're going to make an alias to open it quickly in terminal.  If you're not familiar with <a href="http://en.wikipedia.org/wiki/Alias_(Unix_shell)">alias commands</a> think of them as shortcuts in terminal.</p>
+
+<p>Let's get straight to the meat of it.  First we have to find our flashlog.  By default the flashlog is stored here:<br />
+<code>/Users/<strong>[your system username]</strong>/Library/Preferences/Macromedia/Flash Player/Logs/flashlog.txt'</code></p>
+
+<p>If for whatever reason you aren't getting a flashlog you may need to look into taking some <a href="http://blog.flexexamples.com/2007/08/26/debugging-flex-applications-with-mmcfg-and-flashlogtxt/">simple modifications to your mm.cfg file</a>.' Otherwise you should be ready to make your alias command.</p>
+
+<p>We want to put our alias command in our shell profile so that the shortcut will be available for us automatically when we open up terminal.  To do this launch a new terminal window and type:<br /><code>nano ~/.bash_profile</code></p>
+
+<p>Nano works like a regular text editor, so simply paste the alias command below any existing statements in the document, be sure to replace <strong>your system username</strong> with your actual user name:<br />
+<code>alias fl='tail -F /Users/<strong>[your system username]</strong>/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt'</code></p>
+
+<p>Now that you've done that hit <strong>ctrl-o</strong> to save the changes you've just made to the file and <strong>ctrl-x</strong> to exit nano. Now close the terminal window and open a new terminal.  Type 'fl' and press enter.  You can now see the live output as any instance of the player writes output to the flashlog. If you want to stop viewing output just hit ctrl-c while you're in the terminal window to close the stream.</p>

@@ -1,0 +1,18 @@
+<!-- Pagination links -->
+<nav class="pagination">
+  <ul>
+    {% if paginator.previous_page %}
+      <li>
+        {% if paginator.previous_page > 1 %}
+          <a href="/page{{paginator.previous_page}}/" class="previous">&laquo; Newer Articles</a>
+        {% else %}
+          <a href="/" class="previous">&laquo; Newer Articles</a>
+        {% endif %}
+      </li>
+    {% endif %}
+
+    {% if paginator.next_page %}
+      <li class="next"><a href="/page{{paginator.next_page}}/">Older Articles &raquo;</a></li>
+    {% endif %}
+  </ul>
+</nav>

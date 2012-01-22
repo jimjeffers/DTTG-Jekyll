@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Facing Reality, Cleaning Out, and the Horribleness of Marketing. | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2007-03-30" pubdate="pubdate">March 30, 2007</time>
+      <h1><a href="2007/03/30/facing-reality-cleaning-out-and-the-horribleness-of-marketing" title="Permalink for Facing Reality, Cleaning Out, and the Horribleness of Marketing.">Facing Reality, Cleaning Out, and the Horribleness of Marketing.</a></h1>
+  </header>
+
+  <section id="content">
+    <p>Dealing with indecisiveness has been one of the greatest challenges in my life.  For the past year or so I've been saying I would rebuild this site as my own custom piece of software.  I like to do things, especially things I understand, my own way.  But what's the point?  The tool I'm using right now is fine.  Probably one of the best there is for this sort of thing.  So instead of rejecting the good in WordPress I'm just going to embrace it and stick with it. It's time to get with it as opposed to always dreaming the grass is greener.  </p>
+<p>There are a few things I've learned from building and running my two blogs for the past three years.  One, features our frivolous and purpose is key.  Two, I finally got off my bum and set up "Akismet":http://www.akismet.com as I have been told many times by my friends.  Over the past four months alone I have gotten more sexual invitations, and advice on boner pills than I care to share with you.  Not to mention, the deceptive hollow compliments from pro-spammers trying to seek my approval of their comments.  I tell you I have had to put up with more suck-ups in the six months than Tony Soprano has had to deal with in all seven seasons of the Sopranos combined.</p>
+<p>Lessons aside the thought of this writing is the terror of the reality that is marketing.  Blogging and social software in general is a tool so people can interact with people in a meaningful way.  It allows us to take advantage of a medium to connect to one another in ways we otherwise just could not.  But in the present day, people such as my self, who set to share and discuss our thoughts, feelings, opinions, and intellect (intellect is often lacking) are forced to monitor for spam and install plug-ins and become part of a world wide collaborative software network to prevent it further and... it's just exhausting and disturbing.</p>
+<p>I dislike this abuse.  This abuse has destroyed email.  This abuse can destroy any form of communication if we let it get out of hand.  This abuse is what makes marketing feel and seem terrible.  What is acceptable and what is not?  If only all of us could maintain a higher awareness of the affect some of these things we may do have on others.</p>
+<p>Oh yeah.. I almost forgot DontTrustThisGuy.com redesign coming soon.  Until then no design at all.  Just the plain vanilla with peppermint flavor crystals style of the wordpress' modern default theme.</p>
+
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

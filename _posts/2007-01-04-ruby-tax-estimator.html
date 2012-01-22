@@ -1,0 +1,85 @@
+---
+layout: post
+author: Jim Jeffers
+permalink: 2007/01/04/ruby-tax-estimator
+title: "Ruby: Tax Estimator"
+excerpt:
+  I got bored a couple of weeks ago and wanted to figure out how much I'd be paying in taxes depending on how much I made.  I wrote this little
+---
+
+<p>I got bored a couple of weeks ago and wanted to figure out how much I'd be paying in taxes depending on how much I made.  I wrote this little script in Ruby to give me a basic estimate of how much I'd owe.  You can use it at your own risk or make it better and share it with me!</p>
+<h2>Here is the source:</h2>
+<p>
+<pre name="code" class="ruby">
+# --------------------------------------------------------------------
+# Amounts to analyze taxes for.
+# --------------------------------------------------------------------
+amounts = [40000, 50000, 60000]
+pto = 80 # Specify amount of hours as integer
+
+# --------------------------------------------------------------------
+# Tax schedule for 2006 supplied by IRS
+# (http://www.irs.gov/formspubs/article/0,,id=150856,00.html)
+#
+# Arizona tax information obtained from
+# (http://dab.nfc.usda.gov/pubs/docs/taxformulas/formulas/statecitycounty/taxaz/taxaz.html)
+# --------------------------------------------------------------------
+tax_rates = [0.1, 0.15, 0.25, 0.28, 0.33, 0.35]
+cutoff_levels = [0, 7550, 30650, 74200, 154800, 336550]
+pre_tax_balances = [0, 755, 4220, 15107.5, 37675.5, 97653]
+az_tax_rates = [0.1,0.19]
+az_cutoff = 10000
+work_hours = 52*40-pto
+
+# --------------------------------------------------------------------
+# Extend the numeric clas to accomodate formatting.
+# --------------------------------------------------------------------
+class Numeric
+  def to_currency
+    sprintf("$%0.2f", self)
+  end
+
+  def to_percent
+    sprintf("%d%", self*100)
+  end
+end
+
+# --------------------------------------------------------------------
+# Calculate the amounts.
+# --------------------------------------------------------------------
+for amount in amounts
+
+  # Determine the federal witholding bracket
+  index = 0
+  for cutoff in cutoff_levels
+    if amount > cutoff then bracket = index end
+    index += 1
+  end
+
+  # Determine the state tax withholding percentage
+  (amount < az_cutoff) ? az_index = 0 : az_index = 1
+
+  # Calculate withholding amounts and remaining income
+  tax = (amount-cutoff_levels[bracket])*tax_rates[bracket] + pre_tax_balances[bracket]
+  az_tax = tax * az_tax_rates[az_index]
+  income = amount - tax - az_tax
+
+  # Print out the results
+  puts "---------------------------------------------------------------"
+  puts "Income Analyses for #{amount.to_currency} w/ #{pto} hours of paid time off "
+  puts "---------------------------------------------------------------"
+  puts "This level of income would put you in the level #{bracket+1} tax bracket which charges #{tax_rates[bracket].to_percent}."
+  puts "In addition this income qualifies for the #{az_tax_rates[az_index]} state income tax level."
+  puts "Total income: #{income.to_currency} after #{tax.to_currency} in federal tax expenses and #{az_tax.to_currency} in state tax expenses.."
+  puts "------------------------------\nPost Tax Income\n------------------------------"
+  puts "Monthly income: #{(income/12).to_currency}"
+  puts "Bi-Weekly income: #{(income/24).to_currency}"
+  puts "------------------------------\nHourly Income\n------------------------------"
+  puts "You are going to work #{work_hours} hours this year."
+  puts "That will make up #{(work_hours.to_f/(365*12)).to_percent} percent of your active time."
+  puts "Before tax your hourly income is #{(amount / work_hours).to_currency} taking paid time off into account."
+  puts "After tax your hourly income is #{(income / work_hours).to_currency} taking paid time off into account."
+  puts "\n\n"
+
+end
+</pre></pre></p>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Tips for the Aspiring Web Consultant | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2008-10-19" pubdate="pubdate">October 19, 2008</time>
+      <h1><a href="2008/10/19/tips-for-the-aspiring-web-consultant" title="Permalink for Tips for the Aspiring Web Consultant">Tips for the Aspiring Web Consultant</a></h1>
+  </header>
+
+  <section id="content">
+    <p>Last week I left my post at <a href="http://integrumtech.com">Integrum</a> in favor of solely focusing on my own business, <a href="http://sumocreations.com">Sumo Creations</a>.  I've been running Sumo outside of school and fulltime work for the past three years and this is a very exciting time for me.  Since starting my company, I've learned a lot of lessons on working productively for my clients and consistently developing positive relationships with them. Here are some of the lessons I learned.</p>
+<!--more-->
+<h3>Don't Fire Clients Because They Don't Get It</h3>
+<p>People in this business love to say "these guys don't get it." What exactly is it they don't get? The problem is we don't get it. Our job is to educate and advise our clients on what we do and what needs to be done. Accusing the client of "not getting it" is a cop out for not doing our job.</p>
+<p>If you ever find your self murmuring that line be sure to get off your high horse and come down to earth. As consultants our job is not to render a particular service. Our job is to achieve the goals of our client through our expertise.  The services we render to do it are just a means to an end. Always focus on your client's goal and work with them never against them.</p>
+<h3>Don't Be a Servant</h3>
+<p>You always know you're in a backwards position as a consultant when the client is telling you how to do your job.  If this happens it's because you let it happen. Not everyone really likes taking control of something. We become knowledge experts and then just want to perform. That will work if you want to be a worker bee but not as a consultant. If you want to be an order-taker go corporate and specialize; consulting is probably not for you. If you plan on working as a consultant take your client's goal and own it.  Our job is to make things happen not to be micromanaged and react to client directions. Listen to your client's needs, understand their objectives, develop a plan, advise them consistently, and most importantly take control of the situation. Think of your role as a translator, converting client needs to action items.</p>
+<h3>Deliver Solid Gold</h3>
+<p>If you remember one lesson remember this one. In software they have a term called 'gold-plating' and it means your putting to much effort into something frivolous. It goes like this: "client doesn't care if the module is perfect they just want the module." That may be so and it's better to have that mind set then to deliver nothing.  But that is not what this point is about. We are only as good as the standards we hold ourselves up to and if you want to be successful your goal is to be the best. If you don't mind working harder than the other guy you can go far as a web consultant. Here's a recipe for making gold:</p>
+<ul>
+	<li>Identify two or three of the most critical parts of your project</li>
+	<li>Dedicate additional time here - don't rush to get it done focus on getting it right.</li>
+	<li>Test it. Test it with actual users. This doesn't have to be formal but do get feedback.</li>
+	<li>Think critically and revise.</li>
+</ul>
+<p>Normally when I say critical points I mean the core functionality of the application you are building. It's easy to say we don't have time or can't do it. Saying no is easy.  But if you're going to focus on quality go the extra mile where it counts.  We can say no to making the entire project perfect but it's important that we get a few things right.</p>
+<p>In the development world we're rewarded for results and unfortunately the metric we tend to use is functionality/time. But it's really the quality of the functionality that we need to look at.  A product with three well thought out features is more effective than a mash-up of a hundred half baked ideas. Get real, focus on what matters, and most importantly don't cut corners. Be sure the client is on board - if they aren't don't fire them, educate them.</p>
+<h3>Communicate Constantly</h3>
+<p>The most important thing you can do for your clients is keep them in the loop.  If you have a knack for falling off the face of the Earth you probably shouldn't work as an independent consultant.  Whether you are meeting your deadlines or not, always communicate in between them.  Why is it so important?  As a freelance consultant keeping your work progress transparent is your primary form of customer service.</p>
+<p>If you aren't communicating with your client on a regular basis chances are you might be making a lot of assumptions about the work you're performing.  This can manifest itself as a big death spiral for a freelance consultant. If the client doesn't see what you're working on until the point of delivery chances are there will be a lot of communication breakdown.  More importantly, a lot of conflicts with payment / revisions and other hassles that you really don't want to get into.  Always post updates to your clients even if minor so the client can see progress. Communication breakdown, not time, is your number one enemy.</p>
+<h3>Treat Every Client Individually</h3>
+<p>Despite what you might see on agency websites.  There is no golden bullet for a fixed process to follow for every client and project.  Every project will be unique and you need to adapt to the context of the situation. If a client is not respondent via phone switch to email or vice versa. If a client can't make an in person meeting resort to a conference call.  Be flexible with your time and required medium.</p>
+<p>I'll give you an example, one of my clients does not appreciate basecamp.  I use basecamp to manage all of my projects.  So when a client communicates with me outside of basecamp I'll simply post the transcripts and files from our outside conversation to basecamp for my own reference. I'm not going to try to make them use basecamp by enforcing artificial requirements for the basis of our communication. It's my job to make this work and adjust to their communication style.</p>
+<p>Whatever comes at you - make things work with what you have. Hours spent on trying to educate and conform your client around your process is time wasted.  We're hired to work on our projects not our processes.</p>
+
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

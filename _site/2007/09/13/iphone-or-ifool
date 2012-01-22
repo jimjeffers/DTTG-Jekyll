@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>iPhone or iFool? | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2007-09-13" pubdate="pubdate">September 13, 2007</time>
+      <h1><a href="2007/09/13/iphone-or-ifool" title="Permalink for iPhone or iFool?">iPhone or iFool?</a></h1>
+  </header>
+
+  <section id="content">
+    <p>So I recently caved to the lower price point of the Apple iPhone and now I've put my self into a situation bound to be full of turbulence.  Activating the phone tonight, a deceptively smooth process, abruptly came to a halt when the credit check failed.  Knowing my credit score is high from quarterly credit reports Discover card sends me; I was genuinely surprised to find out my credit information was not good enough for AT&T's standards.  So I'm left here trying to rationalize the situation.  I have a useless piece of expensive technology sitting next to my laptop as I type this.  This is very disconcerting.</p>
+<p>Further research on Apple's discussion forums shows customers who have experienced similar problems.  It seems like the use of any identity theft protection can cause AT&T's credit run to fail.  So even though I can get a credit card, bank account, auto loan, etc. all while having my identity theft service in action, I can't get approved without going down to an AT&T wireless store in person.  Oh what joyous time awaits me.</p>
+<p><strong>Update:</strong> I got the phone activated without a hitch after verifying my identity through identity theft protection.  My phone number transferred in less than 15 minutes.  The process is easy; so easy that I'm actually glad I have the theft protection in place.  If not anyone with my social security number and street address could have activated an iPhone in 15 minutes or less and stolen my life!  Oh the information age.  So far I'm going ga ga ga ga for the iPhone.  These things are worth the hype!  I'm almost sorry I resisted for so long.</p>
+
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

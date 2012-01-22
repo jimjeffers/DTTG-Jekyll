@@ -1,0 +1,91 @@
+---
+layout: post
+author: Jim Jeffers
+permalink: 2006/05/07/improve-a-snippet-make-a-better-search-function
+title: "Improve a Snippet: Make a better search function."
+excerpt:
+  UPDATED: May 16th - I coded this search app a while back.  It's not the greatest but it works.  Can you make it better?  Right now it just ta
+---
+
+<p><strong>UPDATED: May 16th - </strong>I coded this search app a while back.  It's not the greatest but it works.  Can you make it better?  Right now it just takes a field and a phrase.  The phrase is parsed.  It then generates SQL.  You could write a separate parsing function separately which could return the array that feeds this function.  You could also rewrite this function to support an array of fields.  Take your best stab.  I'll post the final snippet with everyone's input.</p>
+<pre name="code" class="ruby">
+  # Advanced search function accepts a string split apart by whitespace.  Accepts a field name
+  # and a phrase.  Splits the phrase by whitespace into separate terms.  If the string is quoted
+  # the terms are considered to be required together.  If not terms are assumed to be either or.
+  # This code is far from perfect please feel free to improve it to support , deliminations and
+  # what not.
+  # Snippet written by J. Jeffers. Copyright 2006 / I share freely.
+  def advanced_search(fields,phrases)
+
+    # Check to see if what type of search is required.  If the phrase is "quoted" we will
+    # use AND to require all terms.  Otherwise, we will use OR to find any matches.
+    if phrases =~ /"[^"\r\n]*"/
+      glue = ' AND '
+    else
+      glue = ' OR '
+    end
+
+    # Break the list down from a string into a smart array of useable terms.
+    list = clean_up(phrases).split(/\s/)
+
+    discreet_list = []
+    results = []
+    count = 0
+    discreet_count = 0
+
+    # Cycle through every item in the list.
+    for item in list   
+
+      # Check to see if the phrase begins with a !exclamation point.  If so we will negate
+      # this term to find terms that do not match
+      if item =~ /!\w*/
+
+          item.gsub!(/!/,'')
+
+          if item =~ /BLANK/
+            fields.each do |field|
+              results[count] = "#{field} != ''"
+              count += 1
+            end
+          else
+            fields.each do |field|
+              results[count] = "#{field} NOT LIKE '#{item}'"
+              count += 1
+            end
+          end
+
+      # Check for wildcards in the phrase...
+      elsif item =~ /!%\w*|\w*%/
+          fields.each do |field|
+            results[count] = "#{field} LIKE '#{item.to_s}'"
+            count += 1
+          end
+
+      # Check for a plain blank request...
+      elsif item =~ /BLANK/
+          discreet_list[discreet_count] = ''
+          discreet_count += 1
+
+      # Otherwise just dump the list into an array of absolute matches...
+      else
+          discreet_list[discreet_count] = item.to_s
+          discreet_count += 1
+      end
+
+    end
+
+    # Compile the discreet list...
+    (discreet_list.length > 1) ? list = discreet_list.join("','") : list = discreet_list.to_s
+    unless list.length < 1
+      fields.each do |field|
+        results[count] = "#{field} IN ('#{list}')"
+        count += 1
+      end
+    end
+
+    # Compile the final SQL string...
+    return results.join(glue).to_s
+
+  end
+</pre>
+</pre>

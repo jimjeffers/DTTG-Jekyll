@@ -1,0 +1,86 @@
+---
+layout: post
+author: Jim Jeffers
+permalink: 2008/05/29/using-presenters-in-rails
+title: "Using Presenters in Rails"
+excerpt:
+  Sitting thrugh my first tutorials session at RailsConf we've come across an interesting discussion about the philosophy of using the 'Present
+---
+
+<p>Sitting thrugh my first tutorials session at RailsConf we've come across an interesting discussion about the philosophy of using the <a href="http://blog.jayfields.com/2007/03/rails-presenter-pattern.html">'Presenter Pattern'</a> to refactor code in your applications controller.</p>
+
+
+<!--more-->
+
+<p>What the presenter initially did was build out a traditional presenter class to extend the model and provide two methods to find possible status and priority objects from the database.  This requires the author to delegate class methods from the model that the Presenter class could use.  It also requires us to wrap any instance variable of the child object in the presenter class before we pass it to the view.</p>
+
+<pre name="code" class="ruby">
+class StoryPresenter
+  
+  def initialize(story)
+    @story = story
+  end
+  
+  delegate  :id, :class, :errors, :to_param, :new_record?,
+            :to => :@story
+  
+  def possible_statuses
+    @statuses = Status.find(:all).map{ |s| [s.name, s.id] }.unshift []
+  end
+  
+  def possible_priorities
+    @priorities = Priority.find(:all).map{ |e| [e.name, e.id] }.unshift []
+  end
+  
+  def method_missing(name, *args)
+    @story.send name, *args
+  end
+  
+end
+</pre>
+
+<p>And then the implementation in the controller looks something like this:</p>
+
+<pre name="code" class="ruby">
+def create
+  story = @project.stories.build(params[:story])
+  respond_to do |format|
+    format.js do
+      @story = StoryPresenter.new story
+      render :action => "stories/new" unless story.save
+    end
+  end
+end
+</pre>
+
+<p>A member in the audience suggested that instead of treating the presenter as a traditional presenter object we simply write it as a module.  Then we no longer would have to delegate the methods from the model and instead of wrapping any instance variable of the child class we could just extend it.  The argument for this is clear.  It's less code, and it's more flexible.</p>
+
+<pre name="code" class="ruby">
+module StoryPresenter
+  
+  def possible_statuses
+    @statuses = Status.find(:all).map{ |s| [s.name, s.id] }.unshift []
+  end
+  
+  def possible_priorities
+    @priorities = Priority.find(:all).map{ |e| [e.name, e.id] }.unshift []
+  end
+  
+end
+</pre>
+
+<p>And then the implementation in the controller looks something like this:</p>
+
+<pre name="code" class="ruby">
+def create
+  @story = @project.stories.build(params[:story])
+  respond_to do |format|
+    format.js do
+      @story.extend StoryPresenter 
+      render :action => "stories/new" unless @story.save
+    end
+  end
+end
+</pre>
+
+<p>However, the arguments against using a presenter as a mixin are more philosophical.  If we're using the presenter pattern we should encapsulate only what we need the view to use explicitly to prevent logic leaking into the view or the controller by other authors.  By treating the Presenter object as a class and explicitly delegating the model methods we do just that.  To utilize further methods of the model we would need to return to the presenter object and extend it there as opposed to just sliding extraneous logic into our controller or view.</p>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Utilizing Regular Expressions in AS3 | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2008-02-29" pubdate="pubdate">February 29, 2008</time>
+      <h1><a href="2008/02/29/utilizing-regular-expressions-in-as3" title="Permalink for Utilizing Regular Expressions in AS3">Utilizing Regular Expressions in AS3</a></h1>
+  </header>
+
+  <section id="content">
+    <p>Regular Expressions are a powerful tool that you can utilize in many different programming languages.  After throwing together the little <a href="http://twitter.com">twitter</a> widget at the top of this page - I was informed by <a href="http://brianshaler.com/blog/">Brian Shaler</a> of a major bug that causing it to crash.  So while reworking the code to fix it I figured I'd add some much needed functionality as well.  You see, just grabbing the feed from twitter does not generate html links for you.  You have to parse your feed and wrap any '@username' responses, or 'http://addresses' into actual hyperlinks yourself.  Here's how I did it.</p>
+
+
+<!--more-->
+
+<h3>Finding the @usernames and HTTP Addresses</h3>
+
+<p>So this is where we actually utilize RegExp.  In Flash RegEx works very similar to other programming languages.  You simply define a new variable as a with :RegExp class and then assign it a pattern.  I used two separate patterns, one matches users, the other matches the http addresses.  I won't go into detail on explaining the RegEx patterns itself here as that is an entirely different topic.  What I'm focusing on here is how to implement them in flash.  But just for the heck of it, incase you want to take tese and make them better here are the two regular expression patterns I wrote:</p>
+
+<ul>
+	<li><strong>'@usernames':</strong> <code>/(\s@+\w*(\s|,|!|\.|\n))/</code></li>
+	<li><strong>'http://...':</strong> <code>/[^"|^>](http:\/\/+[\S]*)/</code></li>
+</ul>
+
+<p>So here is the actual code I use in the widget above.  The only difference is the 'cur' variable on the first line passes the current title from the twitter RSS feed instead of the dummy string I've hardcoded:</p>
+
+<pre name="code" class="javascript">
+private function dropRSS():void {
+	var cur:String = "Hey @sunnythaper, @shalerjump, @jamesarcher! Check this out: http://tinyurl.com/377owu" 
+	if (cur.substr(0,1) == "@") { 			// Skip response messages as they do not always provide enough context to be stand alone statements.
+		_current++;
+		dropRSS();
+	} else {
+		cur = cur+" "; // Append a space at the end so RegEx catches trailing expressions
+
+		var twitterUser:RegExp = /(\s@+\w*(\s|,|!|\.|\n))/;		// "
+		var url:RegExp = /[^"|^>](http:\/\/+[\S]*)/;
+
+		while(twitterUser.exec&nbsp;(cur) != null) {
+			cur = cur.replace(twitterUser, pointToUser);	
+		}
+
+		while(url.exec&nbsp;(cur) != null) {
+			cur = cur.replace(url, setUrl);	
+		}
+		
+		twit.htmlText = cur;
+		TweenLite.from(twit, 2, {ease:Elastic.easeOut, y:"-10", alpha: 0});
+		_current++;
+	}
+}
+</pre>
+
+<p>What's important to take note of is two things: <strong>1)</strong> I need to loop and execute the pattern onto the string until it no longer finds any matches <strong>2)</strong> I'm passing a function as the second parameter in the replace method as opposed to an alternate string.</p>  
+
+<ul>
+	<li>This has worked great but fundamentally I think there is a more efficient way of doing this without looping and executing the RegEx so many times.</li>
+	<li>If you know a better way let me know and I'll update this post.</li>
+</ul>
+
+<h3>Implementing Changed on Your Matches</h3>
+
+<p>As I said, I'm passing a function to actual handle the replacement as opposed to just passing a replacement string.  This is because I need to run some processes on the matches to build urls based off of them. Flash lets you reference the matches in the functions as arguments. Here is the code.</p>
+
+<pre name="code" class="java">
+	private function pointToUser():String {
+		return " &lt;a href=\"http://twitter.com/"+arguments[1].substr(2,arguments[1].length-3)+"\"&gt;"+arguments[1].substr(1,arguments[1].length-2)+"&lt;/a&gt;"+arguments[1].substr(arguments[1].length-1,1);
+	}
+
+	private function setUrl():String {
+		return " &lt;a href=\""+arguments[1]+"\"&gt;"+arguments[1]+"&lt;/a&gt;";
+	}
+</pre>
+
+<p>Of course, if the RegEx pattern generated two or three differently matched terms you could reference them as well via arguments[2], arguments[3] etc..  Here you can do whatever you want.  I chose to disect the one argument I was working with through a series of substring routines to trim out unwanted characters in certain parts and then re-insert them outside of the html.</p>
+
+<h3>Adobe LiveDoc References:</h3>
+<ul>
+	<li><a href="http://livedocs.adobe.com/flash/9.0/ActionScriptLangRefV3/String.html#replace()">Adobe Live Docs: Replace Method</a></li>
+	<li><a href="http://livedocs.adobe.com/flash/9.0/ActionScriptLangRefV3/RegExp.html">Adobe LiveDocs: RegExp Object</a></li>
+	<li><a href="http://livedocs.adobe.com/flash/9.0/main/wwhelp/wwhimpl/common/html/wwhelp.htm?context=LiveDocs_Parts&file=00000112.html">Adobe LiveDocs: Regular Expression Syntax</a></li>
+	<li><a href="http://homepage.mac.com/roger_jolly/software/index.html#regexhibit">RegExhibit - RegEx Tool for OSX</a></li>
+</ul>
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

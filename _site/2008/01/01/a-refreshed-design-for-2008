@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>A Refreshed Design for 2008 | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2008-01-01" pubdate="pubdate">January 01, 2008</time>
+      <h1><a href="2008/01/01/a-refreshed-design-for-2008" title="Permalink for A Refreshed Design for 2008">A Refreshed Design for 2008</a></h1>
+  </header>
+
+  <section id="content">
+    <p>Happy new year! To kick off the start of 2008 I've labored over a new design for DontTrustThisGuy.com.  Writing a custom <a href="http://wordpress.org/">WordPress</a> template, the new version of this site has <a href="http://microformats.org/">microformats</a> strategically mixed-in for your convenience.  Additionally, the site now uses some advanced <a href="http://www.css3.info/">CSS3</a> styling to reward readers who are using more modern browsers, and to encourage those of you who are not, to upgrade.</p>
+
+
+<!--more-->
+
+<h3>CSS2 Drop Cap via Pseudo-Selectors</h3>
+
+<p>The purpose of the new design is to emphasize the content of each individual blog post.  Most of the focus was on font choice, and text layout to encourage reading.  The first paragraph of every post is slightly larger than the remaining content.  Also, through the use of CSS2, a drop-cap is displayed in <a href="http://www.mozilla.com/en-US/firefox/">Firefox</a>, Safari, and <a href="http://www.opera.com/">Opera</a> web browsers.  Sadly, IE7 does not support the '<a href="http://www.w3schools.com/css/pr_pseudo_first-letter.asp">first-letter</a>' pseudo-selector even though it is a CSS2 feature.  A screenshot displaying the difference can be seen below.  The capture on the right is the gracefully degraded appearance in IE6 and IE7.</p>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2008/01/css3-text-styling-drop-cap-with-pseudo-selectors.jpg" alt="CSS3 Text Styling (Drop-Cap with Pseudo-Selectors)" height="250" width="590" />
+
+<h3>CSS3 Multiple Backgrounds</h3>
+
+<p>The page graphics are emulating a morning newspaper with a casual coffee stain here and there.  Of course, if you are using any browser other than <a href="http://www.apple.com/safari/download/">Safari</a> you won't be able to see where those coffee stains came from.  That's because only <a href="http://webkit.org/">WebKit</a> (the open source engine that Safari runs off of) currently supports the <a href="http://webkit.org/blog/15/multiple-backgrounds/">multiple background images feature of CSS3</a>.  The category and archive listings also have rounded corners courtesy of multiple backgrounds and even a drop shadow courtesy of '<a href="http://www.w3.org/Style/Examples/007/text-shadow">text-shadow</a>', but again only in Safari. The capture to the right is Firefox, and left of it, is Safari.</p>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2008/01/css3-multiple-backgrounds-text-shadow.jpg" alt="CSS3 Multiple Backgrounds Text-Shadow" height="250" width="590" />
+
+<h3>Your Name and Website in hCard</h3>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2008/01/vcards.jpg" alt="vCards in every post with hCard" height="250" width="590"/>
+
+<p>Whenever an author posts on this blog his <a href="http://microformats.org/wiki/hcard">hCard</a> (a <a href="http://en.wikipedia.org/wiki/VCard">vcard</a> in HTML format) is embedded into the post.  This is not a built-in feature of WordPress and I think it should be.  But I even took that a step further; if you comment on the site an hCard is generated for you with your name and web URL.  Don't worry, your email address is not included.</p>
+
+<li><strong>Note:</strong> the toolbar allowing the display and utilization of the microformats embedded into the page in the screenshots are only possible with the Firefox <a href="https://addons.mozilla.org/en-US/firefox/addon/4106">Operator</a> add-on</li>
+
+<h3>Article Specific Feeds for Free with hAtom</h3>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2008/01/hatom-article-feeds.jpg" alt="hAtom Article Feeds" height="250" width="590"/>
+
+<p>Subscribing to a blogs <a href="http://en.wikipedia.org/wiki/RSS_(file_format)">RSS</a> feed is nice but what about if you want to track the comments on a particular article?  Well, by default WordPress also generates a comments feed, but this pushes all comments from all posts into the feed which may not be that useful.  So you're left with having to roll your own php script to generate a customized feed for every post.  This could be a little tricky.  What if you can do it with no extra effort at all?  Every post and it's comments already have to be wrapped in HTML markup so they can be displayed in your browser.  By adding a few extra classes to the already done markup you can turn your HTML into <a href="http://microformats.org/wiki/hatom">hAtom</a> and use an <a href="http://tools.microformatic.com/help/xhtml/hatom/">hAtom transcriber.</a></p>
+
+<h3>Article Bookmarks Baked In with xFolk</h3>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2008/01/xfolk-bookmarks.jpg" alt="xFolk Bookmarks" height="250" width="590" />
+
+<p>Every post, and page displaying a series of posts, such as the archives, has <a href="http://microformats.org/wiki/xfolk">xFolk</a> markup for each article.  Again with <a href="https://addons.mozilla.org/en-US/firefox/addon/4106">Firefox's operator</a>, you can easily bookmark any one of the posts featured on the page or add them to your <a href="http://ma.gnolia.com/">ma.gnolia.com</a> or <a href="http://del.icio.us/">del.icio.us</a> account.</p>
+
+<h3>What Do You Think?</h3>
+
+<p>That about sums it up for the new design.  <strong>It will be interesting to see how well browsers can support the CSS3 and microformats on this site one year from now.</strong> I'll be adding some more features to the site throughout the year as I've left plenty of room for growth.  What are your criticisms, or opinions?  And again, welcome to 2008, and thank you for your readership.</p>
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

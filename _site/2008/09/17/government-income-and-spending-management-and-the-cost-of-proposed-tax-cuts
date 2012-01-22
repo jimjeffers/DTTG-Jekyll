@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Government Income and Spending Management and the Cost of Proposed Tax Cuts | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2008-09-17" pubdate="pubdate">September 17, 2008</time>
+      <h1><a href="2008/09/17/government-income-and-spending-management-and-the-cost-of-proposed-tax-cuts" title="Permalink for Government Income and Spending Management and the Cost of Proposed Tax Cuts">Government Income and Spending Management and the Cost of Proposed Tax Cuts</a></h1>
+  </header>
+
+  <section id="content">
+    <p>Hot on the trail of my <a href="http://donttrustthisguy.com/2008/09/13/150/">last post</a> I have performed even further resource to get another look at how spending has been managed during the last five presidents over the last thirty years.  In this case I referenced the following source:</p>
+<ul>
+	<li><a href="http://www.bea.gov/national/nipaweb/TableView.asp?SelectedTable=84&amp;ViewSeries=NO&amp;Java=no&amp;Request3Place=N&amp;3Place=N&amp;FromView=YES&amp;Freq=Year&amp;FirstYear=1977&amp;LastYear=2008&amp;3Place=N&amp;Update=Update&amp;JavaBox=no#Mid">Table 3.1. Government Current Receipts and Expenditures</a></li>
+	<li>I looked at the <strong>Current Receipts</strong> and the <strong>Current Expenditures</strong> for each year to calculate the growth rates.</li>
+</ul>
+<h3>Expenditures Never Decreased; They Only Grew Less</h3>
+<p>I think this is crucial when listening to political rhetoric.  A lot of politicians say we need to decrease spending or are as bold to say that they promise to decrease spending.  I'm not sure I would believe that.  Analyzing the last thirty years of data we can see that the growth rate of current expenditures has never been negative.  However, the rate at which they grew has fluctuated.</p>
+
+<p>Conversely, the growth rate for current receipts was negative during the second two years of George W. Bush's presidency. These were the only two years out of the past thirty that government income actually shrank: -0.41% in 2001 and -4.96% in 2002. During these periods government expenditures grew at 6.07% in 2001 and 5.85% in 2002.</p>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2008/09/picture-3.png" alt="" />
+<h3>Spending Was Most Controlled During Clinton's Presidency</h3>
+<p>If we calculate the average annual growth rates of receipts and expenditures during the past five presidents terms it is very clear that government spending was best controlled while Clinton was in office.</p>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2008/09/picture-1.png" alt="" />
+
+<p>This was also the only time when government receipts grew at a faster pace than expenditures (6.8 vs. 3.8%) on average.  This can be best seen in the following chart:</p>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2008/09/picture-2.png" alt="" />
+
+<p>From the chart we can also see that prior to George H.W. Bush the growth rate of expenditures and receipts were nearly identical during Reagan and Carter's terms.  However, both George W. Bush and his father had expenses that grew at a much more rampant pace than at the rate which the government's income was growing.  This discrepancy is why you see such large amounts of net borrowing during their terms:</p>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2008/09/net_borrowing_for_president.png" alt="" />
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

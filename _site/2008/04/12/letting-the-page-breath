@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Letting The Page 'Breath'. | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2008-04-12" pubdate="pubdate">April 12, 2008</time>
+      <h1><a href="2008/04/12/letting-the-page-breath" title="Permalink for Letting The Page 'Breath'.">Letting The Page 'Breath'.</a></h1>
+  </header>
+
+  <section id="content">
+    <p>I'm continuing my way through <a href="http://www.amazon.com/Elements-Typographic-Style-Robert-Bringhurst/dp/0881791326">Robert Bringhurst's</a> book and at a slow pace.  The Elements of Typographic Style is so rich with information that I can only read it in spurts of a few pages and often have to re-read to let the full lesson sink in.  Lately, I've become very intrigued by how he describes rhythm in the text layout and the concept of how a page must 'breath'.</p>
+
+
+<!--more-->
+
+<p>When speaking of rhythm - Bringhurst is referring to the horizontal spacing between characters and the vertical spacing of lines of text.  'Breathing' is how much words the page will carry. This controlled by the rhythm. When we layout text and information, we face the challenge of applying content to the constraint of our space. So the more words we put into a given page, the less it can breath.  For the reader's sake it's important that the text can breath.  If it can't the text becomes unappealing and difficult to read.</p>
+
+<p>Robert, explains various strategies for allowing a page to breath and still carry more text.  For instance, longer line lengths require greater leading.  If we shorten the line length by dividing the page into columns we can reduce the amount of leading on the page and still allow the document to breath.  By reducing the leading we can fit more lines into a given page and thus allow it to carry more text if necessary.</p>
+
+<p>What's interesting about the entire concept of breathing is that it seems very print orientated.  How does this apply to the web where our designs are often modified by the reader.  If the reader resizes their window the entire body could potentially change depending on how we designed our site to accommodate variations in screen-size.  At the same time if we use a fixed width design such as this site - we can find that we suddenly are no longer utilizing enough of the page and allowing the page to breath far too much.  And then of course, the user can adjust the font-size which totally changes the amount of words we carry on each line as the character size changes but the line-length doesn't.</p>
+
+<p>It seems like a new set of typographic rules needs to be written for the web where the constraints aren't so absolute.  But who will do it?</p>
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<article id="post">
+  <header class="row">
+      <time datetime="{{ page.date | date:'%Y-%m-%d' }}" pubdate="pubdate">{{ page.date | date:"%B %d, %Y" }}</time>
+      <h1><a href="{{ page.permalink }}" title="Permalink for {{ page.title }}">{{ page.title }}</a></h1>
+  </header>
+
+  <section id="content">
+    {{ content }}
+  </section>
+</article>

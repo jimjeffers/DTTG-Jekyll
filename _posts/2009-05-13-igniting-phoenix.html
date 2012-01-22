@@ -1,0 +1,77 @@
+---
+layout: post
+author: Jim Jeffers
+permalink: 2009/05/13/igniting-phoenix
+title: "Igniting Phoenix"
+excerpt:
+  It's been too long since I've written anything on this blog. Fortunately, I've had the opportunity to work on a few interesting projects in t
+---
+
+<p>It's been too long since I've written anything on this blog. Fortunately, I've had the opportunity to work on a few interesting projects in the last couple of months. The one I'm sharing with you today was done as a surprise for the <a href="http://ignite-phoenix.org" title="Ignite Phoenix">Ignite Phoenix</a> team and the community in general.</p>
+<!--more-->
+<img src="http://donttrustthisguy.com/wp-content/uploads/2009/05/tca.jpg" alt="Tempe Center for the Arts" title="Tempe Center for the Arts" width="890" height="454" class="alignnone size-full wp-image-325" />
+
+<div class="cited_photo">
+<p><img src="http://donttrustthisguy.com/wp-content/uploads/2009/05/comment_example.jpg" alt="An example of the dynamic commenting system." title="An example of the dynamic commenting system." width="290" height="359" class="alignnone size-full wp-image-326" />
+<cite>The commenting system incorporates functionality from <a href="http://donttrustthisguy.com/2009/01/04/encouraged-commentary/">encouraged commentary</a>.</cite></p>
+</div>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2009/05/ignite_title.jpg" alt="ignite_title" title="Ignite Phoenix Headline with Phoenix Skyline." width="590" height="270" class="alignnone size-full wp-image-324" />
+
+<h3>Visually Phoenix</h3>
+<p>On the surface I've tried to incorporate colors and tones more representative of Phoenix. You'll find illustrative elements resembling our city as well. The site headline contains the Phoenix skyline - as does the site footer. I've also made a minimalist illustration of the Tempe Center for the Arts; the amazing venue hosting the event.</p>
+
+<p>More notable however is the extensive use of transparency used throughout the site. This was achieved with PNG images and rgba color values in the CSS. For viewers in IE7 and IE6 these features have been gracefully degraded. Indeed the entire design and build of this site was an extensive exercise in progressive enhancement.</p>
+
+<h3>Overflowing with CSS Tricks</h3>
+<p>A lot of tricks with overflow and absolute positioning were used to achieve various effects throughout the site. For instance, the three flickr images shown in the intro content are cropped by a containing element. The border around them is achieved with rgba transparency to create a unique effect for those who are visiting the site with modern browsers.</p>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2009/05/cropped_images.jpg" alt="Images Cropped with CSS" title="Images Cropped with CSS" width="590" height="257" class="alignnone size-full wp-image-327" />
+
+<h3>Getting Inline with Block</h3>
+<p>Another fairly simple CSS feature I took advantage was the 'inline-block' display mode. A well supported CSS feature that I've not used to much extent prior to this project other than a work around when we ran into layout complications. In this case I was able to use rgba transparency and 'inline-block' to create a pretty neat highlighting effect. I also liked how I was able to make elements of different formats run into each other quite naturally with this display mode.</p>
+
+<img src="http://donttrustthisguy.com/wp-content/uploads/2009/05/inline-block.jpg" alt="Unique Effect on Headings with Inline-Block and rgba." title="Unique Effect on Headings with Inline-Block and rgba." width="590" height="505" class="alignnone size-full wp-image-328" />
+
+
+<h3>Advanced Positioning</h3>
+<p>Nearly every major element of the page is absolutely positioned so that we could achieve a fluid layout that spans the entire width of the browser window but meets gracefully in the center. The content itself is contained in a 960px grid from the <a href="http://960.gs">960.gs</a> system. To use absolute positioning so extensively we had to hack some magic with some simple <a href="http://jquery.com">jQuery</a>:</p>
+
+<pre name="code" class="javascript">
+function ensureAboveEachOther(onTop,onBottom,spacing){
+   if(onTop.length > 0 && onBottom.length > 0) {
+      onBottom.css('top',onTop.position().top+onTop.height()+spacing);
+   }
+}
+</pre>
+
+<h3>A Navigation That Watches You</h3>
+<p>The main content of the site is presented in a single page layout. So naturally, it works just fine without javascript as the nav anchors point to targets on the page. However, for a better experience I've implemented some smooth automated scrolling via jQuery. Still though, it helps to know what section you're in, and these fixed position navigations fail if they don't update as the user scrolls out of the current section. Again, jQuery is here for the rescue:</p>
+
+<pre name="code" class="javascript">
+// Setup scrolling selector update.
+      var scrollTarget = $(window);
+      scrollTarget.scroll(function(){
+         // TODO:
+         // Refactor this into a nice function sometime later.
+         
+         // About
+         if(scrollTarget.scrollTop() > about.position().top-100 && scrollTarget.scrollTop() < venue.position().top-100) {
+            $('#primary_navigation li.about').addClass('current');
+         } else {
+            $('#primary_navigation li.about.current').removeClass('current');
+         }
+         ...
+   });
+</pre>
+
+<h3>A Big Thanks</h3>
+
+<p>Overall I'm really pleased with how the site came out. I have to thank <a href="http://tomascarrillo.com/">Tomas Carrillo</a> who went out of his way to make sure that this project got to see the light of day. Though I did all of the work to create and build the theme, there was a considerable amount of work done to make sure the theme wouldn't break existing content on the site. If Tomas didn't make the time to do this the theme would have sat on the sidelines as nothing more than a pretty concept. This is for everyone who is involved as an organizer, sponsor, speaker, or community participant just coming to see the event. I hope you <a href="http://ignite-phoenix.org">enjoy it and see you in June</a>!</p>
+
+<h3>One More Thing</h3>
+<p>Since this is a community project the entire source for the wordpress theme is <a href="https://github.com/jimjeffers/Ignite-Phoenix-Wordpress-Theme/tree">available on GitHub</a>. Feel free to check it out!</p>
+<ul>
+<li><a href="http://ignite-phoenix.org">Visit the new Ignite Phoenix website!</a></li>
+<li><a href="https://github.com/jimjeffers/Ignite-Phoenix-Wordpress-Theme/tree">Grab the Theme Code Off GitHub</a></li>
+</ul></pre>

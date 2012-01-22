@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Is Flare9.com the Affordable Website Machine for the Small Business Without a Budget? | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2007-04-22" pubdate="pubdate">April 22, 2007</time>
+      <h1><a href="2007/04/22/is-flare9-com-the-affordable-website-machine-for-the-small-business-without-a-budget" title="Permalink for Is Flare9.com the Affordable Website Machine for the Small Business Without a Budget?">Is Flare9.com the Affordable Website Machine for the Small Business Without a Budget?</a></h1>
+  </header>
+
+  <section id="content">
+    <p>If you work as a designer or a developer you might be frequently bombarded with requests from potential clients that go nowhere.  The conversation starts out promising, but you soon realize they want to you to spend a couple weeks to develop a custom website for a measily $500 budget.  When you return with a realistic number above $500 to say the least your point of contact lets you know "they'll get back to you on that."  And that's that.  A rather passive aggressive manner of parting ways.  The price they can afford is not worth your time, the value you offer is not conducive to what they can afford.  What win/win solution can you create in a situation like this?</p>
+<!--more-->
+<p>Enter <a href="http://www.flare9.com">Flare9</a>.  The developers over at <a href="http://www.obuweb.com">Obuweb</a> are hoping to have an answer you've been looking for.  If you have a go nowhere client why not make a good impression by sending them over to their cookie-cutter-website-on-demand web service and get a nice $150 kickback for the referral?  That's the incentive and thought behind the concept.  <a href="http://www.obuweb.com">Obuweb</a> is hoping we developers will send our problem clients and people who aren't able to afford a real website over to their service as out last resort.  Why not?  It's a five minute transition from lose/lose to win/win.  But let's not get ahead of ourselves yet.  It sounds simple enough but is it good for the client and is it good for us?</p>
+<h3>Is Flare9 a realistic solution?</h3>
+<p>Looking at the system itself, <a href="http://www.flare9.com">Flare9</a> is a heavily modified version of <a href="http://www.wordpress.org">Wordpress</a> to function as a CMS for many many <a href="http://www.flare9.com">Flare9</a> hosted websites.  Obuweb has made it so that a user can manage all of the content on the website, register a domain name, build forms, and even setup email accounts all from within the heavily modified Wordpress / <a href="http://www.flare9.com">Flare9</a> control panel.  Trying out the demo I felt right at home myself since I'm an avid Wordpress user.  I suspect that any moderately experienced web surfer would be able to catch on to Wordpress's administration in no time.  The modifications <a href="http://www.flare9.com">Flare9</a>incorporated should not cause any problems in terms of usability either.  The WSYWIG editor features some unique elements such as a tabbed menu that allows the user to edit a specific column of content on the page.  It also allows the user to drop in forms they created in <a href="http://www.flare9.com">Flare9</a> form creator utility.</p>
+<h3>Good, but not perfect.</h3>
+<p>Looking at the system objectively I would say that <a href="http://www.flare9.com">Flare9</a> is great for small budget clients looking to get online fast and expecting a minimal amount of control over the look and feel of the overall template of the site.  Expecting much more than what is already provided would not be realistic.  I do have a couple of concerns that I could not determine from the demo:</p>
+<ul>
+<li>How do I upload and or change the company logo in the template?</li>
+<li>The blog post and page manager are sort of intermingled into one.  I could see this causing serious problems for users.  Further modification to the Wordpress admin to place these on separate tabs would do a lot of good from a UI perspective.</li>
+<li> Turning the blog on or off is not intuitive.  I deleted the blog page, how do I get it back later if I decide I want a blog after all?</li>
+</ul>
+<p>None of these issues are necessarily critical.  I see most complications in the UI just affecting the user's learning curve.  For instance, the blogging terminology in the manage navigation will not make any sense to someone who's never managed a blog before.  More importantly, I don't believe categories, comments, etc. even apply to pages.  Adding or removing the blog in general should be refined so that the user may turn it on or off in the general settings.  Right now it's simply treated as another page.</p>
+<h3>A solid deal.</h3>
+<p>Flare9 is a very comprehensive, straightforward, and cost effective solution for getting online with minimal effort, time, and money.  I think that this is a very strong release for an initial offering and would recommend it to anyone who approaches me looking for a low-cost alternative to myself. </p>
+<p><strong>The bottom line: Recommended.</strong></p>
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

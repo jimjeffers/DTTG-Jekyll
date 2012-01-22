@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Creating Excel Documents with Ruby On Rails | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2006-07-13" pubdate="pubdate">July 13, 2006</time>
+      <h1><a href="2006/07/13/creating-excel-documents-with-ruby-on-rails" title="Permalink for Creating Excel Documents with Ruby On Rails">Creating Excel Documents with Ruby On Rails</a></h1>
+  </header>
+
+  <section id="content">
+    <p>Generating an excel document is not so difficult to achieve but limited unfortunately.  You cannot write formulas or generate charts via the existing available tools but you can achieve usable results overall.  Here is a snippet I used to generate sales forecasts involving data pulled together from two active record objects. <a href="http://rubyspreadsheet.sourceforge.net/">Here is the gem you'll need.</a></p>
+
+<ul>
+<li><strong>Update:</strong> the link I was posting to prior points to a new Ruby project.  The correct link can be <a href="spreadsheet/excel">found here</a>.</li>
+<pre name="code" class="ruby">
+  # Builds an excel report.
+  def report
+    # Grab time span for report
+    get_span
+
+    # Define stats levels to include.
+    status = %w(high medium low lost won)
+
+    # Create workbook.
+    file = "#{session[:user_id]}_#{Time.now.strftime("%m%d%G%s")}_forecast.xls"
+    workbook = Excel.new("#{RAILS_ROOT}/reports/#{file}")
+
+    heading = Format.new(
+       :color     => "green",
+       :bold      => true,
+       :underline => true
+    )
+
+    data = Format.new(
+       :color     => "black",
+       :bold      => false,
+       :underline => false
+    )
+
+    workbook.add_format(heading)
+    workbook.add_format(data)
+
+    # Cycle through each status level
+    status.each do |status|
+      start_column, start_row = 2, 3
+      worksheet = workbook.add_worksheet(status)
+      opportunities = get_opportunities_that_are(status)
+
+      #Cycle through the opportunities
+      row = start_row
+      totals, dates = [], []
+
+      for opp in opportunities
+        worksheet.write(row,start_column,opp.client,heading)
+
+        column = start_column + 1
+        opp.find_forecasts_within(@span[0],@span[-1]).each do |i|
+          worksheet.write(row,column,i.volume,data)
+          totals[column] = i.volume + totals[column].to_i
+          dates[column] = i.date.strftime("%b '%y")
+          column += 1
+        end    
+
+        row += 1
+      end
+
+      # Generate the totals row and monthly headings
+      column = start_column+1
+      @span.length.times do
+        worksheet.write(row,column,totals[column],heading)
+        worksheet.write(start_row-1,column,dates[column],heading)
+        column += 1
+      end
+
+    end
+
+    workbook.close
+    redirect_to :action => 'show'
+  end
+
+</pre>
+
+
+</ul>
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

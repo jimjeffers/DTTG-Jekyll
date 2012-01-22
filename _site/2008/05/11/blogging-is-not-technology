@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Blogging is not Technology. | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2008-05-11" pubdate="pubdate">May 11, 2008</time>
+      <h1><a href="2008/05/11/blogging-is-not-technology" title="Permalink for Blogging is not Technology.">Blogging is not Technology.</a></h1>
+  </header>
+
+  <section id="content">
+    <p>Last week I was invited to speak at a local <a href="http://netsquared.meetup.com/12/">NetSquared meeting</a> out in Tempe.  Presenting on the topic of blogging forced me to take a step back to look at what I've been doing over the past seven years.  I realized all of the technological connotations associated to blogging are irrelevant.  Blogging is not about the web, rss feeds, or technology.  That is just a means to an end.  Blogging is about people, it's about voices, blogging is all about you. Blogging is a medium for distributing both fact and opinion.  It's about discussion and connecting people in a relevant context.  The technology just helps run the show.</p>
+
+
+<!--more-->
+
+<p>In my presentation I briefly explained the concept of syndication via RSS and Atom - then touched on a high level overview of what a CMS system is used for.  This was mainly to acknowledge the fact that not that many people are keen on the how or why of RSS.  After demystifying the essential technologies involved, I focused on what blogging is really about.  You can check out my slides below or <a href="http://donttrustthisguy.com/slides/jjeffers-050708-blogging.html">view it in fullscreen</a>.</p>
+
+<object width='590' height='450'>
+<param name='movie' value='/slides/slide_viewer.swf?slideshow=/slides/blogging_presentation.swf'>
+<embed src='/slides/slide_viewer.swf?slideshow=/slides/blogging_presentation.swf' width='590' height='450'>
+</embed>
+</param></object>
+
+<ul><li>Disclaimer: You can click through them to proceed, but you can't step back. This is due to a shortcoming in Keynote's export to flash functionality. I wrote a viewer tool to load the .swf file created by keynote to preload it, but I could not interact with the movie itself as it's an older format of SWF.</li></ul>
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

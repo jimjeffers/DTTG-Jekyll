@@ -1,0 +1,33 @@
+---
+layout: post
+author: Jim Jeffers
+permalink: 2005/12/31/ruby-extending-classes-and-method-chaining
+title: "Ruby: Extending classes and method chaining."
+excerpt:
+  Once you start fooling around with the Ruby language you really do get hooked on just how powerful it is.  I was disappointed when I first fo
+---
+
+<p>Once you start fooling around with the Ruby language you really do get hooked on just how powerful it is.  I was disappointed when I first found out that the String.capitalize function only formatted the very first letter of a string to a capital letter as this is undesirable when you are formatting something like a street address.  Not to worry though, extending the String class is easy in ruby and writing the function to do it requires only one line of code!</p>
+<pre name="code" class="ruby">
+class String
+  def capitalize_each
+    self.split(" ").each{|word| word.capitalize!}.join(" ")
+  end
+  def capitalize_each!
+    replace capitalize_each
+  end
+end
+
+puts "hello WORLD!".capitalize_each #=> "Hello World!"
+
+s = "6825 W. GALVESTON ST."
+puts s.capitalize #=> "6825 w. galveston st."
+puts s.capitalize_each #=> "6825 W. Galveston St."
+puts s #=> "6825 W. GALVESTON ST."
+
+s.capitalize_each!
+puts s #=> "6825 W. Galveston St."
+</pre>
+<p>Pretty nifty eh?  If any one can show me how to rewrite the function as a destructive function please comment because I'm stumped.</p>
+<h3>Update:</h3>
+<p><strong>Thanks to Assaf's comment</strong> I was able to write the destructive version of capitalize each.</p>

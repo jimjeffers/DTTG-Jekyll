@@ -1,0 +1,105 @@
+---
+layout: post
+author: Jim Jeffers
+permalink: 2006/02/05/i-m-on-rails-coding-statistics
+title: "I'm on Rails: Coding Statistics."
+excerpt:
+  I recently coded a basic statistics applicaiton for a client that offers a website affiliate program.  I thought it might be worth sharing ho
+---
+
+<p>I recently coded a basic statistics applicaiton for a client that offers a website affiliate program.  I thought it might be worth sharing how easy it is to code this type of software in Rails.  Keep in mind this is extremely basic but never the less a good illustration of how to tackle a cumbersome project relatively easily.</p>
+<h3>Decide what to track.</h3>
+<p>For this client all we needed to track were the number of actual page impressions, the amount of clicks, and the actual amount of unique visitors going to a specific users account.</p>
+<h3>Playing Big Brother.</h3>
+<p>Watching visitor activity and logging it is easy.  I created a model for hits, clicks, and visits.  There is a parent model to all of these called 'User'.  So here's how I broke down the relationships:</p>
+<ul>
+<li>Hits belong to users.</li>
+<li>Visits belong to users.</li>
+<li>Clicks belong to both users and visitors.</li>
+</ul>
+<p>Below is the code that logs the click through information and sends the user off on their happy way.  It basically takes an id and a path so a typical link would look like:  <em>http://www.domain.com/send_to/id/encoded_url_path_to_redirect_to</em></p>
+<pre name="code" class="ruby">
+  def send_to
+
+    if @user = User.find(:first, :conditions => ["name=?",@params[:id].to_s.upcase])
+
+      # Get parameter info...
+      url = params[:path].to_s
+      ip = request.remote_ip
+
+      # Log the click information.
+      click = Click.new
+      click.url = url
+      @user.clicks < < click
+
+      # Log the visitor information.
+      visitor = Visitor.create_if_new_today(ip,@user.id)
+      visitor.clicks < < click
+
+      # Log the hit.
+      hit = Hit.new
+      @user.hits < < hit
+
+      if @user.save
+        redirect_to url
+      end
+
+    end
+</pre>
+
+It should be worth noting that I've decided to track where every click is redirecting too.  I've also decided to track every click as a hit for the user as well as technically it is an impression.
+
+Logging unique visitor information as well as the page impression itself (the hit) is easy too as seen below.
+
+</pre><pre name="code" class="ruby">
+  def index
+
+    if params[:id] == 'nonexistent'
+      params[:id] = 'admin'
+    end
+
+    if @user = User.find(:first, :conditions => ["name=?",params[:id].to_s.upcase])
+      # Log the hit.
+      hit = Hit.new
+      @user.hits < < hit
+
+      # Log the visitor information.
+      ip = request.remote_ip
+      visitor = Visitor.create_if_new_today(ip,@user.id)
+      @user.visitors < < visitor
+
+      @time = Time.now
+      @user_id = params[:id].to_s.upcase
+
+  	else
+  	  redirect_to(:controller => 'show', :id =>'nonexistent')
+  	end
+
+  end
+</pre>
+
+<h3>Grabbing the stats.</h3>
+
+Once you've logged the stats pulling them via rails is a piece of cake.  I wrote a protected function inside of my report controller to pull the hits, clicks, and visits for a specific time length and return them in a hash.
+
+<pre name="code" class="ruby">
+  # Display user stats.
+  def report
+    @time = Time.now
+    @user = User.find(session[:user_id])
+    @todays = stats(@user,1.days.ago)
+    @last_weeks = stats(@user,1.weeks.ago)
+    @last_months = stats(@user,4.weeks.ago)
+    @records = transactions
+  end
+
+  protected
+
+  # Generates a hash containing hits, visitors, and clicks from the past.
+  def stats(user,time)
+    clicks = user.clicks.find(:all, :conditions => ["created_on > ?", time])
+    hits = user.hits.find(:all, :conditions => ["created_on > ?", time])
+    visitors = user.visitors.find(:all, :conditions => ["created_on > ?", time])
+    return { :hits => hits, :visitors => visitors, :clicks => clicks }
+  end
+</pre>

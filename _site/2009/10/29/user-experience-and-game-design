@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>User Experience and Game Design | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <!-- Please don't add "maximum-scale=1" here. It's bad for accessibility. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    
+    <script src="/javascripts/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body>
+    <div id="content">
+      <article id="post">
+  <header class="row">
+      <time datetime="2009-10-29" pubdate="pubdate">October 29, 2009</time>
+      <h1><a href="2009/10/29/user-experience-and-game-design" title="Permalink for User Experience and Game Design">User Experience and Game Design</a></h1>
+  </header>
+
+  <section id="content">
+    <p>I've studied user experience and interaction design from the perspective of software applications and web sites, but never truly considered the parallels and great illustrations of user experience design successes and failures that occur in video games. I guess it should seem obvious since a game itself is a very robust and rich software project. Let's take a look at games and their design in depth.</p>
+
+<h3>What is a Game?</h3>
+
+<blockquote>
+<p>A game is an activity with rules. It is a form of play often but not always involving conflict, either with other players, with the game system itself, or with randomness/fate/luck.</p>
+</blockquote>
+
+	<p>Before we can dissect the design of a game we need to understand what a game itself is. The <a href="http://www.igda.org"><span class="caps">IGDA</span></a> has provided a set of rules in their <a href="http://www.igda.org/wiki/images/e/ee/Igda2008cf.pdf">curriculum framework</a> and concede that:</p>
+
+	<ul>
+	<li>Most games have <strong>goals</strong>, but not all <em>(e.g. The Sims, SimCity)</em>. </li>
+		<li>Most games have <strong>defined start and end points</strong>, but not all <em>(World of Warcraft, Dungeons &#38; Dragons)</em>.</li>
+		<li>Most games <strong>involve decision-making</strong> on the part of the players, but not all <em>(e.g. Candyland, Chutes &#38; Ladders)</em>.</li>
+	</ul>
+
+<blockquote>
+<p>Game design is the process of crafting a system of play in which players' actions have meaning in the context of the game environment. Game design encompasses the set of principles, concepts, and practices that lead to the development of a high-quality product.</p>
+<p>Implicit in the process of game design is the consideration of design trade-offs to allow the implementation of a game in some human playable interactive environment.</p>
+<cite>IDGA Curriculum Framework, v3.2 beta</cite>
+</blockquote>
+
+	<h3>The Atomic Parts of a Game</h3>
+
+
+	<p>According to the <span class="caps">IGDA</span>, game design can be broken down into the following atomic parts:</p>
+
+
+	<ul>
+	<li>Game objects (tokens) and game setting</li>
+		<li>Rules</li>
+		<li>Dynamics</li>
+		<li><strong>Play mechanics</strong> &#8211; What are the rules? How do players interact with the environment? Do they provide discrete input (e.g. puzzle games) or is react to a randomness/chance (e.g. slot machines)</li>
+		<li>Goal(s) &#8211; </li>
+		<li>Conflict</li>
+		<li>Theme/Color</li>
+	</ul>
+
+
+	<h3>Let&#8217;s focus on Game Mechanics</h3>
+
+
+	<p>Good mechanics of a game are key. This is where we determine how the player interacts with the game environment. It&#8217;s also our seek balance. If we make the game too simple or too difficult for players it&#8217;s likely we&#8217;ll ruin the experience. I suspect, that the case more often than not is we come across a game that has been made too difficult by a series of design flaws. For examples of how this can be the case let me defer to the &#8220;Angry Video Game Nerd&#8221;. <strong>Be forewarned: the videos below use excessive (though most of it deserved) profanity.</strong></p>
+
+<h4>AVGN on The Simpsons</h4>
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/mKnl0CvfeLs&#38;hl=en&#38;fs=1&#38;"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/mKnl0CvfeLs&#38;hl=en&#38;fs=1&#38;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object> 
+
+<h4>AVGN on The Ninja Turtles</h4>
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/XjUz8IT0CYg&#38;hl=en&#38;fs=1&#38;"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/XjUz8IT0CYg&#38;hl=en&#38;fs=1&#38;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+
+<h4>AVGN on Back to the Future</h4>
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/y306cWw98a4&#38;hl=en&#38;fs=1&#38;"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/y306cWw98a4&#38;hl=en&#38;fs=1&#38;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+
+<h3>Parallels in Game Design and Software Applications</h3>
+
+<p>There are several areas in game design that relate specifically to software design.</p>
+
+<h4>Providing Adequate Feedback to Players</h4>
+
+<p>In a game a player may require constant feedback as to what the input they have provide is producing. In a software application this also occurs but at a more passive level. A good example of this would be crisis points in your software. This is how you handle errors in user input. <a href="http://www.amazon.com/gp/product/073571410X?ie=UTF8&tag=donttcom-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=073571410X">Defensive Design for the Web</a>, a 'classic' book by <a href="http://37signals.com">37 Signals</a>, highlights how we provide feedback (or the lack there of) at these critical points of interaction with users.</p>
+
+<h4>Teaching Your Players how to Play the Game</h4>
+
+<p>Games tend to be much more varied than software in a sense that the designers have a lot more freedom to create a unique experience. As a result games come with directions and tutorials. Users come into the game expecting to learn it the first time through. With software we're still grappling  with that. For a number of years 37 Signals has made a big fuss about <a href="http://gettingreal.37signals.com/ch09_The_Blank_Slate.php">'blank slate' pages</a> that are <a href="http://37signals.com/svn/posts/291-preview-3-highrise-welcome-and-workspace-tabs">used in their applications</a>. Yahoo! has taken this a step further and for a number of years now has provided interactive tours guiding you through the process of using some of their pages.</p>
+  </section>
+</article>
+
+    </div>
+  
+    <footer>
+      <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+      <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+    </footer>
+    <script src="/javascripts/application.js"></script>
+  </body>
+</html>

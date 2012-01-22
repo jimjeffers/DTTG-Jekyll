@@ -1,0 +1,83 @@
+---
+layout: post
+author: Jim Jeffers
+permalink: 2006/07/13/creating-excel-documents-with-ruby-on-rails
+title: "Creating Excel Documents with Ruby On Rails"
+excerpt:
+  Generating an excel document is not so difficult to achieve but limited unfortunately.  You cannot write formulas or generate charts via the 
+---
+
+<p>Generating an excel document is not so difficult to achieve but limited unfortunately.  You cannot write formulas or generate charts via the existing available tools but you can achieve usable results overall.  Here is a snippet I used to generate sales forecasts involving data pulled together from two active record objects. <a href="http://rubyspreadsheet.sourceforge.net/">Here is the gem you'll need.</a></p>
+
+<ul>
+<li><strong>Update:</strong> the link I was posting to prior points to a new Ruby project.  The correct link can be <a href="spreadsheet/excel">found here</a>.</li>
+<pre name="code" class="ruby">
+  # Builds an excel report.
+  def report
+    # Grab time span for report
+    get_span
+
+    # Define stats levels to include.
+    status = %w(high medium low lost won)
+
+    # Create workbook.
+    file = "#{session[:user_id]}_#{Time.now.strftime("%m%d%G%s")}_forecast.xls"
+    workbook = Excel.new("#{RAILS_ROOT}/reports/#{file}")
+
+    heading = Format.new(
+       :color     => "green",
+       :bold      => true,
+       :underline => true
+    )
+
+    data = Format.new(
+       :color     => "black",
+       :bold      => false,
+       :underline => false
+    )
+
+    workbook.add_format(heading)
+    workbook.add_format(data)
+
+    # Cycle through each status level
+    status.each do |status|
+      start_column, start_row = 2, 3
+      worksheet = workbook.add_worksheet(status)
+      opportunities = get_opportunities_that_are(status)
+
+      #Cycle through the opportunities
+      row = start_row
+      totals, dates = [], []
+
+      for opp in opportunities
+        worksheet.write(row,start_column,opp.client,heading)
+
+        column = start_column + 1
+        opp.find_forecasts_within(@span[0],@span[-1]).each do |i|
+          worksheet.write(row,column,i.volume,data)
+          totals[column] = i.volume + totals[column].to_i
+          dates[column] = i.date.strftime("%b '%y")
+          column += 1
+        end    
+
+        row += 1
+      end
+
+      # Generate the totals row and monthly headings
+      column = start_column+1
+      @span.length.times do
+        worksheet.write(row,column,totals[column],heading)
+        worksheet.write(start_row-1,column,dates[column],heading)
+        column += 1
+      end
+
+    end
+
+    workbook.close
+    redirect_to :action => 'show'
+  end
+
+</pre>
+
+
+</ul>

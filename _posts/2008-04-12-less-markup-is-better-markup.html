@@ -1,0 +1,37 @@
+---
+layout: post
+author: Jim Jeffers
+permalink: 2008/04/12/less-markup-is-better-markup
+title: "Less Markup Is Better Markup."
+excerpt:
+  There is a lot of ambiguity when it comes to writing semantic markup in HTML: to what extent should we markup data?  How semantically detaile
+---
+
+<p>There is a lot of ambiguity when it comes to writing semantic markup in HTML: to what extent should we markup data?  How semantically detailed do we need to be?  While there is no specific rule of thumb, I will say that the less the better.  When writing markup, be as clean as possible without losing meaning.  Much like how <a href="http://www.amazon.com/Elements-Style-William-Strunk/dp/0205313426/ref=pd_bbs_2?ie=UTF8&s=books&qid=1208116574&sr=8-2">The Elements of Style</a> emphasizes brevity in writing - a sentence should use as few words as possible without losing it's meaning - an html document should use as little markup as possible without breaking the context of it's content.</p>
+
+
+<!--more-->
+
+<h3>Use the Minimum Necessary to Communicate Meaning</h3>
+
+<p>Unfortunately, life is not so simple for the HTML author.  Technology binds us to complications that create an environment that is less precise, less absolute, than merely writing a sentence.  But if you can put the pressures we face from design implementation and browser support aside to focus on the basic semantic meaning; you will find that the aforementioned complexity is quite easy to deal with by incorporating small tweaks to your HTML.  Here are two primary points in regards to the over complexity of HTML when thinking in terms of <a href="http://donttrustthisguy.com/2008/04/04/write-html-that-means-something/">implementation as opposed to meaning</a>.</p>
+
+<ul>
+	<li>Writing HTML based purely on semantic meaning results in much clearer and flexible HTML that is easier to style and maintain.</li>
+	<li>Complications during implementation are best tackled by adding superfluous markup to correct a problem as it arises rather than preemptively.</li>
+</ul>
+
+<h3>Only Add Superfluous Markup After Challenges Arise</h3>
+
+<p>Here is an example.  Let's say we have a body of content containing two unsorted lists with four items a piece.  Now let's say we want the unsorted lists in this body of content be styled differently from the general rules we have already applied.  If we wanted the absolute most flexibility, we could have preemptively given each list item (&lt;li&gt;) it's own class.  That would be a total of eight elements with additional markup.  We could reduce this to only two elements by simply applying a class to the unsorted lists (&lt;ul&gt;) and leaving the list items bare.  Or, provided the body of content is encapsulated in it's own HTML element to semantically describe the associations between the content elements, we could give the containing object a class or ID.  Let's say this body of content is the secondary content on the page.  We could give the encapsulating div a class, <strong>thus reducing the amount of marked up elements from eight to one.</strong></p>
+
+<h3>Only Use Containing Elements to Construct Associations</h3>
+
+<p>It's far to easy and common to find html documents that have nearly every individual element wrapped in it's own division (&lt;div&gt;) but this is a terrible breakdown in semantics.  These excessive containers create meaningless layers of information that add no semantic value to the document.  Elements certainly need to be packaged into other containing elements but only when they need to be associated to each other.</p>
+
+<ul>
+	<li>There should never be a time when a lone element is enclosed in it's own containing element.</li>
+	<li>If an element is alone in a container - it should be strong enough to stand on it's own and the containing element should be eliminated.</li>
+</ul>
+
+<p>Take this blog as an example.  This post contains many headings, paragraphs, and unsorted lists.  It makes sense to enclose the content of this entry into it's own division to symbolize that all of these various elements are part of a larger body of content.  A single heading, paragraph, or bullet point in this post could not stand on it's own to communicate the message of this article.  Think about that when trying to make sense of when you should or should not apply a containing element.  In other words, when writing a long novel you would not put every single sentence on it's own page.  Wrapping every single paragraph, image, and list of  your content into a &lt;div&gt; is not so different.</p>

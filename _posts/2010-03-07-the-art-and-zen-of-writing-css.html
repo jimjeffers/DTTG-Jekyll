@@ -1,0 +1,94 @@
+---
+layout: post
+author: Jim Jeffers
+permalink: 2010/03/07/the-art-and-zen-of-writing-css
+title: "The Art and Zen of Writing CSS"
+excerpt:
+  I've been writing pure html/css layouts for well over eight years now. While I've found best practices in the form of convention and document
+---
+
+<p>I've been writing pure html/css layouts for well over eight years now. While I've found best practices in the form of convention and documentation to be useful. They don't prevent some of my CSS nightmares from reoccurring. They merely make them less painful. My solution is to follow guiding principles in the way I write stylesheets. These principles form a foundation for writing stylesheets that will be easier to work in as the project grows.</p>
+<!--more-->
+<h3>Lesson One: Only be Specific When You Need to Be.</h3>
+
+<p>There is a hesitation to fully utilize the cascade. Many people who have worked in CSS for a long time tend to utilize very powerful pseudo-selectors to target specific elements. This is all well and good but it also creates a dangerous habit. <strong>We become uncomfortable writing rules that are not highly specific.</strong></p>
+
+<p>This has been a hard lesson learned many times over. My preference has always been to be accurate. I'd write CSS rules that were really detailed and specific. But this is bad. Specific rules paint you into a corner and make reuse very difficult. <strong>Instead, use the most general rule you can to get the job done and only write rules that are more specific when the situation presents itself.</strong> See the example below:</p>
+
+<script src="http://gist.github.com/324170.js?file=be_generic.css"></script>
+
+<p>Now it's true that the second rule would apply to every paragraph tag on the site. But at first this is fine. Imagine how simple it is to add more specific rules later. As projects grow and styles become inherently more complex by necessity, the situations where we need to become more specific will naturally present themselves. If we are generic from the start we can take advantage of the cascade and overwrite rules with more specific rules when we need to.</p>
+
+<p>To see how bad it can get take a look at these two examples (the third set of rules is an example of adding additional style info with a more specific selector):</p>
+
+<script src="http://gist.github.com/324170.js?file=nightmare.css"></script>
+
+<p>This seems like a fundamental lesson in CSS. We can write styles that apply to many objects and the more specific rules will take precedence. Most people who write CSS know this. What's not usually brought up is the fact that it's much safer to avoid the complexity created by writing more specific CSS. There are two laws I would propose in regards to specificity in CSS:</p>
+
+<ul>
+<li>The complexity of your stylesheet is directly correlated to how specific your selectors are.</li>
+<li>Refactoring CSS selectors to be less specific is exponentially more difficult than simply adding specific rules as situations arise.</li>
+</ul>
+
+<h3>Lesson Two: You Must Start Somewhere.</h3>
+
+<p>Whether you work alone or on a team you need to have a starting point in your stylesheet. A starting point is a generic set of rules that defines how we expect our environment to behave. This is generally important when working in CSS but infinitely more important when working on a CSS document with multiple contributors. Everyone needs to be on the same page and having a baseline foundation for our stylesheet is the best trick we have in our arsenal for achieving exactly this.</p>
+
+<p>My starting point is <a href="http://meyerweb.com/eric/tools/css/reset/index.html">Eric Meyer's Reset CSS</a>. Unfortunately for your own productivity, it seems that using a reset stylesheet is a controversial subject. Some experienced with CSS consider these tools to be <a href="http://snook.ca/archives/html_and_css/no_css_reset/">unnecessary</a> or <a href="http://meiert.com/en/blog/20080419/reset-style-sheets-are-bad/">just plain bad</a>. But the truth is that we all use them in one form or another. The real problem with reset stylesheets is that they were named "reset". They are not resets but rather they serve as our baselines, our foundations, our intentions for how we want our environment to behave.</p>
+
+<p>The reality is if we don't use CSS resets we implement them in a much more difficult manner. We repeat ourselves where we have to throughout the document in order to achieve a standard desired behavior. The best example are margins. Every web browser platform has it's own default styles for margins on different elements. There is no way in hell any of us can memorize the variations of these defaults in our minds let alone compensate for them without taking a serious productivity hit.</p>
+
+<p>If you don't define your starting point then you inherent every browser's own pre-defined starting point. This leads to a much more hostile environment for our work to be deployed. We're giving up control of our environment. It's much less predictable. It's actually very very scary.</p>
+
+<p>That's not to say reset CSS files are the holy grail to writing good CSS. Far from it. They can be a pain if you don't tailor them. For example, many people don't like certain settings used in some reset CSS files. A common example is that the 'strong' element is no longer bold. But that's because the reset is distributed as a pure example. It's up to you and your team to change this reset file for your own purposes. If you want strong to be bold adjust the reset. Ultimately, you will develop your own reset.css (though really I think we should call it base.css) over time. The key lessons here are:</p>
+
+<ul>
+<li>Base stylesheets grant CSS authors control over their environment.</li>
+<li>Base styles are key to creating a shared set of assumptions or expectations amongst multiple contributors.</li>
+<li>Base styles do not guarantee cross browser compatibility but rather buy us and our team members predictable outcomes.</li>
+</ul>
+
+<h3>Lesson Three: Rely on Specificity Over Order.</h3>
+
+<p>A basic principle in CSS is that if you write two equally specific rules the latter takes precedence. In other words, order matters in your CSS. But this is dangerous. Order only matters if you let it matter - by writing rules with selectors of equal specificity.</p>
+
+<p>As stylesheets grow in size they become more cumbersome to manage. To remain productive in our files we break them down into sections. Or we separate our rules into entirely separate files.</p>
+
+<p>A reliance on the order our code makes it very brittle or fragile. When we need to incorporate a strategy for organizing our code we can easily disrupt the original order the rules appeared in. This is significant because as I stated earlier it's more manageable to write selectors that are less specific and more general. That does not mean you should incorporate the principle of order as a technique for maintaining a stylesheet with generic rules. If you have two rules of equal specificity that conflict with each other then you need to make one of them more specific in the interest of writing a stylesheet that is flexible enough to be reorganized in a structural framework.</p>
+
+<p>Additionally, most of the occurrences in our stylesheets that provide situations where we have rules which overrule each other due to their order of appearance tend to deal with duplicate selectors. These cases are ideal scenarios where our CSS could potentially be refactored.</p>
+
+<p>The key take aways from this point are:</p>
+
+<ul>
+<li>Stylesheets that have a strong reliance on order of appearance are inherently more brittle and more susceptible to problems when we attempt to restructure or reorganize our documents.</li>
+<li>Rules that are overwritten due to their order of appearance typically  could or should be refactored.</li>
+</ul>
+
+<h3>Lesson Four: Be Clear and Expressive.</h3>
+
+<p>You need to be clear on what you expect. You need to be clear on how things should be done and handled in your document. How do you do that in CSS? Simply with commenting. We can provide ample amounts of documentation in our CSS files simply by commenting. We can use comments to:</p>
+
+<ul>
+<li>Define best practices.</li>
+<li>Denote organizational sections.</li>
+<li>Provide references for resources.</li>
+</ul>
+
+<p>There are two problems here. The first is that not enough people utilize comments in their stylesheets. The second is that many authors don't see the need to. Yes the latter is probably the reason for the former.</p>
+
+<p>Let's look into why we might not think commenting or documenting our expectations and best practices in the document may be worthwhile. The first reason is that comments make our CSS file larger in file size. Yes - this is certainly true but we can easily use YUI compressor or write <a href="http://github.com/jimjeffers/CSS-Reader">simple scripts to automate the process of minifying and removing comments</a> from our production code.</p>
+
+<p>The second reason might be that you're the only author touching the stylesheet. This is incredibly short sighted. Always always (always!) plan on someone else touching your stylesheet at some point in time. Chances are you are not the only one who will be working on the project for eternity. In other words - count on the fact that someone else will eventually be writing code in your stylesheet as well. You may as well make it clear to them as to how they should do it to maintain a consistent stylesheet. Otherwise you may find yourself cleaning up a big mess later when you're called back to work on a broken site!</p>
+
+<p>Being expressive is easier said than done though. How do you go about declaring how you expect things to be done? I personally embed my best practices in a short set of directions complete with an example in a comment at the top of all of my stylesheet files. The snippet looks like this:</p>
+
+<script src="http://gist.github.com/324170.js?file=best_practices.css"></script>
+
+<p>The point here is you can utilize comments to make things very clear in a simple elegant fashion. Just document your CSS as you should be documenting all of your code. Textmate users can benefit from a <a href="http://donttrustthisguy.com/2008/01/05/css-commenting-with-textmate/">CSS commenting bundle</a> I put together a few years ago to quickly document and section apart their stylesheets. What you need to remember regarding expressiveness in your CSS is the following:</p>
+
+<ul>
+<li>Utilize comments to define how CSS should be formatted and written for other authors.</li>
+<li>Always count on the fact that someone other than you will probably work in this document at some point in time.</li>
+<li>Utilize comments to organize your code into sections. Comments can effectively become a navigation system within your CSS document.</li>
+</ul>
