@@ -1,7 +1,7 @@
 blog_dir: blog
 # domain: http://donttrustthisguy.com
 exclude: *.sass, *.scss, Gemfile, Gemfile.lock, Procfile, README.md, *.rb, *.yml
-lsi: true
+# lsi: true
 markdown: rdiscount
 paginate: 120
 # permalink: /:title
