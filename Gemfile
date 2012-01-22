@@ -2,12 +2,10 @@ source 'http://rubygems.org'
 
 gem 'heroku'
 gem 'jekyll'
-gem 'rack-jekyll'
 gem 'rdiscount'
-gem 'thin'
+gem 'gsl'
 
 group :development do
   gem 'compass'
   gem 'foreman'
-  gem 'gsl'
 end
