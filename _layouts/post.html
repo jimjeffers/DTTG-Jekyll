@@ -11,4 +11,16 @@ layout: default
   <section id="body">
     {{ content }}
   </section>
+  
+  <nav id="posts_nav">
+    <ul>
+      <li id="table_of_contents"><a href="/" title="Return to the table of contents."><img src="/images/icon_table_of_contents.svg" height="85" width="85"></a></li>
+      {% if page.previous %}
+      <li id="previous"><a href="{{ page.previous.url }}" title="{{ page.previous.title }}"><img src="/images/icon_previous.svg" height="85" width="85"></a></li>
+      {% endif %}
+      {% if page.next %}
+      <li id="next"><a href="{{ page.next.url }}" title="{{ page.next.title }}"><img src="/images/icon_next.svg" height="85" width="85"></a></li>
+      {% endif %}
+    </ul>
+  </nav>
 </article>

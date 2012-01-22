@@ -8,7 +8,7 @@ a {
 }
 
 a:visited {
-  opacity: 0.85;
+  color: #50aad7;
 }
 
 .no-touch a:hover {
@@ -44,7 +44,7 @@ time+h1 {
   margin-top: 0.2em;
 }
 
-section#body {
+#body {
   padding: 0 0 2em 0;
   font-size: 1.2em;
   line-height: 1.5em;
@@ -137,4 +137,46 @@ footer p {
   font-size: 0.875em;
   line-height: 1.5em;
   width: auto;
+}
+
+.no-svg #posts_nav {
+  display: none;
+}
+
+#posts_nav.active li {
+  opacity: 1;
+}
+
+#posts_nav li {
+  opacity: 0;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+    -webkit-transform: translateZ(0);
+}
+
+.no-touch #posts_nav li:hover {
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+#table_of_contents {
+  left: 20px;
+  position: absolute;
+  top: 20px;
+}
+
+#next,
+#previous {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+}
+
+#next {
+  right: 140px;
 }
