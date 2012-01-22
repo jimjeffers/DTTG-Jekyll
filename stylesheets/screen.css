@@ -22,8 +22,11 @@ header h1 {
   max-width: 960px;
 }
 
-header h1 a {
+header h1 a,
+header h1 a:visited,
+.no-touch header h1 a:hover {
   color: #301f15;
+  text-decoration: none;
 }
 
 header h2 {
@@ -174,9 +177,159 @@ footer p {
 #previous {
   position: fixed;
   top: 20px;
-  right: 40px;
+  right: 10px;
 }
 
 #next {
-  right: 140px;
+  right: 110px;
+}
+
+
+@media only screen and (min-width: 320px) {
+  body {
+    padding: 20px;
+  }
+  
+  #body {
+    font-size: 1.1em;
+    line-height: 1.5em;
+  }
+  
+  .archives {
+    margin: 0.2em 0.8em 0.2em 0.2em;
+    padding: 0;
+  }
+  
+  .archives li {
+    padding: 1em 6em 0.4em 0;
+  }
+  
+  .archives .date {
+    position: relative;
+    right: auto;
+    top: auto;
+  }
+  
+  header h2 {
+    margin: -1em 0 3em 0.2em;
+    font-size: 1em;
+  }
+  
+  #posts_nav li,
+  #posts_nav li img {
+    display: block;
+    height: 43px;
+    width: 43px;
+  }
+  
+  header h1 {
+    font-size: 3em;
+    max-width: 320px;
+  }
+  
+  time+h1 {
+    font-size: 2em;
+    margin-bottom: 2em;
+  }
+  
+  #next,
+  #previous {
+    top: 20px;
+    right: 0;
+  }
+
+  #next {
+    right: 50px;
+  }
+  
+  #table_of_contents {
+    left: 0;
+  }
+}
+ 
+@media only screen and (min-width: 660px) {
+  body {
+    padding: 40px;
+  }
+  
+  #body {
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+  
+  header h1 {
+    font-size: 6em;
+    max-width: 960px;
+  }
+  
+  time+h1 {
+    font-size: 4em;
+    margin-bottom: 1em;
+  }
+  
+  header h2 {
+    font-size: 1.25em;
+    margin: -3em 0 3em 0.7em;
+  }
+  
+  #posts_nav li,
+  #posts_nav li img {
+    display: block;
+    height: 85px;
+    width: 85px;
+  }
+  
+  #table_of_contents {
+    left: 20px;
+  }
+  
+  #next,
+  #previous {
+    top: 20px;
+    right: 10px;
+  }
+
+  #next {
+    right: 110px;
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  body {
+    padding: 40px;
+  }
+  
+  header h1 {
+    color: #301f15;
+    font-size: 8em;
+    line-height: 1em;
+    max-width: 960px;
+  }
+  
+  time+h1 {
+    font-size: 6em;
+    margin-top: 0.2em;
+  }
+  
+  header h2 {
+    font-size: 1.5em;
+    margin: -3em 0 3em 1em;
+  }
+}
+
+
+
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
 }
