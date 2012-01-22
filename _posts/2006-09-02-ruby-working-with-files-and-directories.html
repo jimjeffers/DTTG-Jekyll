@@ -1,10 +1,10 @@
 ---
 layout: post
 author: Jim Jeffers
-permalink: 2006/09/02/ruby-working-with-files-and-directories
+permalink: /2006/09/02/ruby-working-with-files-and-directories
 title: "Ruby: Working with files and directories."
 excerpt:
-  I wrote this snippet today to cycle through the present working directory and do some cleaning up so to speak.  We got a ton of images from o
+  <p>I wrote this snippet today to cycle through the present working directory and do some cleaning up 
 ---
 
 <p>I wrote this snippet today to cycle through the present working directory and do some cleaning up so to speak.  We got a ton of images from one of our clients and they all need to be setup as galleries for <a href="http://www.slideshowpro.com">slideshow pro</a> in flash.  So I needed a few things to be done.. first of all the images were all conveniently placed in their own directories for each album, however, the thumbnails were stored together with the large photo files so I needed to separate them from each other.  I wrote this snippet... my first time writing a ruby script to do some nifty stuff with directories and files quickly.  This will actually rename all of the directories to be more web friendly i.e. 'Bay Area' becomes 'bay_area' etc. etc. and then it will rename all of the images uniformly but place thumbnails in a tn subdirectory and large images in an lg subdirectory.  Finally, it also generates a SSP friendly XML doc for each directory.</p>

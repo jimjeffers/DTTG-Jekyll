@@ -4,17 +4,66 @@ body {
 
 a {
   color: #0074AE;
+  text-decoration: none;
 }
 
-#content h1 {
+a:visited {
+  opacity: 0.85;
+}
+
+.no-touch a:hover {
+  text-decoration: underline;
+}
+
+header h1 {
   color: #301f15;
   font-size: 8em;
+  line-height: 1em;
   max-width: 960px;
 }
 
-#content h2 {
+header h1 a {
+  color: #301f15;
+}
+
+header h2 {
   color: #301f15;
   margin: -3em 0 3em 1em;
+}
+
+time {
+  color: #CABFB4;
+  display: block;
+  font-size: 1.2em;
+  line-height: 1em;
+  margin-top: 6em;
+}
+
+time+h1 {
+  font-size: 6em;
+  margin-top: 0.2em;
+}
+
+section#body {
+  padding: 0 0 2em 0;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  max-width: 720px;
+}
+
+article li {
+  color: #333;
+  padding: 0.5em 1.25em;
+}
+
+article h3 {
+  margin: 1.5em 0;
+}
+
+cite {
+  color: #CABFB4;
+  font-size: 0.75em;
+  line-height: 1.5em;
 }
 
 .archives {
