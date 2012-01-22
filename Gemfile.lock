@@ -40,6 +40,7 @@ GEM
     mime-types (1.17.2)
     narray (0.6.0.1)
     posix-spawn (0.3.6)
+    rdiscount (1.6.8)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rubyzip (0.9.5)
@@ -57,3 +58,4 @@ DEPENDENCIES
   gsl
   heroku
   jekyll
+  rdiscount
