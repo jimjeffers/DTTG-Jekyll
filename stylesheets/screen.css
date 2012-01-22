@@ -2,14 +2,30 @@ body {
   padding: 40px;
 }
 
+a {
+  color: #0074AE;
+}
+
+#content h1 {
+  color: #301f15;
+  font-size: 8em;
+  max-width: 960px;
+}
+
+#content h2 {
+  color: #301f15;
+  margin: -3em 0 3em 1em;
+}
+
 .archives {
   list-style: none;
-  padding-right: 120px;
+  max-width: 960px;
+  padding: 0 1.5em;
 }
 
 .archives li {
   border-bottom: 1px solid #eee;
-  padding: 0.1em 6em .1em 0;
+  padding: 0.2em 6em 0.2em 0;
   position: relative;
 }
   
@@ -22,7 +38,7 @@ body {
   padding: 0.2em 0;
   position: absolute;
   text-transform: uppercase;
-  top: 0;
+  top: 0.4em;
 }
 
 .date .month,
@@ -39,11 +55,9 @@ body {
 
 footer {
   color: #444;
-  border: 2px solid #eee;
+  border-top: 2px double #eee;
   margin-top: 10em;
-  max-width: 610px;
   padding: 0 1em;
-  width: 84%;
 }
 
 footer hgroup {
