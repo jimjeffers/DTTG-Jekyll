@@ -246,6 +246,11 @@ pre {
   #table_of_contents {
     left: 0;
   }
+  
+  .touch #posts_nav.active li#next,
+  .touch #posts_nav.active li#previous {
+    opacity: 0.2;
+  }
 }
  
 @media only screen and (min-width: 660px) {
@@ -307,11 +312,6 @@ pre {
     right: -25px;
     top: 45%;
     margin-top: -50px;
-  }
-  
-  .touch #posts_nav.active li#next,
-  .touch #posts_nav.active li#previous {
-    opacity: 0.2;
   }
   
   .touch #next {
