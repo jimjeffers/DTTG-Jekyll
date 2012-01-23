@@ -298,10 +298,15 @@ footer p {
   
   .touch #next,
   .touch #previous {
-    opacity: 0.25;
+    
     right: -25px;
     top: 45%;
     margin-top: -50px;
+  }
+  
+  #posts_nav.active li#next,
+  #posts_nav.active li#previous {
+    opacity: 0.5;
   }
   
   .touch #next {
