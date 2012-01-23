@@ -6,9 +6,9 @@ excerpt:
   Work sucks when you know you need to do it. But work is easy and effortless when you want to do it.
 ---
 
-Work sucks when you know you need to do it. But work is easy and effortless when you want to do it. I've found that I dread the weeks or days that I feel under pressure to get work done. When you feel too many obligations stacking up you easily get overwhelmed. Every minute of the day you're not tending to these obligations feels like a burden. It feels like you can never just get to work when you need to.
+Work sucks when you know you need to do it. But work is easy and effortless when you want to do it. I've found that I dread the weeks or days that I feel under pressure to get work done. It's easy to get overwhelmed when too many obligations stack up. Every minute of the day you're not tending to these obligations feels like a burden. It feels like you can never just get to work when you need to.
 
-The exact opposite is true when you spend the whole day having fun and relaxing. Work almost feels like a welcome break after a while. And often on these days you are more productive. Spend the whole day sitting outside, enjoying the sun, and then come home in the evening with some ideas and focus (provided you don't enjoy the day by getting tanked)!
+The exact opposite is true when you spend the whole day having fun. Work almost feels like a welcome break after a while. And often on these days you are more productive. Spend the whole day sitting outside, enjoying the sun, and then come home in the evening with some ideas and focus (provided you don't enjoy the day by getting tanked)!
 
 There is a popular belief that you work better under pressure. I feel this is not the case. Or to be more accurate this isn't exactly the case. I think we work better under 'high energy' and even though pressure can create some energy through tension and stress, it's not ideal. Stress isn't always enjoyable and the introduction of pressure into our work lives tends to have a few side effects such as: making your work stressful (ok that's obvious), limiting your engagement (do I actually care about what happens or just that this gets done), and poor attention to detail.
 
