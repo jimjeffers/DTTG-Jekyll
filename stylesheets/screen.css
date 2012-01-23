@@ -254,10 +254,9 @@ pre {
   
   .touch #next,
   .touch #previous {
-    
     right: -25px;
     top: 45%;
-    margin-top: -50px;
+    margin-top: -10px;
   }
   
   .touch #next {
@@ -317,6 +316,11 @@ pre {
   
   .no-touch #next {
     right: 100px;
+  }
+  
+  .touch #next,
+  .touch #previous {
+    margin-top: -50px;
   }
 }
 
