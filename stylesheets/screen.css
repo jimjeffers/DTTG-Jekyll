@@ -304,8 +304,8 @@ footer p {
     margin-top: -50px;
   }
   
-  #posts_nav.active li#next,
-  #posts_nav.active li#previous {
+  .touch #posts_nav.active li#next,
+  .touch #posts_nav.active li#previous {
     opacity: 0.2;
   }
   
