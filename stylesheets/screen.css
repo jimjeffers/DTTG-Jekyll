@@ -298,8 +298,9 @@ footer p {
   
   .touch #next,
   .touch #previous {
+    opacity: 0.75;
     right: -25px;
-    top: 50%;
+    top: 45%;
     margin-top: -50px;
   }
   
