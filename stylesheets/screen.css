@@ -251,6 +251,19 @@ pre {
   .touch #posts_nav.active li#previous {
     opacity: 0.2;
   }
+  
+  .touch #next,
+  .touch #previous {
+    
+    right: -25px;
+    top: 45%;
+    margin-top: -50px;
+  }
+  
+  .touch #next {
+    right: auto;
+    left: -30px;
+  }
 }
  
 @media only screen and (min-width: 660px) {
@@ -304,19 +317,6 @@ pre {
   
   .no-touch #next {
     right: 100px;
-  }
-  
-  .touch #next,
-  .touch #previous {
-    
-    right: -25px;
-    top: 45%;
-    margin-top: -50px;
-  }
-  
-  .touch #next {
-    right: auto;
-    left: -30px;
   }
 }
 
