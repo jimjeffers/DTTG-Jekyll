@@ -4,19 +4,10 @@ author: Jim Jeffers
 permalink: /2009/05/13/igniting-phoenix
 title: "Igniting Phoenix"
 excerpt:
-  <p>It's been too long since I've written anything on this blog. Fortunately, I've had the opportunity
+  It's been too long since I've written anything on this blog.
 ---
 
 <p>It's been too long since I've written anything on this blog. Fortunately, I've had the opportunity to work on a few interesting projects in the last couple of months. The one I'm sharing with you today was done as a surprise for the <a href="http://ignite-phoenix.org" title="Ignite Phoenix">Ignite Phoenix</a> team and the community in general.</p>
-<!--more-->
-<img src="http://donttrustthisguy.com/wp-content/uploads/2009/05/tca.jpg" alt="Tempe Center for the Arts" title="Tempe Center for the Arts" width="890" height="454" class="alignnone size-full wp-image-325" />
-
-<div class="cited_photo">
-<p><img src="http://donttrustthisguy.com/wp-content/uploads/2009/05/comment_example.jpg" alt="An example of the dynamic commenting system." title="An example of the dynamic commenting system." width="290" height="359" class="alignnone size-full wp-image-326" />
-<cite>The commenting system incorporates functionality from <a href="http://donttrustthisguy.com/2009/01/04/encouraged-commentary/">encouraged commentary</a>.</cite></p>
-</div>
-
-<img src="http://donttrustthisguy.com/wp-content/uploads/2009/05/ignite_title.jpg" alt="ignite_title" title="Ignite Phoenix Headline with Phoenix Skyline." width="590" height="270" class="alignnone size-full wp-image-324" />
 
 <h3>Visually Phoenix</h3>
 <p>On the surface I've tried to incorporate colors and tones more representative of Phoenix. You'll find illustrative elements resembling our city as well. The site headline contains the Phoenix skyline - as does the site footer. I've also made a minimalist illustration of the Tempe Center for the Arts; the amazing venue hosting the event.</p>
@@ -26,13 +17,8 @@ excerpt:
 <h3>Overflowing with CSS Tricks</h3>
 <p>A lot of tricks with overflow and absolute positioning were used to achieve various effects throughout the site. For instance, the three flickr images shown in the intro content are cropped by a containing element. The border around them is achieved with rgba transparency to create a unique effect for those who are visiting the site with modern browsers.</p>
 
-<img src="http://donttrustthisguy.com/wp-content/uploads/2009/05/cropped_images.jpg" alt="Images Cropped with CSS" title="Images Cropped with CSS" width="590" height="257" class="alignnone size-full wp-image-327" />
-
 <h3>Getting Inline with Block</h3>
 <p>Another fairly simple CSS feature I took advantage was the 'inline-block' display mode. A well supported CSS feature that I've not used to much extent prior to this project other than a work around when we ran into layout complications. In this case I was able to use rgba transparency and 'inline-block' to create a pretty neat highlighting effect. I also liked how I was able to make elements of different formats run into each other quite naturally with this display mode.</p>
-
-<img src="http://donttrustthisguy.com/wp-content/uploads/2009/05/inline-block.jpg" alt="Unique Effect on Headings with Inline-Block and rgba." title="Unique Effect on Headings with Inline-Block and rgba." width="590" height="505" class="alignnone size-full wp-image-328" />
-
 
 <h3>Advanced Positioning</h3>
 <p>Nearly every major element of the page is absolutely positioned so that we could achieve a fluid layout that spans the entire width of the browser window but meets gracefully in the center. The content itself is contained in a 960px grid from the <a href="http://960.gs">960.gs</a> system. To use absolute positioning so extensively we had to hack some magic with some simple <a href="http://jquery.com">jQuery</a>:</p>

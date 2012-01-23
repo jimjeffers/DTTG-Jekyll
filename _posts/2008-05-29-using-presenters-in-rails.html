@@ -4,13 +4,10 @@ author: Jim Jeffers
 permalink: /2008/05/29/using-presenters-in-rails
 title: "Using Presenters in Rails"
 excerpt:
-  <p>Sitting thrugh my first tutorials session at RailsConf we've come across an interesting discussion
+  Sitting thrugh my first tutorials session at RailsConf we've come across an interesting discussion
 ---
 
 <p>Sitting thrugh my first tutorials session at RailsConf we've come across an interesting discussion about the philosophy of using the <a href="http://blog.jayfields.com/2007/03/rails-presenter-pattern.html">'Presenter Pattern'</a> to refactor code in your applications controller.</p>
-
-
-<!--more-->
 
 <p>What the presenter initially did was build out a traditional presenter class to extend the model and provide two methods to find possible status and priority objects from the database.  This requires the author to delegate class methods from the model that the Presenter class could use.  It also requires us to wrap any instance variable of the child object in the presenter class before we pass it to the view.</p>
 
