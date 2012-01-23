@@ -268,25 +268,44 @@ footer p {
     margin: -3em 0 3em 0.7em;
   }
   
-  #posts_nav li,
-  #posts_nav li img {
+  .no-touch #posts_nav li,
+  .no-touch #posts_nav li img {
     display: block;
     height: 85px;
     width: 85px;
+  }
+  
+  .touch #posts_nav li,
+  .touch #posts_nav li img {
+    display: block;
+    height: 64px;
+    width: 64px;
   }
   
   #table_of_contents {
     left: 20px;
   }
   
-  #next,
-  #previous {
+  .no-touch #next,
+  .no-touch #previous {
     top: 20px;
     right: 10px;
   }
-
-  #next {
-    right: 110px;
+  
+  .no-touch #next {
+    right: 100px;
+  }
+  
+  .touch #next,
+  .touch #previous {
+    right: -25px;
+    top: 50%;
+    margin-top: -50px;
+  }
+  
+  .touch #next {
+    right: auto;
+    left: -30px;
   }
 }
 
