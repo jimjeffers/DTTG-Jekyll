@@ -3,12 +3,12 @@ layout: post
 author: Jim Jeffers
 title: "Mobile UX: Specific can be Better Than Simple"
 excerpt:
-  Work sucks when you know you need to do it. But work is easy and effortless when you want to do it.
+  It's not a fad, smart phones and tablets aren't going away anytime soon. But the way we used to approach our projects has.
 ---
 
 It's not a fad, smart phones and tablets aren't going away anytime soon. But the way we used to approach our projects has. If you're designing an online service you now have many possible touch points. The web browser, once considered the only way, is just one of many and it may not even be ideal. When designing for mobile devices you'll be faced with a whole boatload of considerations and decisions that didn't exist before. Will we need a native app or a web app? What type of form factor will we use? What infrastructure does the platform (android, iOS, windows phone) provide? How do users on that platform typically behave? What does the user of an iOS device (i.e. more animation and polish) expect vs. the user of an Android device (i.e. more technical control)?
 
-All of these things can easily lead a team to set them selves up for failure. Here are some important things to consider when approaching a mobile project:
+All of these decisions invite opportunities for missteps which can easily lead a team toward failure. Here are some important things to consider when approaching a mobile project:
 
 ### 1. Being specific is more important than keeping it simple.
 
@@ -24,4 +24,4 @@ Remember, identify your best platforms and focus on each one. Don't fall into th
 
 ### Reach Shouldn't Trump Experience
 
-The real lesson is that any strategic decision that sacrifices the experience of the end product to save on cost should be reconsidered. Think about narrowing the scope of the product instead of creating shortcuts to do everything for less. While it might seem like you can have your cake and eat it too, if the cake is mediocre, not very good, and has a funny texture on your end user's mobile device, the chances of it being a success with them is going to be unlikely.
+The real lesson is that any strategic decision that sacrifices the experience of the end product to save on cost should be reconsidered. Think about narrowing the scope of the product instead of creating shortcuts to do everything for less. While it might seem like you can have your cake and eat it too, if the cake is mediocre, not very good in taste, and has a funny texture on your end user's mobile device, the chances of it being a success with them is going to be unlikely.
