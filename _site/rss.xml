@@ -6,8 +6,8 @@
     <atom:link href="http://coyled.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Wed, 25 Jan 2012 00:25:49 -0700</pubDate>
-    <lastBuildDate>Wed, 25 Jan 2012 00:25:49 -0700</lastBuildDate>
+    <pubDate>Wed, 25 Jan 2012 10:03:38 -0700</pubDate>
+    <lastBuildDate>Wed, 25 Jan 2012 10:03:38 -0700</lastBuildDate>
 
     
     <item>
@@ -18,7 +18,7 @@
       <guid>http://donttrustthisguy.com/specific_can_be_better</guid>
       <description>&lt;p&gt;It&amp;#8217;s not a fad, smart phones and tablets aren&amp;#8217;t going away anytime soon. But the way we used to approach our projects has. If you&amp;#8217;re designing an online service you now have many possible touch points. The web browser, once considered the only way, is just one of many and it may not even be ideal. When designing for mobile devices you&amp;#8217;ll be faced with a whole boatload of considerations and decisions that didn&amp;#8217;t exist before. Will we need a native app or a web app? What type of form factor will we use? What infrastructure does the platform (android, iOS, windows phone) provide? How do users on that platform typically behave? What does the user of an iOS device (i.e. more animation and polish) expect vs. the user of an Android device (i.e. more technical control)?&lt;/p&gt;
 
-&lt;p&gt;All of these things can easily lead a team to set them selves up for failure. Here are some important things to consider when approaching a mobile project:&lt;/p&gt;
+&lt;p&gt;All of these decisions invite opportunities for missteps which can easily lead a team toward failure. Here are some important things to consider when approaching a mobile project:&lt;/p&gt;
 
 &lt;h3 id='1_being_specific_is_more_important_than_keeping_it_simple'&gt;1. Being specific is more important than keeping it simple.&lt;/h3&gt;
 
@@ -34,7 +34,7 @@
 
 &lt;h3 id='reach_shouldnt_trump_experience'&gt;Reach Shouldn&amp;#8217;t Trump Experience&lt;/h3&gt;
 
-&lt;p&gt;The real lesson is that any strategic decision that sacrifices the experience of the end product to save on cost should be reconsidered. Think about narrowing the scope of the product instead of creating shortcuts to do everything for less. While it might seem like you can have your cake and eat it too, if the cake is mediocre, not very good, and has a funny texture on your end user&amp;#8217;s mobile device, the chances of it being a success with them is going to be unlikely.&lt;/p&gt;</description>
+&lt;p&gt;The real lesson is that any strategic decision that sacrifices the experience of the end product to save on cost should be reconsidered. Think about narrowing the scope of the product instead of creating shortcuts to do everything for less. While it might seem like you can have your cake and eat it too, if the cake is mediocre, not very good in taste, and has a funny texture on your end user&amp;#8217;s mobile device, the chances of it being a success with them is going to be unlikely.&lt;/p&gt;</description>
     </item>
     
     <item>
