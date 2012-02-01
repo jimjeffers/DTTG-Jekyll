@@ -6,9 +6,26 @@
     <atom:link href="http://coyled.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Wed, 25 Jan 2012 10:03:38 -0700</pubDate>
-    <lastBuildDate>Wed, 25 Jan 2012 10:03:38 -0700</lastBuildDate>
+    <pubDate>Wed, 01 Feb 2012 10:21:05 -0700</pubDate>
+    <lastBuildDate>Wed, 01 Feb 2012 10:21:05 -0700</lastBuildDate>
 
+    
+    <item>
+      <title>The Future is in the Client</title>
+      <link>http://donttrustthisguy.com/the-future-is-in-the-client</link>
+      <pubDate>Wed, 01 Feb 2012 00:00:00 -0700</pubDate>
+      <author>Jim Jeffers</author>
+      <guid>http://donttrustthisguy.com/the-future-is-in-the-client</guid>
+      <description>&lt;p&gt;We&amp;#8217;ve crossed a major tipping point when it comes to designing services that rely on software. The client (front-end) is now essentially the star of the show. If you don&amp;#8217;t know what that means I can explain. When you use any product that uses the web you have a client and a server. The client is your computer, your phone, your iPad, or other mobile device that you use to interact with the software. The server is the network of computers that store and transmit the data to you.&lt;/p&gt;
+
+&lt;p&gt;Since it&amp;#8217;s inception online service design had always been focused on server side programmin and there was a good reason for this. Traditionally web services have always been accessed by the user via a web browser which used to be an extremely hostile environment. But that&amp;#8217;s not true today. The current browser landscape is more competitive than ever as vendors are racing to support modern and proposed standards. This means it&amp;#8217;s possible to build and reliably deploy complex software that resides in the web browser.&lt;/p&gt;
+
+&lt;p&gt;What&amp;#8217;s even more important is the changing device demographic. The main way of accessing and using online services has been through a desktop web browser but over the past three years we&amp;#8217;ve experienced a dramatic change in the adoption of highly capable mobile devices. Apple&amp;#8217;s iOS and Google&amp;#8217;s Android provide two very homogenous platforms where service providers can deploy complex client side software more reliably than they ever could in the past. Apple&amp;#8217;s iOS is the best example of this due to its extremely homogenous and controlled device base. By testing on only three devices a developer can reliably experience how their application will run for over 200 million people. Never in the history of computing has such predictable deployment been possible.&lt;/p&gt;
+
+&lt;p&gt;We used to use the server to do nearly everything the user did and saw. Any interaction or behavior exerted by the user was sent to the server so that a new page or portion of a page could be rendered. But moving forward the server will begin to behave more like a server (surprised?), passing data to and from the user only when they need to. The rest can happen on the client.&lt;/p&gt;
+
+&lt;p&gt;The future of development is in the client. Those who focus on the client will create the most interesting and exciting services of tomorrow.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Mobile UX: Specific can be Better Than Simple</title>
