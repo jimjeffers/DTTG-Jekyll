@@ -6,16 +6,16 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Thu, 16 Feb 2012 01:11:45 -0700</pubDate>
-    <lastBuildDate>Thu, 16 Feb 2012 01:11:45 -0700</lastBuildDate>
+    <pubDate>Thu, 16 Feb 2012 01:13:52 -0700</pubDate>
+    <lastBuildDate>Thu, 16 Feb 2012 01:13:52 -0700</lastBuildDate>
 
     
     <item>
       <title>Personifying the Impersonal</title>
-      <link>http://donttrustthisguy.com/peronifying-the-impersonal</link>
+      <link>http://donttrustthisguy.com/personifying-the-impersonal</link>
       <pubDate>Thu, 16 Feb 2012 00:00:00 -0700</pubDate>
       <author>Jim Jeffers</author>
-      <guid>http://donttrustthisguy.com/peronifying-the-impersonal</guid>
+      <guid>http://donttrustthisguy.com/personifying-the-impersonal</guid>
       <description>&lt;p&gt;The element of play is extremely important when designing tangible interfaces. I firmly believe in the notion that there is an aesthetic for physical interactions we embed in our software. While devices (phones, tablets, computers, gizmos, etc.) have an aesthetic and character to each their own, the software running the device does as well. Its character is not how it looks, but how it feels, and how it seems to behave. Software can transform a device into a living creature that interacts with us, or it can simply render a device into paper&amp;#8217;s digital counterpart. Think about it. What could be more interesting?&lt;/p&gt;
 
 &lt;p&gt;Imagine a simple timer application. You could view a timer as a utility and perhaps design a UI with a more mechanical aesthetic in mind. The timer might have a handle or some sort of mechanism that the user taps, swipes, or pans to their desired time amount. When the user needs more time they just adjust the setting on the tool. This is all good and fine. From a utilitarian aspect, it&amp;#8217;s perfectly fine.&lt;/p&gt;

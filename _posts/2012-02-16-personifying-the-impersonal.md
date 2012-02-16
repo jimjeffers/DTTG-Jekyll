@@ -1,0 +1,15 @@
+---
+layout: post
+author: Jim Jeffers
+title: "Personifying the Impersonal"
+excerpt:
+  The element of play is extremely important when designing tangible interfaces.
+---
+
+The element of play is extremely important when designing tangible interfaces. I firmly believe in the notion that there is an aesthetic for physical interactions we embed in our software. While devices (phones, tablets, computers, gizmos, etc.) have an aesthetic and character to each their own, the software running the device does as well. Its character is not how it looks, but how it feels, and how it seems to behave. Software can transform a device into a living creature that interacts with us, or it can simply render a device into paper's digital counterpart. Think about it. What could be more interesting?
+
+Imagine a simple timer application. You could view a timer as a utility and perhaps design a UI with a more mechanical aesthetic in mind. The timer might have a handle or some sort of mechanism that the user taps, swipes, or pans to their desired time amount. When the user needs more time they just adjust the setting on the tool. This is all good and fine. From a utilitarian aspect, it's perfectly fine.
+
+But what if we want to evoke emotion? What if we want to change behavior. In this case personifying the timer could play an important role. Rather than viewing the timer as a tool the user views the timer as a peer. What if you could turn to the timer and see how it's feeling? Maybe it would look like a friend who looks rushed or simply relaxed. The amount of time we have is relative to our own interpretation. Consider a situation where a hypothetical team is still preparing a presentation that they must deliver in five minutes. One team member might consider five minutes as a lot of time (crazy right?), while the others might feel quite rushed. But, if the timer software expresses the amount of time (data) remaining in an emotion (visualization) it could potentially set the emotional state of the team on the same page. This effectively transforms the timer from an information middleman to a participant in the team. Rather than looking at the timer and then deferring to each other for an emotional interpretation on the situation, the timer, to some extent, could do this for us when personified.
+
+And what if we want to evoke a certain behavior, like encourage users to be more or less generous with the amounts of they allow for certain tasks? Or more importantly, how could we detract users from simply adding more time back onto the clock (cheating, snoozing, etc.). What if adding more time involved invoking some sort of discomfort or pain to the timer. Could we play off our own human empathy to personify time itself into a character we'd nurture and relate to? Could such a timer be more effective than a simple utilitarian approach? Just an idea I wanted to throw out there.
