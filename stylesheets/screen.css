@@ -374,6 +374,10 @@ pre {
     max-width: 940px;
   }
   
+  header#splash hgroup {
+    margin-left: 4rem;
+  }
+  
   .archives {
     margin-top: 28rem;
     margin-left: 1.5em;
