@@ -1,4 +1,4 @@
-exclude: Gemfile, Gemfile.lock, Procfile, README.md, *.rb, *.yml
+exclude: Gemfile, Gemfile.lock, Procfile, README.md, *.rb, *.yml, *.ru
 paginate: 120
 permalink: /:title
 pygments: true
