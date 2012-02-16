@@ -17,7 +17,7 @@
   # Added headers for Varnish
   before do
     if ENV['RACK_ENV'] == 'production' and request.path != '/blog'
-      response.headers['Cache-Control'] = 'public, max-age=259200'
+      response.headers['Cache-Control'] = 'public, max-age=1200'
     end
   end
 
