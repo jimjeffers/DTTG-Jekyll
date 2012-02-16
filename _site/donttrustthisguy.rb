@@ -64,9 +64,9 @@
   get '/feed' do
     if request.user_agent =~ /FeedBurner/
       content_type 'application/atom+xml', :charset => 'utf-8'
-      File.read("_site/feed/index.xml")
+      File.read("_site/atom.xml")
     else
-      redirect 'http://feeds.feedburner.com/flatterline', 301
+      redirect 'http://feeds.feedburner.com/donttrustthisguyblog', 301
     end
   end
 
