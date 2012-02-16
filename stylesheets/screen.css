@@ -30,6 +30,29 @@ header h2 {
   margin: -3em 0 3em 1em;
 }
 
+header#splash {
+  background: #301f15;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+header#splash h1,
+header#splash h2 {
+  color: #fff;
+  text-shadow: -4px 3px 0 #6b4935, -14px 7px 0 #0e0906;
+}
+
+header#splash h2 {
+  text-shadow: -7px 4px 0 #0e0906;
+}
+
+header#splash hgroup {
+  margin-left: 4rem;
+}
+
 time {
   color: #CABFB4;
   display: block;
@@ -216,6 +239,14 @@ pre {
     font-size: 1em;
   }
   
+  header#splash hgroup {
+    margin-left: 1rem;
+  }
+  
+  .archives {
+    margin-top: 13rem;
+  }
+  
   #posts_nav li,
   #posts_nav li img {
     display: block;
@@ -290,6 +321,14 @@ pre {
     margin: -3em 0 3em 0.7em;
   }
   
+  header#splash hgroup {
+    margin-left: 2rem;
+  }
+  
+  .archives {
+    margin-top: 21rem;
+  }
+  
   .no-touch #posts_nav li,
   .no-touch #posts_nav li img {
     display: block;
@@ -336,6 +375,7 @@ pre {
   }
   
   .archives {
+    margin-top: 28rem;
     margin-left: 1.5em;
     margin-right: 1.5em;
   }
