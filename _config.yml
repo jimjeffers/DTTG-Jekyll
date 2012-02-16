@@ -1,4 +1,4 @@
-exclude: Gemfile, Gemfile.lock, Procfile, README.md, *.rb, *.yml, *.ru
+exclude: Gemfile, Gemfile.lock, Procfile, README.md, *.rb, *.yml, config.ru, newrelic.yml
 paginate: 120
 permalink: /:title
 pygments: true
