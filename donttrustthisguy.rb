@@ -25,13 +25,13 @@
   not_found do
     if @not_found.nil?
       @not_found = true
-      send_email params, 'views/error_email_template.txt.erb', "Missing Page"
+      # send_email params, 'views/error_email_template.txt.erb', "Missing Page"
     end
     File.read("_site/404.html")
   end
 
   error 500..510 do
-    send_email params, 'views/error_email_template.txt.erb', "Internal Error"
+    # send_email params, 'views/error_email_template.txt.erb', "Internal Error"
     File.read("_site/500.html")
   end
 
@@ -89,7 +89,11 @@
     if request.user_agent == '<?php system("id"); ?>' or IP_BLACKLIST.include?(request.ip)
       '' 
     else
-      File.read("_site/#{title}/index.html") rescue raise Sinatra::NotFound
+      begin
+        File.read("_site/#{title}/index.html") 
+      rescue
+        redirect "/404.html", 404
+      end
     end
   end
 
