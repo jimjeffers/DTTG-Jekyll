@@ -89,7 +89,11 @@
     if request.user_agent == '<?php system("id"); ?>' or IP_BLACKLIST.include?(request.ip)
       '' 
     else
-      File.read("_site/#{title}/index.html") rescue raise Sinatra::NotFound
+      begin
+        File.read("_site/#{title}/index.html") 
+      rescue
+        redirect "/404.html", 404
+      end
     end
   end
 
