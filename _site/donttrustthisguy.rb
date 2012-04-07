@@ -25,13 +25,13 @@
   not_found do
     if @not_found.nil?
       @not_found = true
-      send_email params, 'views/error_email_template.txt.erb', "Missing Page"
+      # send_email params, 'views/error_email_template.txt.erb', "Missing Page"
     end
     File.read("_site/404.html")
   end
 
   error 500..510 do
-    send_email params, 'views/error_email_template.txt.erb', "Internal Error"
+    # send_email params, 'views/error_email_template.txt.erb', "Internal Error"
     File.read("_site/500.html")
   end
 

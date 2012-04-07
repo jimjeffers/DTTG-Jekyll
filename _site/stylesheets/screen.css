@@ -31,7 +31,6 @@ header h2 {
 }
 
 header#splash {
-  background: #301f15;
   left: 0;
   position: absolute;
   right: 0;
@@ -41,12 +40,7 @@ header#splash {
 
 header#splash h1,
 header#splash h2 {
-  color: #fff;
-  text-shadow: -4px 3px 0 #6b4935, -14px 7px 0 #0e0906;
-}
-
-header#splash h2 {
-  text-shadow: -7px 4px 0 #0e0906;
+  color: #301f15;
 }
 
 header#splash hgroup {
@@ -90,14 +84,8 @@ cite {
 
 .archives {
   list-style: none;
-  max-width: 960px;
+  overflow: hidden;
   padding: 0 1.5em;
-}
-
-.archives li {
-  border-bottom: 1px solid #eee;
-  padding: 0.2em 6em 0.2em 0;
-  position: relative;
 }
   
 .archives .date {
@@ -126,6 +114,7 @@ cite {
 
 footer {
   color: #444;
+  clear: both;
   border-top: 2px double #eee;
   margin-top: 10em;
   padding: 0 1em;
@@ -225,7 +214,9 @@ pre {
   }
   
   .archives li {
-    padding: 1em 6em 0.4em 0;
+    background: rgba(202,191,180,0.1);
+    margin: 0.25rem 0;
+    padding: 1rem;
   }
   
   .archives .date {
@@ -327,6 +318,15 @@ pre {
   
   .archives {
     margin-top: 21rem;
+  }
+  
+  .archives li {
+    display: block;
+    float: left;
+    height: 8rem;
+    margin: 0.25rem;
+    position: relative;
+    width: 8rem;
   }
   
   .no-touch #posts_nav li,
