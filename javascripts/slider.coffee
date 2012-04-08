@@ -5,11 +5,14 @@ class @PageSlider
     @nextUrl = @getUrlForId(params['next'])
     @prevUrl = @getUrlForId(params['previous'])
     
-    if Modernizr.touch
+    if Modernizr.touch and @article? and @element? and @nextUrl? and @prevUrl?
       @element.addEventListener("touchstart", ((event) => @touchStart(event)), false)
       @element.addEventListener("touchmove", ((event) => @touchMove(event)), false)
       @element.addEventListener("touchend", ((event) => @touchEnd(event)), false)
       @element.addEventListener("touchcancel", ((event) => @touchCancel(event)), false)
+      
+      @slideTo = 0
+      @translate()
   
   touchStart: (event) ->
     @disableTransition()
@@ -21,6 +24,7 @@ class @PageSlider
     if event.touches.length == 1
       xOffset = Math.abs(event.touches[0].pageX - @slideStartX)
       yOffset = Math.abs(event.touches[0].pageY - @slideStartY)
+      event.preventDefault() if xOffset > 50
       if xOffset > yOffset
         @slideTo = event.touches[0].pageX - @slideStartX
     else

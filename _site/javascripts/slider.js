@@ -9,7 +9,7 @@
       this.article = document.getElementById(params['articleId']);
       this.nextUrl = this.getUrlForId(params['next']);
       this.prevUrl = this.getUrlForId(params['previous']);
-      if (Modernizr.touch) {
+      if (Modernizr.touch && (this.article != null) && (this.element != null) && (this.nextUrl != null) && (this.prevUrl != null)) {
         this.element.addEventListener("touchstart", (function(event) {
           return _this.touchStart(event);
         }), false);
@@ -22,6 +22,8 @@
         this.element.addEventListener("touchcancel", (function(event) {
           return _this.touchCancel(event);
         }), false);
+        this.slideTo = 0;
+        this.translate();
       }
     }
 
@@ -38,6 +40,7 @@
       if (event.touches.length === 1) {
         xOffset = Math.abs(event.touches[0].pageX - this.slideStartX);
         yOffset = Math.abs(event.touches[0].pageY - this.slideStartY);
+        if (xOffset > 50) event.preventDefault();
         if (xOffset > yOffset) {
           this.slideTo = event.touches[0].pageX - this.slideStartX;
         }
