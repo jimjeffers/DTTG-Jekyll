@@ -64,7 +64,7 @@
       if (urlToLoad) {
         return setTimeout(function() {
           return window.location = urlToLoad;
-        }, 150);
+        }, 75);
       }
     };
 
@@ -83,7 +83,7 @@
     };
 
     PageSlider.prototype.translate = function() {
-      return event.currentTarget.style["-webkit-transform"] = "translate3d(" + this.slideTo + "px, 0, 0)";
+      return event.currentTarget.style["-webkit-transform"] = "translate(" + this.slideTo + "px, 0)";
     };
 
     PageSlider.prototype.getUrlForId = function(id) {

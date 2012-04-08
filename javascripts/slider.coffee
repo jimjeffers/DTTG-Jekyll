@@ -42,7 +42,7 @@ class @PageSlider
     if urlToLoad
       setTimeout( ->
         window.location = urlToLoad
-      , 150)
+      , 75)
   
   touchCancel: (event) ->
     @enableTransition()
@@ -56,8 +56,9 @@ class @PageSlider
     event.currentTarget.style["-webkit-transition"] = ""
   
   translate: ->
-    event.currentTarget.style["-webkit-transform"] = "translate3d(#{@slideTo}px, 0, 0)"
-  
+    #event.currentTarget.style["-webkit-transform"] = "translate3d(#{@slideTo}px, 0, 0)"
+    event.currentTarget.style["-webkit-transform"] = "translate(#{@slideTo}px, 0)"
+    
   getUrlForId: (id) ->
     listItem = document.getElementById(id)
     if listItem?
