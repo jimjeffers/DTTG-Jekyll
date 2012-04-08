@@ -214,9 +214,12 @@ pre {
     width: 43px;
   }
   
+  header#splash h1 {
+    font-size: 4em;
+  }
+  
   header h1 {
     font-size: 3em;
-    max-width: 320px;
   }
   
   time+h1 {
@@ -235,27 +238,34 @@ pre {
   }
   
   #table_of_contents {
-    left: 0;
+    left: 15px;
+    top: 0px;
   }
   
   .touch #posts_nav.active li#next,
   .touch #posts_nav.active li#previous {
-    opacity: 0.2;
+    opacity: 0.1;
   }
   
   .touch #next,
   .touch #previous {
-    right: -25px;
+    right: -15px;
     top: 45%;
     margin-top: -10px;
   }
   
   .touch #next {
     right: auto;
-    left: -30px;
+    left: -15px;
   }
 }
- 
+
+@media only screen and (min-width: 420px) {
+  time {
+    margin-top: 3em;
+  }
+}
+
 @media only screen and (min-width: 660px) {
   body {
     padding: 40px;
@@ -269,6 +279,10 @@ pre {
   header h1 {
     font-size: 6em;
     max-width: 960px;
+  }
+  
+  time {
+    margin-top: 6em;
   }
   
   time+h1 {
