@@ -25,26 +25,8 @@ header h1 a:visited,
   text-decoration: none;
 }
 
-header h2 {
+header#splash h1 {
   color: #301f15;
-  margin: -3em 0 3em 1em;
-}
-
-header#splash {
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 0;
-}
-
-header#splash h1,
-header#splash h2 {
-  color: #301f15;
-}
-
-header#splash hgroup {
-  margin-left: 4rem;
 }
 
 time {
@@ -84,8 +66,8 @@ cite {
 
 .archives {
   list-style: none;
+  padding: 0;
   overflow: hidden;
-  padding: 0 1.5em;
 }
   
 .archives .date {
@@ -208,11 +190,6 @@ pre {
     line-height: 1.5em;
   }
   
-  .archives {
-    margin: 0.2em 0.8em 0.2em 0.2em;
-    padding: 0;
-  }
-  
   .archives li {
     background: rgba(202,191,180,0.1);
     margin: 0.25rem 0;
@@ -228,14 +205,6 @@ pre {
   header h2 {
     margin: -1em 0 3em 0.2em;
     font-size: 1em;
-  }
-  
-  header#splash hgroup {
-    margin-left: 1rem;
-  }
-  
-  .archives {
-    margin-top: 13rem;
   }
   
   #posts_nav li,
@@ -312,14 +281,6 @@ pre {
     margin: -3em 0 3em 0.7em;
   }
   
-  header#splash hgroup {
-    margin-left: 2rem;
-  }
-  
-  .archives {
-    margin-top: 21rem;
-  }
-  
   .archives li {
     display: block;
     float: left;
@@ -372,16 +333,6 @@ pre {
     font-size: 1.4em;
     line-height: 1.5em;
     max-width: 940px;
-  }
-  
-  header#splash hgroup {
-    margin-left: 4rem;
-  }
-  
-  .archives {
-    margin-top: 28rem;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
   }
   
   header h1 {
