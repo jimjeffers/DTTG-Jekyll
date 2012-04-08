@@ -1,6 +1,7 @@
 class @PageSlider
   constructor: (params={}) ->
     @element = document.getElementById(params['id'])
+    @article = document.getElementById(params['articleId'])
     @nextUrl = @getUrlForId(params['next'])
     @prevUrl = @getUrlForId(params['previous'])
     
@@ -50,15 +51,17 @@ class @PageSlider
     @translate()
   
   enableTransition: ->
-    event.currentTarget.style["-webkit-transition"] = "all 0.2s ease-out"
+    @article.style[Modernizr.prefixed('transition')] = "all 0.2s ease-out"
   
   disableTransition: ->
-    event.currentTarget.style["-webkit-transition"] = ""
+    @article.style[Modernizr.prefixed('transition')] = ""
   
   translate: ->
-    #event.currentTarget.style["-webkit-transform"] = "translate3d(#{@slideTo}px, 0, 0)"
-    event.currentTarget.style["-webkit-transform"] = "translate(#{@slideTo}px, 0)"
-    
+    if Modernizr.csstransforms3d
+      @article.style[Modernizr.prefixed('transform')] = "translate3d(#{@slideTo}px, 0, 0)"
+    else if Modernizr.csstransforms
+      @article.style[Modernizr.prefixed('transform')] = "translate(#{@slideTo}px, 0)"
+  
   getUrlForId: (id) ->
     listItem = document.getElementById(id)
     if listItem?

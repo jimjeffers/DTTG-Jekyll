@@ -49,6 +49,10 @@ time+h1 {
   max-width: 720px;
 }
 
+#content {
+  background: #CABFB4;
+}
+
 article li {
   color: #333;
   padding: 0.5em 0.35em;
@@ -56,6 +60,25 @@ article li {
 
 article h3 {
   margin: 1.5em 0;
+}
+
+article#post {
+  background: #fff;
+    -o-box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    -icab-box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    -khtml-box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  left: 0;
+  padding: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+article#post footer {
+  padding-bottom: 4em;
 }
 
 cite {
@@ -239,7 +262,7 @@ pre {
   
   #table_of_contents {
     left: 15px;
-    top: 0px;
+    top: 20px;
   }
   
   .touch #posts_nav.active li#next,
@@ -249,14 +272,14 @@ pre {
   
   .touch #next,
   .touch #previous {
-    right: -15px;
+    right: -5px;
     top: 45%;
     margin-top: -10px;
   }
   
   .touch #next {
     right: auto;
-    left: -15px;
+    left: -5px;
   }
 }
 

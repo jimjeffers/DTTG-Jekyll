@@ -6,6 +6,7 @@
       var _this = this;
       if (params == null) params = {};
       this.element = document.getElementById(params['id']);
+      this.article = document.getElementById(params['articleId']);
       this.nextUrl = this.getUrlForId(params['next']);
       this.prevUrl = this.getUrlForId(params['previous']);
       if (Modernizr.touch) {
@@ -75,15 +76,19 @@
     };
 
     PageSlider.prototype.enableTransition = function() {
-      return event.currentTarget.style["-webkit-transition"] = "all 0.2s ease-out";
+      return this.article.style[Modernizr.prefixed('transition')] = "all 0.2s ease-out";
     };
 
     PageSlider.prototype.disableTransition = function() {
-      return event.currentTarget.style["-webkit-transition"] = "";
+      return this.article.style[Modernizr.prefixed('transition')] = "";
     };
 
     PageSlider.prototype.translate = function() {
-      return event.currentTarget.style["-webkit-transform"] = "translate(" + this.slideTo + "px, 0)";
+      if (Modernizr.csstransforms3d) {
+        return this.article.style[Modernizr.prefixed('transform')] = "translate3d(" + this.slideTo + "px, 0, 0)";
+      } else if (Modernizr.csstransforms) {
+        return this.article.style[Modernizr.prefixed('transform')] = "translate(" + this.slideTo + "px, 0)";
+      }
     };
 
     PageSlider.prototype.getUrlForId = function(id) {
