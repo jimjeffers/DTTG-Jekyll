@@ -281,6 +281,10 @@ pre {
     max-width: 960px;
   }
   
+  header#splash h1 {
+    font-size: 6em;
+  }
+  
   time {
     margin-top: 6em;
   }
@@ -354,6 +358,10 @@ pre {
     font-size: 8em;
     line-height: 1em;
     max-width: 960px;
+  }
+  
+  header#splash h1 {
+    font-size: 8em;
   }
   
   time+h1 {

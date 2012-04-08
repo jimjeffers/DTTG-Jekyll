@@ -6,3 +6,7 @@ setTimeout(function(){
     }
   }
 }, 500);
+
+if(Modernizr.touch) {
+  pageSlider = new PageSlider({id: "content", next: "next", previous: "previous"})
+}
