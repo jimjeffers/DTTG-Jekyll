@@ -31,10 +31,10 @@ class @PageSlider
     limit = window.innerWidth/3
     urlToLoad = false
     if @slideTo > 0 and Math.abs(@slideTo) >= limit and @nextUrl != false
-      @slideTo = -window.innerWidth
+      @slideTo = window.innerWidth
       urlToLoad = @nextUrl
     else if @slideTo < 0 and Math.abs(@slideTo) >= limit and @prevUrl != false
-      @slideTo = window.innerWidth
+      @slideTo = -window.innerWidth
       urlToLoad = @prevUrl
     else
       @slideTo = 0

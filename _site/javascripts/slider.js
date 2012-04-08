@@ -52,10 +52,10 @@
       limit = window.innerWidth / 3;
       urlToLoad = false;
       if (this.slideTo > 0 && Math.abs(this.slideTo) >= limit && this.nextUrl !== false) {
-        this.slideTo = -window.innerWidth;
+        this.slideTo = window.innerWidth;
         urlToLoad = this.nextUrl;
       } else if (this.slideTo < 0 && Math.abs(this.slideTo) >= limit && this.prevUrl !== false) {
-        this.slideTo = window.innerWidth;
+        this.slideTo = -window.innerWidth;
         urlToLoad = this.prevUrl;
       } else {
         this.slideTo = 0;
