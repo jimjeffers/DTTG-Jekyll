@@ -64,7 +64,7 @@
       if (urlToLoad) {
         return setTimeout(function() {
           return window.location = urlToLoad;
-        }, 100);
+        }, 150);
       }
     };
 
@@ -75,7 +75,7 @@
     };
 
     PageSlider.prototype.enableTransition = function() {
-      return event.currentTarget.style["-webkit-transition"] = "all 0.1s ease-out";
+      return event.currentTarget.style["-webkit-transition"] = "all 0.2s ease-out";
     };
 
     PageSlider.prototype.disableTransition = function() {

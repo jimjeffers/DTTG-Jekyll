@@ -42,7 +42,7 @@ class @PageSlider
     if urlToLoad
       setTimeout( ->
         window.location = urlToLoad
-      , 100)
+      , 150)
   
   touchCancel: (event) ->
     @enableTransition()
@@ -50,7 +50,7 @@ class @PageSlider
     @translate()
   
   enableTransition: ->
-    event.currentTarget.style["-webkit-transition"] = "all 0.1s ease-out"
+    event.currentTarget.style["-webkit-transition"] = "all 0.2s ease-out"
   
   disableTransition: ->
     event.currentTarget.style["-webkit-transition"] = ""
