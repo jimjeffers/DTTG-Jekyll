@@ -29,11 +29,13 @@
     };
 
     NavButton.prototype.show = function() {
-      return this.element.className = "";
+      this.element.className = "";
+      return this;
     };
 
     NavButton.prototype.hide = function() {
-      return this.element.className = "hidden";
+      this.element.className = "hidden";
+      return this;
     };
 
     return NavButton;

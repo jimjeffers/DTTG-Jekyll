@@ -26,12 +26,12 @@ class @ArticleController
         if @nextArticle.tableOfContents
           window.location = "/"
         else
-          @pageSlider.moveBackwardAnimated(true)
+          @pageSlider.moveBackwardAnimated(false)
       else
         if @prevArticle.tableOfContents
           window.location = "/"
         else
-          @pageSlider.moveForwardAnimated(true)
+          @pageSlider.moveForwardAnimated(false)
     
     # Reacting to the HTML5 popstate event. This is when
     # the user navigates with the browser's forward and

@@ -1,3 +1,18 @@
+# Notes:
+#
+# I tried to avoid frameworks as much as possible but
+# have opted for a few external dependencies. If you 
+# see anything unfamiliar to you please note that 
+# this project relies on the following libraries:
+#
+# modernizr.js (http://modernizr.com/docs/)
+# domReady.js (https://github.com/ded/domready)
+# radio.js (http://radio.uxder.com/documentation.html)
+
+# This is a really simple wrapper. We assign an element and a direction
+# the button will broadcast a click event whenever it is clicked.
+# This allows us to subscribe and handle one type of event regardless 
+# of how many nav buttons we create.
 class @NavButton
   @DIRECTION_NEXT = "NavButtonDirectionNext"
   @DIRECTION_PREV = "NavButtonDirectionPrev"
@@ -16,8 +31,13 @@ class @NavButton
   hidden: ->
     @element.className == "hidden"
   
+  # Note: The behaviors all return 'this' for chainability.
+  # ----------------------------------------------------------------
+  
   show: ->
     @element.className = ""
+    this
   
   hide: ->
     @element.className = "hidden"
+    this

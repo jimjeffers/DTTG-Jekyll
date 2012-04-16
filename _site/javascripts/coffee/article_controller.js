@@ -17,13 +17,13 @@
           if (_this.nextArticle.tableOfContents) {
             return window.location = "/";
           } else {
-            return _this.pageSlider.moveBackwardAnimated(true);
+            return _this.pageSlider.moveBackwardAnimated(false);
           }
         } else {
           if (_this.prevArticle.tableOfContents) {
             return window.location = "/";
           } else {
-            return _this.pageSlider.moveForwardAnimated(true);
+            return _this.pageSlider.moveForwardAnimated(false);
           }
         }
       });
