@@ -2,7 +2,9 @@
 layout: default
 ---
 
-<article id="post">
+<article class="post">
+  <a href="/" title="Return to the table of contents." id="table_of_contents"><img src="/images/icon_table_of_contents.svg" height="85" width="85"></a>
+  
   <header>
       <time datetime="{{ page.date | date:'%Y-%m-%d' }}" pubdate="pubdate">{{ page.date | date:"%B %d, %Y" }}</time>
       <h1><a href="{{ page.permalink }}" title="Permalink for {{ page.title }}">{{ page.title }}</a></h1>
@@ -20,12 +22,15 @@ layout: default
 
 <nav id="posts_nav">
   <ul>
-    <li id="table_of_contents"><a href="/" title="Return to the table of contents."><img src="/images/icon_table_of_contents.svg" height="85" width="85"></a></li>
     {% if page.previous %}
     <li id="previous"><a href="{{ page.previous.url }}" title="{{ page.previous.title }}"><img src="/images/icon_previous.svg" height="85" width="85"></a></li>
+    {% else %}
+    <li id="previous"><a href="/" title="Table of Contents"><img src="/images/icon_previous.svg" height="85" width="85"></a></li>
     {% endif %}
     {% if page.next %}
     <li id="next"><a href="{{ page.next.url }}" title="{{ page.next.title }}"><img src="/images/icon_next.svg" height="85" width="85"></a></li>
+    {% else %}
+    <li id="next"><a href="/" title="Table of Contents"><img src="/images/icon_next.svg" height="85" width="85"></a></li>
     {% endif %}
   </ul>
 </nav>

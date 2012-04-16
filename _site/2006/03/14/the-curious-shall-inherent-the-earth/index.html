@@ -17,8 +17,8 @@
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="/feed" rel="alternate" type="application/atom+xml" />
     
-    <script src="/javascripts/modernizr.js"></script>
-    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script> -->
+    <script src="/javascripts/lib.min.js"></script>
+    
     <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-3186798-1']);
@@ -36,7 +36,9 @@
   </head>
 
   <body id="content">
-    <article id="post">
+    <article class="post">
+  <a href="/" title="Return to the table of contents." id="table_of_contents"><img src="/images/icon_table_of_contents.svg" height="85" width="85"></a>
+  
   <header>
       <time datetime="2006-03-14" pubdate="pubdate">March 14, 2006</time>
       <h1><a href="/2006/03/14/the-curious-shall-inherent-the-earth" title="Permalink for The Curious Shall Inherent the Earth.">The Curious Shall Inherent the Earth.</a></h1>
@@ -58,7 +60,6 @@
 
 <nav id="posts_nav">
   <ul>
-    <li id="table_of_contents"><a href="/" title="Return to the table of contents."><img src="/images/icon_table_of_contents.svg" height="85" width="85"></a></li>
     
     <li id="previous"><a href="/2006/02/11/add-this-to-my-list-of-movies-to-see" title="Add this to my list of movies to see."><img src="/images/icon_previous.svg" height="85" width="85"></a></li>
     
@@ -68,8 +69,6 @@
   </ul>
 </nav>
 
-    
-    <script src="/javascripts/slider.js"></script>
-    <script src="/javascripts/application.js"></script>
+    <script src="/javascripts/app.min.js"></script>
   </body>
 </html>

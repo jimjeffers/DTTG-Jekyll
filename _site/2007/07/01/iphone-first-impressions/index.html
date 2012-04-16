@@ -17,8 +17,8 @@
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="/feed" rel="alternate" type="application/atom+xml" />
     
-    <script src="/javascripts/modernizr.js"></script>
-    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script> -->
+    <script src="/javascripts/lib.min.js"></script>
+    
     <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-3186798-1']);
@@ -36,7 +36,9 @@
   </head>
 
   <body id="content">
-    <article id="post">
+    <article class="post">
+  <a href="/" title="Return to the table of contents." id="table_of_contents"><img src="/images/icon_table_of_contents.svg" height="85" width="85"></a>
+  
   <header>
       <time datetime="2007-07-01" pubdate="pubdate">July 01, 2007</time>
       <h1><a href="/2007/07/01/iphone-first-impressions" title="Permalink for iPhone First Impressions.">iPhone First Impressions.</a></h1>
@@ -58,7 +60,6 @@
 
 <nav id="posts_nav">
   <ul>
-    <li id="table_of_contents"><a href="/" title="Return to the table of contents."><img src="/images/icon_table_of_contents.svg" height="85" width="85"></a></li>
     
     <li id="previous"><a href="/2007/06/14/it-s-been-hanging-over-my-head" title="It's Been Hanging Over My Head."><img src="/images/icon_previous.svg" height="85" width="85"></a></li>
     
@@ -68,8 +69,6 @@
   </ul>
 </nav>
 
-    
-    <script src="/javascripts/slider.js"></script>
-    <script src="/javascripts/application.js"></script>
+    <script src="/javascripts/app.min.js"></script>
   </body>
 </html>
