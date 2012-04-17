@@ -11,7 +11,12 @@
     }, 500);
     if (!document.querySelector(".archives")) {
       document.body.className = "contained";
-      return articleController = new ArticleController();
+      articleController = new ArticleController();
+      return articleController.setAnalyticsCallback(function(event) {
+        if (event == null) event = {};
+        _gat._getTrackerByName()._trackPageview(event['pathname']);
+        return _gat._getTrackerByName()._trackEvent(event['category'], event['action']);
+      });
     }
   });
 

@@ -42,3 +42,10 @@ domready ->
     # of articles. This is a custom class I wrote in coffee script.
     # See article_controller.coffee to view the source.
     articleController = new ArticleController()
+    
+    # I want to track page views occuring from the swipe navigation
+    # so I've allotted for a callback to be set on the article 
+    # controller.
+    articleController.setAnalyticsCallback (event={}) ->
+      _gat._getTrackerByName()._trackPageview(event['pathname'])
+      _gat._getTrackerByName()._trackEvent(event['category'], event['action'])

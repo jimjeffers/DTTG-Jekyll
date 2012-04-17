@@ -125,7 +125,15 @@ class @Article
       @element.className  = "post"
       @staged             = false
       @current            = true
-      history.pushState(null, null, @href) if window.location.href != @href
+      
+      # Update the page title.
+      document.querySelector("title").innerHTML = "#{@title} | DontTrustThisGuy.com"
+      
+      # Push the new page state to the history object. Note we pass in an empty
+      # string for the title. The title isn't utilized by most browsers so we'll
+      # pass in an empty string to future proof should more browsers utilize
+      # this aspect of the spec.
+      history.pushState(null, "", @href) if window.location.href != @href
       this
 
   # We enable the and disable the transition with these two helpers

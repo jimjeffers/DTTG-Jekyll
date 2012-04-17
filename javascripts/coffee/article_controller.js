@@ -44,6 +44,13 @@
       var _this = this;
       this.currentArticle = currentArticle;
       this.currentArticle.makeCurrent();
+      if ((this.analyticsCallback != null) && typeof this.analyticsCallback === "function") {
+        this.analyticsCallback({
+          category: "articleChange",
+          action: "asynchronous",
+          pathname: location.pathname
+        });
+      }
       this.nextArticle = Article.fetchFromURL(this.currentArticle.nextURL);
       this.prevArticle = Article.fetchFromURL(this.currentArticle.prevURL);
       if (this.nextArticle != null) {
@@ -99,6 +106,11 @@
     ArticleController.prototype.showPrevArticle = function() {
       this.prevArticle.stage();
       if (this.nextArticle != null) return this.nextArticle.unstage();
+    };
+
+    ArticleController.prototype.setAnalyticsCallback = function(analyticsCallback) {
+      this.analyticsCallback = analyticsCallback;
+      return typeof this.analyticsCallback === "function";
     };
 
     return ArticleController;

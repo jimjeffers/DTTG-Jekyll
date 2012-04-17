@@ -51,7 +51,16 @@ class @ArticleController
   
   # Set's the current article and grabs it's adjacent 
   setCurrentArticle: (@currentArticle) ->
+    # Make the current article current.
     @currentArticle.makeCurrent()
+    
+    # Run any analytics code we may need.
+    if @analyticsCallback? and typeof(@analyticsCallback) == "function"
+      @analyticsCallback(
+        category: "articleChange"
+        action:   "asynchronous"
+        pathname: location.pathname
+      )
     
     # Grab the next and previous articles.
     @nextArticle = Article.fetchFromURL(@currentArticle.nextURL)
@@ -110,3 +119,7 @@ class @ArticleController
   showPrevArticle: ->
     @prevArticle.stage()
     @nextArticle.unstage() if @nextArticle?
+  
+  # I just like to be explicit when letting people set properties
+  # on instances of JS based classes.
+  setAnalyticsCallback: (@analyticsCallback) -> typeof(@analyticsCallback) == "function"

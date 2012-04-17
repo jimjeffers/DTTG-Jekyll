@@ -11,7 +11,12 @@
     }, 500);
     if (!document.querySelector(".archives")) {
       document.body.className = "contained";
-      return articleController = new ArticleController();
+      articleController = new ArticleController();
+      return articleController.setAnalyticsCallback(function(event) {
+        if (event == null) event = {};
+        _gat._getTrackerByName()._trackPageview(event['pathname']);
+        return _gat._getTrackerByName()._trackEvent(event['category'], event['action']);
+      });
     }
   });
 
@@ -123,8 +128,9 @@
         this.element.className = "post";
         this.staged = false;
         this.current = true;
+        document.querySelector("title").innerHTML = "" + this.title + " | DontTrustThisGuy.com";
         if (window.location.href !== this.href) {
-          history.pushState(null, null, this.href);
+          history.pushState(null, "", this.href);
         }
         return this;
       }
@@ -201,6 +207,13 @@
       var _this = this;
       this.currentArticle = currentArticle;
       this.currentArticle.makeCurrent();
+      if ((this.analyticsCallback != null) && typeof this.analyticsCallback === "function") {
+        this.analyticsCallback({
+          category: "articleChange",
+          action: "asynchronous",
+          pathname: location.pathname
+        });
+      }
       this.nextArticle = Article.fetchFromURL(this.currentArticle.nextURL);
       this.prevArticle = Article.fetchFromURL(this.currentArticle.prevURL);
       if (this.nextArticle != null) {
@@ -256,6 +269,11 @@
     ArticleController.prototype.showPrevArticle = function() {
       this.prevArticle.stage();
       if (this.nextArticle != null) return this.nextArticle.unstage();
+    };
+
+    ArticleController.prototype.setAnalyticsCallback = function(analyticsCallback) {
+      this.analyticsCallback = analyticsCallback;
+      return typeof this.analyticsCallback === "function";
     };
 
     return ArticleController;

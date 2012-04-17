@@ -104,8 +104,9 @@
         this.element.className = "post";
         this.staged = false;
         this.current = true;
+        document.querySelector("title").innerHTML = "" + this.title + " | DontTrustThisGuy.com";
         if (window.location.href !== this.href) {
-          history.pushState(null, null, this.href);
+          history.pushState(null, "", this.href);
         }
         return this;
       }
