@@ -134,6 +134,10 @@ cite {
   width: 1.5em;
 }
 
+strong {
+  font-weight: bold;
+}
+
 footer {
   color: #444;
   clear: both;
@@ -223,8 +227,13 @@ footer p {
 }
 
 pre {
-  font-size: 0.675em;
+  font-size: 0.65em;
   line-height: 1.5em;
+}
+
+/* GIST OVERRIDES */
+html .gist .gist-file .gist-meta  {
+  display: none;
 }
 
 @media only screen and (min-width: 320px) {
@@ -255,7 +264,9 @@ pre {
   }
   
   #posts_nav li,
-  #posts_nav li img {
+  #posts_nav li img,
+  #table_of_contents li,
+  #table_of_contents img {
     display: block;
     height: 43px;
     width: 43px;
@@ -356,7 +367,9 @@ pre {
   }
   
   .no-touch #posts_nav li,
-  .no-touch #posts_nav li img {
+  .no-touch #posts_nav li img,
+  #table_of_contents li,
+  #table_of_contents img {
     display: block;
     height: 85px;
     width: 85px;

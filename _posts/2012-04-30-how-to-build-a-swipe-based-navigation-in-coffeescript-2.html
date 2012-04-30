@@ -1,0 +1,68 @@
+---
+layout: post
+author: Jim Jeffers
+title: "How to Build a Swipe Based UI in CoffeeScript pt.2"
+published: false
+excerpt:
+  Loading and cacheing adjacent Article's and utilizing HTML5 pushState().
+---
+
+<p>This is the second part of a short series explaining how I built the page swipe navigation on this blog. If you haven't <a href="/how-to-build-a-swipe-based-navigation-in-coffeescript">read part 1</a> yet I recommend doing so before reading this article.</p>
+
+<h2>A Quick Recap</h2>
+
+<p>The project itself consists of three files:</p>
+
+<img src="/images/illustrations/042812-mvc-diagram.svg" alt="Model: Article, Controller: ArticleController, View: PageSlider" width="100%">
+
+<ul>
+   <li><a href="https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/article.coffee">Article.coffee</a> is a model object that represents any page of this blog.</li>
+   <li><a href="https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/article_controller.coffee">ArticleController.coffee</a> is a controller that manages and caches articles which are loaded asynchronously.</li>
+   <li><a href="https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/page_slider.coffee">PageSlider.coffee</a> is more of a component than it is a view. It handles touch events applied to and applies CSS transforms to the current document.</li>
+</ul>
+
+<p>In <a href="/how-to-build-a-swipe-based-navigation-in-coffeescript">part 1</a> I covered how the <a href="https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/page_slider.coffee">PageSlider</a> and some parts of the <a href="https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/article.coffee">Article</a> objects work. In this section we'll cover how <a href="https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/article_controller.coffee">ArticleController</a> pulls everything together.</p>
+
+<h2>Once Everything's Ready</h2>
+
+<p>I'm using the incredibly small <a href="https://github.com/ded/domready">domReady</a> to fire my initialization code once the DOM is accessible:</p>
+
+<script src="https://gist.github.com/2523610.js?file=dom_ready.coffee"></script>
+
+<p>If we're not on the table of contents the script will do two things.</p>
+
+<ol>
+   <li>Add a special 'contained' CSS class to the body.</li>
+   <li>Initialize an instance of the ArticleController.</li>
+</ol>
+
+<p>The CSS for the contained class absolutely positions the body to all edges of the window and sets its overflow to hidden. This is how we create the effect where pages slide horizontally out of the viewport without enabling horizontal scrolling. It looks like this:</p>
+
+<script src="https://gist.github.com/2523610.js?file=contained_class.css"></script>
+
+<p>The controller's <a href="https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/article_controller.coffee#L16">constructor</a> generates a new instance of the <strong>Article</strong> model and then passes it to an instance method that receives an instance of <strong>Article</strong> to set it's state to current:</p>
+
+<script src="https://gist.github.com/2523610.js?file=article_controller_constructore.coffee"></script>
+
+<p>Let's take a look at how the <a href="https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/article.coffee#L31">constructor</a> of <strong>Article</strong> works:</p>
+
+<script src="https://gist.github.com/2523610.js?file=article_constructor.coffee"></script>
+
+<p>There's a lot going on here. The Article model is an abstraction of the HTML for a given post on this blog. The constructor accepts a javascript object (a technique I like to use for class constructors) and looks for attributes named <strong>href</strong>, <strong>html</strong>, and <strong>element</strong>. We'll use the <strong>href</strong> for HTML5 pushState and cacheing. The <strong>html</strong> is the raw source of the entire post which we'll parse. Finally, the <strong>element</strong> is the actual DOM node we want to manipulate.</p>
+
+<p>The interesting stuff happens when we parse the HTML source. When we load the adjacent document with a standard <strong>XMLHttpRequest</strong> we can't use native methods like <strong>querySelector</strong> to parse the source. I get around this by creating a temporary element and setting its <strong>innerHTML</strong> to the text of the raw source.</p>
+
+<script src="https://gist.github.com/2523610.js?file=temp_element.coffee"></script>
+
+<p>You can see the default behavior of the controller is to grab the node from the html source. But when we load the initial article we're using the current page. So earlier in the <strong>domReady()</strong> I passed in the node from the page itself as a parameter to override this.</p>
+
+<p>The remainder of the function parses the tempElement in order to get values that for the <strong>@title</strong>, <strong>@nextUrl</strong>, and <strong>@prevUrl</strong> properties. Finally, we set the two properties used to manage the state of the article, <strong>@staged</strong> and <strong>@current</strong>, to false.</p>
+
+<h2>What is the Current Article?</h2>
+
+<p>The <strong>ArticleController</strong> only keeps 3 <strong>Article</strong> elements on the page at any given point in time. They are all absolutely positioned and layered with their z-index coupled to their state:</p>
+
+<img src="/images/illustrations/042812-article-layers-diagram.svg" alt="The z-index of the articles in their respective states." width="100%">
+
+<p>So by setting an <strong>Article</strong> to current we are moving it to the top of the stack, and removing any old articles from the page while also loading any new articles we haven't requested before. This is done by using the <strong>@nextUrl</strong> and <strong>@prevUrl</strong> properties on the <strong>Article</strong> model. Here's what the <a href=""><strong>@setCurrentArticle()</strong></a> looks like:</p>
+

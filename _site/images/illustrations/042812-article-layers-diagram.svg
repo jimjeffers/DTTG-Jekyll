@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="643px" height="215px" viewBox="0 -253.5 643 215" enable-background="new 0 -253.5 643 215" xml:space="preserve">
+<g>
+	<polygon opacity="0.25" fill="#FFFFFF" stroke="#000000" stroke-width="6.2622" stroke-miterlimit="10" points="562.001,-53.955 
+		463.337,-53.955 413.432,-137.314 512.094,-137.314 	"/>
+	<polygon fill="#FFFFFF" stroke="#FFCE00" stroke-width="6.2089" stroke-miterlimit="10" points="574.418,-66.373 475.756,-66.373 
+		425.849,-149.732 524.513,-149.732 	"/>
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="6.2622" stroke-miterlimit="10" points="586.837,-78.791 488.173,-78.791 
+		438.267,-162.15 536.93,-162.15 	"/>
+	<circle fill="#FFCE00" cx="408.266" cy="-161.627" r="5.166"/>
+	<text transform="matrix(1 0 0 1 55.0342 -189.0464)" font-family="'Courier'" font-size="16.0694">Staged Article z-index: -1</text>
+	<polyline fill="none" stroke="#FFCE00" stroke-width="2.4836" stroke-miterlimit="10" points="408.266,-161.826 377.539,-192.552 
+		335.934,-192.552 	"/>
+	<text transform="matrix(1 0 0 1 35.166 -151.793)" font-family="'Courier'" font-size="16.0694">Unstaged Article z-index: -2</text>
+	<path opacity="0.25" fill="#301F15" stroke="#000000" stroke-width="2.4836" stroke-miterlimit="10" d="M359.83-156.461
+		l52.461,52.46L359.83-156.461z"/>
+	
+		<line opacity="0.25" fill="#301F15" stroke="#000000" stroke-width="2.4836" stroke-miterlimit="10" x1="335.934" y1="-156.461" x2="359.83" y2="-156.461"/>
+	<circle opacity="0.25" fill="#301F15" cx="409.507" cy="-106.989" r="5.166"/>
+	<path fill="#301F15" stroke="#000000" stroke-width="2.4836" stroke-miterlimit="10" d="M375.606-228.102l52.461,52.46
+		L375.606-228.102z"/>
+	
+		<line fill="#301F15" stroke="#000000" stroke-width="2.4836" stroke-miterlimit="10" x1="331.71" y1="-228.102" x2="375.606" y2="-228.102"/>
+	<circle fill="#301F15" cx="425.283" cy="-178.63" r="5.166"/>
+	<text transform="matrix(1 0 0 1 46.3418 -226.2998)" font-family="'Courier'" font-size="16.0694">Current Article z-index:  0</text>
+</g>
+</svg>

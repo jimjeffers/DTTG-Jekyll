@@ -6,9 +6,172 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Mon, 16 Apr 2012 18:02:44 -0700</pubDate>
-    <lastBuildDate>Mon, 16 Apr 2012 18:02:44 -0700</lastBuildDate>
+    <pubDate>Mon, 30 Apr 2012 09:39:09 -0700</pubDate>
+    <lastBuildDate>Mon, 30 Apr 2012 09:39:09 -0700</lastBuildDate>
 
+    
+    <item>
+      <title>How to Build a Swipe Based UI in CoffeeScript</title>
+      <link>http://donttrustthisguy.com/how-to-build-a-swipe-based-navigation-in-coffeescript</link>
+      <pubDate>Sat, 28 Apr 2012 00:00:00 -0700</pubDate>
+      <author>Jim Jeffers</author>
+      <guid>http://donttrustthisguy.com/how-to-build-a-swipe-based-navigation-in-coffeescript</guid>
+      <description>&lt;p&gt;I recently implemented a swipe gesture to improve the user experience on this blog. If you're on an iOS or Android device you should be able to swipe across the content of this page to peer at the next and previous articles. I'll show you how it works.&lt;/p&gt;
+
+&lt;h2&gt;No JS Framework, Just Native Methods&lt;/h2&gt;
+
+&lt;p&gt;I've been using jQuery in a lot of my projects purely out of habit. But that's not really necessary when you're developing for touch devices. This time around I figured I'd skip the jQuery tax and only use third party libraries as needed. I also chose to code the project in CoffeeScript. So be advised, all of the example code here is &lt;a href=&quot;http://coffeescript.org/&quot;&gt;CoffeeScript&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Rather than jQuery, I am only relying on three dependencies that total to 12k before gzipping:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A &lt;a href=&quot;http://www.modernizr.com/download/#-opacity-cssanimations-cssgradients-csstransforms-csstransforms3d-csstransitions-canvas-history-audio-video-inlinesvg-svg-touch-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load&quot;&gt;custom build&lt;/a&gt; of &lt;a href=&quot;http://www.modernizr.com&quot;&gt;Modernizr&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://radio.uxder.com/&quot;&gt;radio.js&lt;/a&gt; for custom events.&lt;/li&gt;
+&lt;li&gt;And &lt;a href=&quot;https://github.com/ded/domready&quot;&gt;domReady&lt;/a&gt; which does what it says.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The project itself consists of three files:&lt;/p&gt;
+
+&lt;img src=&quot;/images/illustrations/042812-mvc-diagram.svg&quot; alt=&quot;Model: Article, Controller: ArticleController, View: PageSlider&quot; width=&quot;100%&quot;&gt;
+
+&lt;ul&gt;
+   &lt;li&gt;&lt;a href=&quot;https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/article.coffee&quot;&gt;Article.coffee&lt;/a&gt; is a model object that represents any page of this blog.&lt;/li&gt;
+   &lt;li&gt;&lt;a href=&quot;https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/article_controller.coffee&quot;&gt;ArticleController.coffee&lt;/a&gt; is a controller that manages which articles to present and or remove.&lt;/li&gt;
+   &lt;li&gt;&lt;a href=&quot;https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/page_slider.coffee&quot;&gt;PageSlider.coffee&lt;/a&gt; is more of a component than it is a view. It handles touch events applied to and applies CSS transforms to the current document.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Enough Jabbering! How can I Swipe Pages?&lt;/h2&gt;
+
+&lt;p&gt;The first key to this puzzle is handling touch events from the device. I wrapped this up into a nifty class called &lt;a href=&quot;https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/page_slider.coffee&quot; target=&quot;_blank&quot;&gt;PageSlider&lt;/a&gt;. Let's go through the constructor first:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2517058.js?file=page_slider_constructor.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;The most important stuff happens on line 11 in the gist. First, I feature detect touch support with modernizr:&lt;/p&gt; 
+
+&lt;script src=&quot;https://gist.github.com/2559634.js?file=check_for_touch.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Then I add event listeners to the &lt;strong&gt;@touchTarget&lt;/strong&gt; property of the class. In this case, &lt;strong&gt;@touchTarget&lt;/strong&gt; is referencing the &lt;strong&gt;document.body&lt;/strong&gt;. So any &quot;touchstart&quot;,  &quot;touchmove&quot;, &quot;touchend&quot;, or &quot;touchcancel&quot; event occurring on the body of the page is getting picked up by a given instance of the &lt;strong&gt;PageSlider&lt;/strong&gt; class. One trick here -- when passing in the event handler I create an anonymous function using CoffeeScript's &lt;a href=&quot;http://coffeescript.org/#fat_arrow&quot;&gt;fat arrow&lt;/a&gt; (=&amp;gt;) operator for function binding.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2559634.js?file=event_binding.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;This ensures the scope of 'this' remains the &lt;strong&gt;PageSlider&lt;/strong&gt; and not the actual &lt;strong&gt;@touchTarget&lt;/strong&gt; (which would be the &lt;strong&gt;document.body&lt;/strong&gt; if you're still with me!)&lt;/p&gt;
+
+&lt;h2&gt;What Happens When a User Touches the Screen?&lt;/h2&gt;
+
+&lt;p&gt;Now that we've binded the events we need someway to handle them. The &quot;touchstart&quot; event will fire as soon as the user's device detects a new touch. It's the perfect time to do some critical setup:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2517058.js?file=page_slider_touch_start.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;The event object will return a property called &quot;touches&quot; so calling &lt;strong&gt;event.touches&lt;/strong&gt; will return the number of fingers currently on the screen. I start off ensuring only one finger is on the screen before continuing:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2559634.js?file=touch_limit.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;This is a conscious effort by me to only support one finger for this interaction. You could easily adjust this if you wanted to support horizontal swiping with two or three fingers. But remember, if you go any higher you might trigger iOS's four finger swipe convention for switching apps.&lt;/p&gt;
+
+&lt;p&gt;What's really important in this method happens on lines 7-9. Here I'm resetting the direction of the page slider:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2559634.js?file=direction_reset.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;...and obtaining the initial X and Y location of the touch event:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2559634.js?file=slide_start.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;These initial locations are important because we'll need to compare them to the new location of the user's finger as the user swipes in order to find out how far they've moved. As for the direction, I've just made a handful of class level constants that I could reference. Each direction constant stores an integer - here's what the code looks like:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2517058.js?file=page_slider_constants.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Using class level constants like this is a great way to keep things DRY and also makes your code more readable. Imagine later on you need to check which direction the touch is moving, which of the following examples is easier to comprehend?&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2517058.js?file=constants_example.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;h2&gt;Tracking Touches as they Move&lt;/h2&gt;
+
+&lt;p&gt;Ok so we have obtained the initial X and Y position of the user's touch. Now how do we react to the user as they move their finger? Let's take a look at the event handler for &quot;touchmove&quot;:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2517058.js?file=page_slider_touch_move.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;This is a pretty long function and I've broken it down into a handful of gists to explain it in detail. First,  I ensure the user is still only touching the screen with 1 finger. Then I calculate what I call the &lt;strong&gt;xOffset&lt;/strong&gt; and &lt;strong&gt;yOffset&lt;/strong&gt;. This is the x and y distance of the finger's current position compared to where it started.&lt;/p&gt;
+
+&lt;p&gt;Is the user scrolling or swiping? That's what we need to determine next in order to prevent scrolling if necessary. It's important not to trigger the swipe behavior when the user intends to scroll. Without some sort of threshold to differentiate between scrolling and swiping, the page will be jittering as the user scrolls up or down an article. However, when the user is actually swiping we'll want to call &lt;strong&gt;preventDefault()&lt;/strong&gt; in order to disable scrolling. Here's how I did it:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2517058.js?file=page_slider_if_scroll_y_greater.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;That last line sets the current &lt;strong&gt;xOffset&lt;/strong&gt; as a property on the PageSlider called &lt;strong&gt;@slideTo&lt;/strong&gt;. We'll use that value to translate the article with CSS later. But first, this is where we'll determine the direction the user is swiping and broadcast a custom event. This will allow the ArticleController to determine which article to show just beneath the current article getting dragged.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2517058.js?file=direction_broadcast.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;That bit of code is really important in the big scheme of things here. The diagram below shows how the direction change event is broadcasted to the controller which determines which article should show up underneath the article currently being dragged.&lt;/p&gt;
+
+&lt;img src=&quot;/images/illustrations/042812-direction-change-diagram.svg&quot; alt=&quot;Model: Article, Controller: ArticleController, View: PageSlider&quot; width=&quot;100%&quot;&gt;
+
+&lt;p&gt;Now that the correct article is set to appear from beneath the current page, we need to translate the document to make it move with the user's finger. The property &lt;strong&gt;@slideTo&lt;/strong&gt; is storing the current &lt;strong&gt;xOffset&lt;/strong&gt; and so we'll use this value to translate the current &lt;strong&gt;@article&lt;/strong&gt; we're manipulating. Just to recap this is where we're at in the &quot;touchMove&quot; event:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2517058.js?file=page_slider_touch_move_recap.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;The last line of the method actually sets the translation onto the article:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2559634.js?file=translate_article.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;So what exactly does &lt;strong&gt;@article&lt;/strong&gt;'s &lt;strong&gt;&lt;a href=&quot;https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/article.coffee#L154&quot;&gt;translate()&lt;/a&gt;&lt;/strong&gt; look like? Take a look:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2517058.js?file=article_translate.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;The translate method takes an xPosition as its only parameter and then uses Modernizr to apply the appropriate CSS translation directly to the &lt;strong&gt;@article&lt;/strong&gt;'s &lt;strong&gt;element&lt;/strong&gt; attribute. We want to default to 3D transforms if available in order to obtain better performance in webkit browsers. This is necessary purely for performance reasons which is why the translation does not using the Z-axis. To apply the transform to the style I use Modernizr's &lt;strong&gt;&lt;a href=&quot;http://modernizr.com/docs/#prefixed&quot;&gt;prefixed()&lt;/a&gt;&lt;/strong&gt; method which is really useful when manipulating proprietary properties such as &lt;strong&gt;-webkit-transform&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2&gt;What Happens when the Touching Stops?&lt;/h2&gt;
+
+&lt;p&gt;To finish off our interaction we need to position the articles into their proper places once the user's finger is lifted from the display. If we do nothing, the article would simply stay wherever the user left it. For my blog I wanted to design an interaction where two things could happen:&lt;/p&gt;
+
+&lt;ol&gt;
+   &lt;li&gt;If the article was moved more than one third of the screen's width in either direction, then I want the article to continue sliding in that direction off the screen.&lt;/li&gt;
+   &lt;li&gt;Otherwise, if the article was left mostly in place, then I want the article to slide back into its original position.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is where the &lt;strong&gt;touchEnd&lt;/strong&gt; method comes into play:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2517058.js?file=article_touch_end.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;The logic in the event handler itself is pretty straight forward. If the user dragged to the right (a positive value) we move the article off the screen to the right. Otherwise, if &lt;strong&gt;@slideTo&lt;/strong&gt; is a negative value we tell the page to slide to the left. And, if &lt;strong&gt;@slideTo&lt;/strong&gt; is within both limits we tell the page to move back to 0, its origin. But this method is relying on &lt;strong&gt;&lt;a href=&quot;https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/page_slider.coffee#L107&quot;&gt;@moveTo()&lt;/a&gt;&lt;/strong&gt;, a method on the PageSlider class:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2523610.js?file=page_slider_moveto_method.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;There are a few things going on here. First off, we need to enable css transitions on the current page.&lt;/p&gt; 
+
+&lt;script src=&quot;https://gist.github.com/2559634.js?file=enable_transition_call.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Why? Well, basically without a transition there will be no animation when we programmatically set the position of the article. OK, so why do this in javascript when you can have a CSS transition defined in a stylesheet? Well, the problem is we need to have a CSS transition when we set the article's position here, but we don't want to use CSS transitions when we translate the article to match the user's finger as they drag the article. If we had a CSS transition on the element at all times there would be a slight delay when the user dragged a given article with their finger. This effect is undesirable as it breaks that direct connection between the UI and the user's touch. The short answer - utilizing transitions when the user is touching the page renders a behavior that is not  responsive. So we manage this in the &lt;strong&gt;Article&lt;/strong&gt; model with two methods called &lt;a href=&quot;https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/article.coffee#L144&quot;&gt;&lt;strong&gt;enableTransition()&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&quot;https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/article.coffee#L148&quot;&gt;&lt;strong&gt;disableTransition()&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2523610.js?file=article_transitions.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Both methods make use of Modernizr's &lt;a href=&quot;http://modernizr.com/docs/#prefixed&quot;&gt;&lt;strong&gt;prefixed()&lt;/strong&gt;&lt;/a&gt; method to toggle this transition rule: &quot;all 0.2s ease-out&quot; on the DOM element containing the current article.&lt;/p&gt;
+
+&lt;p&gt;Back to that &lt;strong&gt;&lt;a href=&quot;https://github.com/jimjeffers/DTTG-Jekyll/blob/master/javascripts/coffee/page_slider.coffee#L107&quot;&gt;@moveTo()&lt;/a&gt;&lt;/strong&gt; method:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2523610.js?file=page_slider_moveto_method.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Here's what it's doing:&lt;/p&gt;
+
+&lt;ol&gt;
+   &lt;li&gt;Enable CSS transitions on the article.&lt;/li&gt;
+   &lt;li&gt;Add an event listener that will fire once the transition finishes.&lt;/li&gt;
+   &lt;li&gt;Actually apply the desired translation to the article.&lt;/li&gt;
+   &lt;li&gt;Broadcast the &lt;strong&gt;PageSlider.DIRECTION_FINISHED&lt;/strong&gt; custom event once the transition completes only if the page was moved out of the viewport.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The method is actually pretty short but we have to define an object using browser prefixed transition properties as attributes and browser prefixed TransitionEnd events as values:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2559634.js?file=prefixed_event_object.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;This is because Modernizr's &lt;a href=&quot;http://modernizr.com/docs/#prefixed&quot;&gt;&lt;strong&gt;prefixed()&lt;/strong&gt;&lt;/a&gt; doesn't support event names for whatever reason. So instead we use Modernizr to return the prefixed transition property and find the prefixed event from our object:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/2559634.js?file=referencing_prefixed_event.coffee&quot;&gt;&lt;/script&gt;
+
+&lt;h2&gt;That's How the Pages Move But...&lt;/h2&gt;
+
+&lt;p&gt;There's still a whole lot more happening than simply applying translations to the page. In part 2 I'll cover how I load the adjacent pages into the document and cache them in the browser to reduce the amount of request a user sends over. We'll also cover how to implement HTML5's pushState to update the address bar's URL and title for the current article without using a hash bang (#!). Stay tuned!&lt;/p&gt;
+
+&lt;p&gt;One last thing, I don't take comments here so if anything isn't clear please PLEASE message me on twitter and I'll reply to you. I'm &lt;a href=&quot;https://twitter.com/#!/jimjeffers&quot;&gt;@jimjeffers&lt;/a&gt;. Thanks for reading!&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Personifying the Impersonal</title>
