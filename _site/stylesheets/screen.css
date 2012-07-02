@@ -64,7 +64,11 @@ article li {
 }
 
 article h3 {
-  margin: 1.5em 0;
+  margin: 2em 0;
+}
+
+article.post h2 {
+  margin: 2em 0 1em 0;
 }
 
 article.post {
@@ -96,6 +100,10 @@ article.post.offStage {
 
 article.post footer {
   padding-bottom: 4em;
+}
+
+article.post p {
+  margin: 2em 0 2em 0;
 }
 
 cite {
@@ -330,8 +338,9 @@ html .gist .gist-file .gist-meta  {
   }
   
   #body {
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.5em;
+    padding: 10px 60px 40px 60px;
   }
   
   header h1 {
@@ -409,9 +418,10 @@ html .gist .gist-file .gist-meta  {
   }
   
   .touch #body {
-    font-size: 1.4em;
+    font-size: 1.15em;
     line-height: 1.5em;
     max-width: 940px;
+    padding: 10px 160px 40px 80px;
   }
   
   header h1 {
