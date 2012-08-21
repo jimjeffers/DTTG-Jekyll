@@ -6,9 +6,42 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Mon, 02 Jul 2012 00:51:45 -0700</pubDate>
-    <lastBuildDate>Mon, 02 Jul 2012 00:51:45 -0700</lastBuildDate>
+    <pubDate>Mon, 20 Aug 2012 20:16:18 -0700</pubDate>
+    <lastBuildDate>Mon, 20 Aug 2012 20:16:18 -0700</lastBuildDate>
 
+    
+    <item>
+      <title>Internationalizing Your App</title>
+      <link>http://donttrustthisguy.com/internationalizing-your-app</link>
+      <pubDate>Mon, 20 Aug 2012 00:00:00 -0700</pubDate>
+      <author>Jim Jeffers</author>
+      <guid>http://donttrustthisguy.com/internationalizing-your-app</guid>
+      <description>&lt;h1 id='internationalizing_your_app'&gt;Internationalizing Your App&lt;/h1&gt;
+
+&lt;p&gt;When we made &amp;#8220;Idea Bucket&amp;#8221;:http://ideabucket.me, we thought we&amp;#8217;d support internationalization to increase our sales. We opted to support Mandarin and German because those were two languages where we had access to native speakers who could translate our app. It seemed like a smart idea. More languages means more sales internationally. Well, maybe. Internationalization is a feature and it affects your product development cycle. I advise implementing support for internationalization from day one. Assuming your native tongue is English, I do not recommend supporting more than your native tongue unless:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Your app is geologically specific to a certain country.&lt;/li&gt;
+
+&lt;li&gt;The decision to support multiple languages is outside of your control.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id='every_language_is_a_commitment'&gt;Every Language is a Commitment&lt;/h2&gt;
+
+&lt;p&gt;Once you start supporting a language every bit of what you do has a consequence. On the app store you need to translate your keywords, description, and every &amp;#8220;What&amp;#8217;s new in this Release&amp;#8221;. In your app, every alert, error, form field, pretty much every piece of text you add needs to get translated. If you want to move quickly it can be a real pain if you need to run a few short text items past a translator. Yes, it&amp;#8217;s tempting just to throw the text into Google translate but you run the risk of looking bad to that audience. When it comes to internationalization either Do it right or leave it in English.&lt;/p&gt;
+
+&lt;p&gt;Every language you support is a commitment. Each language has a cost. Depending on your situation this cost can vary. But it is undoubtedly a cost.&lt;/p&gt;
+
+&lt;h2 id='localize_for_english'&gt;Localize for English&lt;/h2&gt;
+
+&lt;p&gt;Unless I&amp;#8217;m working on an app specific to Germany or China, I won&amp;#8217;t be implementing those languages in my app. Yes I will have a file full or english translations and build the app with localization from day one. But I won&amp;#8217;t add support for additional languages until I have a reason to add them.&lt;/p&gt;
+
+&lt;h2 id='add_more_languages_by_validating_a_market'&gt;Add more Languages by Validating a Market&lt;/h2&gt;
+
+&lt;p&gt;There are people all over the world who know &amp;#8220;some&amp;#8221; English. It&amp;#8217;s not a good service to those countries to force them to use English, however, it is enough to get a decent amount of sales in those countries. Our app was localized for German but we get just much if not more sales in France. Based off this evidence we should have localized for French and skipped the cost of German. With your app in English you can sell around the world. Not very well. But you can. This can give you some barometer on whether or not it&amp;#8217;s worth your trouble to take on the cost of supporting another locality or not.&lt;/p&gt;
+
+&lt;p&gt;I truly do believe you should internationalize your app. But don&amp;#8217;t do it right away. If you internationalize it they won&amp;#8217;t come. Promoting and marketing a successful app is not easy and as an independent developer you have very limited resources. Make sure your using those resources wisely.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>How to Build a Swipe Based UI in CoffeeScript</title>

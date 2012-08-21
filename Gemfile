@@ -12,5 +12,6 @@ group :development do
   gem 'compass'
   gem 'foreman'
   gem 'jekyll'
-  gem 'gsl'
+  gem 'jekyll-svg-plugin'
+  # gem 'gsl'
 end

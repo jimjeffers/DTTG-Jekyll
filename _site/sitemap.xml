@@ -2,23 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
       <loc>/404.html</loc>
-      <lastmod>2012-01-23</lastmod>
+      <lastmod>2012-08-20</lastmod>
   </url>
   <url>
       <loc>/500.html</loc>
-      <lastmod>2012-01-23</lastmod>
+      <lastmod>2012-08-20</lastmod>
   </url>
   <url>
       <loc>/atom.xml</loc>
-      <lastmod>2012-01-23</lastmod>
+      <lastmod>2012-08-20</lastmod>
   </url>
   <url>
       <loc></loc>
-      <lastmod>2012-04-15</lastmod>
+      <lastmod>2012-08-20</lastmod>
   </url>
   <url>
       <loc>/rss.xml</loc>
-      <lastmod>2012-02-15</lastmod>
+      <lastmod>2012-08-20</lastmod>
+  </url>
+  <url>
+      <loc>/internationalizing-your-app</loc>
+      <lastmod>2012-08-20</lastmod>
+      <changefreq>never</changefreq>
   </url>
   <url>
       <loc>/how-to-build-a-swipe-based-navigation-in-coffeescript</loc>
