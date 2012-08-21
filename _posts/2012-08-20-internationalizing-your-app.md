@@ -28,4 +28,4 @@ There are people all over the world who know "some" English. I would say imposin
 
 I truly do believe you should internationalize your app. But don't do it right away. If you internationalize it they won't come. Approach support for a locality as if you were targeting a market. Plan out how you'd reach people in that market before you start going through all of the trouble to maintain that localization in your app. 
 
-Promoting and marketing a successful app is not easy, and as an independent developer you have very limited resources. Make sure your using those resources wisely.
+Promoting and marketing a successful app is not easy, and as an independent developer you have very limited resources. Make sure you're using those resources wisely.
