@@ -6,8 +6,8 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Mon, 20 Aug 2012 20:20:24 -0700</pubDate>
-    <lastBuildDate>Mon, 20 Aug 2012 20:20:24 -0700</lastBuildDate>
+    <pubDate>Mon, 20 Aug 2012 20:22:57 -0700</pubDate>
+    <lastBuildDate>Mon, 20 Aug 2012 20:22:57 -0700</lastBuildDate>
 
     
     <item>
@@ -32,7 +32,7 @@
 
 &lt;h2 id='localize_for_english'&gt;Localize for English&lt;/h2&gt;
 
-&lt;p&gt;Unless I&amp;#8217;m working on an app specific to Germany or China, I won&amp;#8217;t be implementing those languages in my app. Yes I will have a file full or english translations and build the app with localization from day one. But I won&amp;#8217;t add support for additional languages until I have a reason to add them.&lt;/p&gt;
+&lt;p&gt;Unless I&amp;#8217;m working on an app specific to Germany or China, I won&amp;#8217;t be implementing those languages in my app. I will have a file full of English translations and build the app with support for localization from day one. But I won&amp;#8217;t add support for additional languages until I have a reason to add them.&lt;/p&gt;
 
 &lt;h2 id='add_more_languages_by_validating_a_market'&gt;Add more Languages by Validating a Market&lt;/h2&gt;
 

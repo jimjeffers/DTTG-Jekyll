@@ -20,7 +20,7 @@ Every language you support is a commitment. Each language has a cost. Depending 
 
 ## Localize for English
 
-Unless I'm working on an app specific to Germany or China, I won't be implementing those languages in my app. Yes I will have a file full or english translations and build the app with localization from day one. But I won't add support for additional languages until I have a reason to add them.
+Unless I'm working on an app specific to Germany or China, I won't be implementing those languages in my app. I will have a file full of English translations and build the app with support for localization from day one. But I won't add support for additional languages until I have a reason to add them.
 
 ## Add more Languages by Validating a Market
 
