@@ -6,8 +6,8 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Mon, 20 Aug 2012 20:22:57 -0700</pubDate>
-    <lastBuildDate>Mon, 20 Aug 2012 20:22:57 -0700</lastBuildDate>
+    <pubDate>Mon, 20 Aug 2012 20:30:26 -0700</pubDate>
+    <lastBuildDate>Mon, 20 Aug 2012 20:30:26 -0700</lastBuildDate>
 
     
     <item>
@@ -16,10 +16,10 @@
       <pubDate>Mon, 20 Aug 2012 00:00:00 -0700</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/internationalizing-your-app</guid>
-      <description>&lt;p&gt;When we made &lt;a href='http://ideabucket.me'&gt;Idea Bucket&lt;/a&gt;, we thought we&amp;#8217;d support internationalization to increase our sales. We opted to support Mandarin and German because those were two languages where we had access to native speakers who could translate our app. It seemed like a smart idea. More languages means more sales internationally. Well, maybe. Internationalization is a feature and it affects your product development cycle. I advise implementing support for internationalization from day one. Assuming your native tongue is English, I do not recommend supporting more than your native tongue unless:&lt;/p&gt;
+      <description>&lt;p&gt;When we made &lt;a href='http://ideabucket.me'&gt;Idea Bucket&lt;/a&gt;, we thought we&amp;#8217;d support internationalization to increase our sales. We opted to support Simplified Chinese and German localizations as we had access to native speakers who could translate our app. It seemed like a smart idea. More languages means more sales internationally. Maybe. Internationalization is a feature and it affects your product development cycle. I advise implementing support for internationalization from day one. But, assuming your native tongue is English, I do not recommend supporting any additional localizations unless:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Your app is geologically specific to a certain country.&lt;/li&gt;
+&lt;li&gt;Your app is geologically specific to a certain country / territory.&lt;/li&gt;
 
 &lt;li&gt;The decision to support multiple languages is outside of your control.&lt;/li&gt;
 &lt;/ol&gt;
