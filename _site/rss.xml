@@ -6,8 +6,8 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Mon, 20 Aug 2012 20:40:11 -0700</pubDate>
-    <lastBuildDate>Mon, 20 Aug 2012 20:40:11 -0700</lastBuildDate>
+    <pubDate>Mon, 20 Aug 2012 20:41:21 -0700</pubDate>
+    <lastBuildDate>Mon, 20 Aug 2012 20:41:21 -0700</lastBuildDate>
 
     
     <item>
@@ -26,17 +26,17 @@
 
 &lt;h2 id='every_language_is_a_commitment'&gt;Every Language is a Commitment&lt;/h2&gt;
 
-&lt;p&gt;Once you start supporting a language every bit of what you do has a consequence. On the app store you need to translate your keywords, description, and every &amp;#8220;What&amp;#8217;s new in this Release&amp;#8221;. In your app, every alert, error, form field, pretty much every piece of text you add needs to get translated. If you want to move quickly it can be a real pain if you need to run a few short text items past a translator. Yes, it&amp;#8217;s tempting just to throw the text into Google translate but you run the risk of looking bad to that audience. When it comes to internationalization either Do it right or leave it in English.&lt;/p&gt;
+&lt;p&gt;Once you add a localization for a language, every bit of what you do has an additional consequence. On the app store you need to localize your keywords, description, and every &amp;#8220;What&amp;#8217;s new in this Release&amp;#8221; blurb. In your app, every alert, error, form field, and pretty much every piece of text you add will need to be translated. If you want to move quickly and you have no way of translating these things your self you will have to delay. Yes, it&amp;#8217;s tempting just to throw the text into Google translate, but then you run the risk of looking bad to that audience by sounding like an idiot or saying the wrong thing entirely. When it comes to internationalization either do it right or leave it in English.&lt;/p&gt;
 
-&lt;p&gt;Every language you support is a commitment. Each language has a cost. Depending on your situation this cost can vary. But it is undoubtedly a cost.&lt;/p&gt;
+&lt;p&gt;Just remember: every language you support is a commitment. Each localization has a cost. Depending on your situation this cost can vary. But it is undoubtedly a cost.&lt;/p&gt;
 
 &lt;h2 id='localize_for_english'&gt;Localize for English&lt;/h2&gt;
 
-&lt;p&gt;Unless I&amp;#8217;m working on an app specific to Germany or China, I won&amp;#8217;t be implementing those languages in my app. I will have a file full of English translations and build the app with support for localization from day one. But I won&amp;#8217;t add support for additional languages until I have a reason to add them.&lt;/p&gt;
+&lt;p&gt;Unless I&amp;#8217;m working on an app specific to Germany or China, I won&amp;#8217;t be implementing localizations for those countries in my app. Not for a while. I will have a file full of English translations and build the app with support for localization from day one. But I won&amp;#8217;t add support for additional languages until I can justify the cost of adding one.&lt;/p&gt;
 
-&lt;h2 id='add_more_languages_by_validating_a_market'&gt;Add more Languages by Validating a Market&lt;/h2&gt;
+&lt;h2 id='localize_your_app_for_valid_markets'&gt;Localize Your App for Valid Markets&lt;/h2&gt;
 
-&lt;p&gt;There are people all over the world who know &amp;#8220;some&amp;#8221; English. It&amp;#8217;s not a good service to those countries to force them to use English, however, it is enough to get a decent amount of sales in those countries. Our app was localized for German but we get just much if not more sales in France. Based off this evidence we should have localized for French and skipped the cost of German. With your app in English you can sell around the world. Not very well. But you can. This can give you some barometer on whether or not it&amp;#8217;s worth your trouble to take on the cost of supporting another locality or not.&lt;/p&gt;
+&lt;p&gt;There are people all over the world who know &amp;#8220;some&amp;#8221; English. I would say imposing English is not doing the world a good service, but the reality is that it is enough to get a decent amount of sales in many large countries where English is not the primary language. For example, our app was localized for German but we get just much if not more sales in France, a market for which our app is not yet localized. Based off this evidence we should have localized for French and skipped the cost of German until we saw a good marketing opportunity or witnessed an increase in demand. With your app in English you can sell around the world. Not very well. But you can. This can give you some barometer on whether or not it&amp;#8217;s worth your trouble to take on the cost of supporting another locality or not.&lt;/p&gt;
 
 &lt;p&gt;I truly do believe you should internationalize your app. But don&amp;#8217;t do it right away. If you internationalize it they won&amp;#8217;t come. Promoting and marketing a successful app is not easy and as an independent developer you have very limited resources. Make sure your using those resources wisely.&lt;/p&gt;</description>
     </item>
