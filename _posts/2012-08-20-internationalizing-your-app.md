@@ -7,9 +7,7 @@ excerpt:
   Every language is a commitment, are you using your resources wisely?
 ---
 
-# Internationalizing Your App
-
-When we made "Idea Bucket":http://ideabucket.me, we thought we'd support internationalization to increase our sales. We opted to support Mandarin and German because those were two languages where we had access to native speakers who could translate our app. It seemed like a smart idea. More languages means more sales internationally. Well, maybe. Internationalization is a feature and it affects your product development cycle. I advise implementing support for internationalization from day one. Assuming your native tongue is English, I do not recommend supporting more than your native tongue unless:
+When we made [Idea Bucket](http://ideabucket.me), we thought we'd support internationalization to increase our sales. We opted to support Mandarin and German because those were two languages where we had access to native speakers who could translate our app. It seemed like a smart idea. More languages means more sales internationally. Well, maybe. Internationalization is a feature and it affects your product development cycle. I advise implementing support for internationalization from day one. Assuming your native tongue is English, I do not recommend supporting more than your native tongue unless:
 
 1. Your app is geologically specific to a certain country.
 2. The decision to support multiple languages is outside of your control.
