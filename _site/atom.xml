@@ -4,13 +4,41 @@
   <title>Dont Trust This Guy</title>
   <link href="http://donttrustthisguy.com/"/>
   <link type="application/atom+xml" rel="self" href="http://donttrustthisguy.com/atom.xml"/>
-  <updated>2012-08-20T20:50:32-07:00</updated>
+  <updated>2013-01-14T21:53:51-07:00</updated>
   <id>http://donttrustthisguy.com/</id>
   <author>
     <name>Jim Jeffers</name>
     <email>spammersshouldnt@donttrustthisguy.com</email>
   </author>
 
+  
+  <entry>
+    <id>http://donttrustthisguy.com/programming-in-2013</id>
+    <link type="text/html" rel="alternate" href="http://donttrustthisguy.com/programming-in-2013"/>
+    <title>Programming in 2013</title>
+    <updated>2013-01-14T00:00:00-07:00</updated>
+    <author>
+      <name>Jim Jeffers</name>
+      <uri>http://jimjeffers.com/</uri>
+    </author>
+    <content type="html">&lt;p&gt;I wouldn&amp;#8217;t say this list is really exciting by any means. But I thought I&amp;#8217;d share the languages I&amp;#8217;m continuing to focus on this year:&lt;/p&gt;
+
+&lt;h2 id='javascript__coffeescript'&gt;Javascript / Coffeescript&lt;/h2&gt;
+
+&lt;p&gt;Javascript is quickly becoming one of my favorite programming languages. It&amp;#8217;s something I&amp;#8217;m using more and more each year. Also, I find the organization and workflow for client-side Javascript projects to be a weak point for many of the development projects I contribute to. The rails &amp;#8220;asset-pipeline&amp;#8221; is definitely a crutch and though it&amp;#8217;s good enough in my opinion it&amp;#8217;s only useful while working within rails projects. This year, a focus on workflow, project organization, and testing will be key. It&amp;#8217;s really easy to build something in javascript but it&amp;#8217;s not common to see people building things to last. And there&amp;#8217;s still way too much spaghetti code being flung around sites.&lt;/p&gt;
+
+&lt;h2 id='objectivec__ios_development'&gt;Objective-C / iOS Development&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#8217;m still incredibly excited to work in objective-C. While my own App Store adventure has turned out to be lackluster, I had great fun co-developing and designing Idea Bucket. Fortunately, that experience provided two consulting opportunities involving native iOS development. I find the platform to be really challenging in a good way. Testing, maintainability, and organization will be my focus here this year.&lt;/p&gt;
+
+&lt;h2 id='ruby__rails'&gt;Ruby / Rails&lt;/h2&gt;
+
+&lt;p&gt;I admittedly did very little work in Ruby last year. In fact, I&amp;#8217;d say less than 10% of my income was from Rails based projects last year. That being said, I still find ruby to be one of the languages I&amp;#8217;m most comfortable programming and testing in. Ruby 2.0 and Rails 4.0 should both be released this year bringing a fresh sense of excitement to working on these projects once again.&lt;/p&gt;
+
+&lt;h2 id='arduino__rasberry_pi'&gt;Arduino / Rasberry Pi&lt;/h2&gt;
+
+&lt;p&gt;Last year I bought a couple of kits for arduino and started to attend weekly hardware hacking meetings. That sort of thing fell off my radar after I got caught up with work. This year, I really don&amp;#8217;t want that to be the case. This week is actually the first week I&amp;#8217;m going to meet up with a friend (creating a &amp;#8216;helping relationship&amp;#8217; in behavior design) to start what I hope becomes a weekly / monthly endeavor into playing around with hardware and code.&lt;/p&gt;</content>
+  </entry>
   
   <entry>
     <id>http://donttrustthisguy.com/internationalizing-your-app</id>
