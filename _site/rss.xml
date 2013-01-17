@@ -6,9 +6,30 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Tue, 15 Jan 2013 14:17:58 -0700</pubDate>
-    <lastBuildDate>Tue, 15 Jan 2013 14:17:58 -0700</lastBuildDate>
+    <pubDate>Wed, 16 Jan 2013 22:16:15 -0700</pubDate>
+    <lastBuildDate>Wed, 16 Jan 2013 22:16:15 -0700</lastBuildDate>
 
+    
+    <item>
+      <title>Two Rules for Writing Better CSS</title>
+      <link>http://donttrustthisguy.com/two-rules-for-better-css</link>
+      <pubDate>Wed, 16 Jan 2013 00:00:00 -0700</pubDate>
+      <author>Jim Jeffers</author>
+      <guid>http://donttrustthisguy.com/two-rules-for-better-css</guid>
+      <description>&lt;p&gt;This might seem obvious but it&amp;#8217;s difficult for many to practice. There are really just two good rules to have very effective and efficient CSS.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Only use class selectors.&lt;/li&gt;
+
+&lt;li&gt;Don&amp;#8217;t scope any rules unless you&amp;#8217;re namespacing an entire module.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That&amp;#8217;s really it. Overly simplified? Perhaps. But this is what you need to remember: class level selectors are flexible and perform well. The only selectors more performant are ID based selectors. However, giving every styled object an ID is impractical.&lt;/p&gt;
+
+&lt;p&gt;Class level selectors are also extremely flexible. You can repeatedly use them as much as you&amp;#8217;d like and providing a specific type of appearance to a given object is as simple as adding a class or two. Thus you have predictable knowledge of how to apply your UI without deferring to convoluted nested tags of markup to recreate outcomes created by complex scoped and tag-based selectors.&lt;/p&gt;
+
+&lt;p&gt;Follow these two rules alone and you will find your CSS is much easier to work with in the long run. Yes, you need to add more classes to the elements in your markup. But that provides greater clarity to your future self and others who work on the project later.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Health Gadgets</title>

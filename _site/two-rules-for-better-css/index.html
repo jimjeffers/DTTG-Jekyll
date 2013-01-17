@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Two Rules for Writing Better CSS | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/feed" rel="alternate" type="application/atom+xml" />
+    
+    <script src="/javascripts/lib.min.js"></script>
+    
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body id="content">
+    <article class="post">
+  <a href="/" title="Return to the table of contents." id="table_of_contents"><img src="/images/icon_table_of_contents.svg" height="85" width="85"></a>
+  
+  <header>
+      <time datetime="2013-01-16" pubdate="pubdate">January 16, 2013</time>
+      <h1><a href="" title="Permalink for Two Rules for Writing Better CSS">Two Rules for Writing Better CSS</a></h1>
+  </header>
+
+  <section id="body">
+    <p>This might seem obvious but it&#8217;s difficult for many to practice. There are really just two good rules to have very effective and efficient CSS.</p>
+
+<ol>
+<li>Only use class selectors.</li>
+
+<li>Don&#8217;t scope any rules unless you&#8217;re namespacing an entire module.</li>
+</ol>
+
+<p>That&#8217;s really it. Overly simplified? Perhaps. But this is what you need to remember: class level selectors are flexible and perform well. The only selectors more performant are ID based selectors. However, giving every styled object an ID is impractical.</p>
+
+<p>Class level selectors are also extremely flexible. You can repeatedly use them as much as you&#8217;d like and providing a specific type of appearance to a given object is as simple as adding a class or two. Thus you have predictable knowledge of how to apply your UI without deferring to convoluted nested tags of markup to recreate outcomes created by complex scoped and tag-based selectors.</p>
+
+<p>Follow these two rules alone and you will find your CSS is much easier to work with in the long run. Yes, you need to add more classes to the elements in your markup. But that provides greater clarity to your future self and others who work on the project later.</p>
+  </section>
+  
+  <footer>
+    <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+    <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+  </footer>
+</article>
+
+<nav id="posts_nav">
+  <ul>
+    
+    <li id="previous"><a href="/health-gadgets" title="Health Gadgets"><img src="/images/icon_previous.svg" height="85" width="85"></a></li>
+    
+    
+    <li id="next"><a href="/" title="Table of Contents"><img src="/images/icon_next.svg" height="85" width="85"></a></li>
+    
+  </ul>
+</nav>
+
+    <script src="/javascripts/app.min.js"></script>
+  </body>
+</html>

@@ -4,13 +4,37 @@
   <title>Dont Trust This Guy</title>
   <link href="http://donttrustthisguy.com/"/>
   <link type="application/atom+xml" rel="self" href="http://donttrustthisguy.com/atom.xml"/>
-  <updated>2013-01-15T14:17:58-07:00</updated>
+  <updated>2013-01-16T22:16:15-07:00</updated>
   <id>http://donttrustthisguy.com/</id>
   <author>
     <name>Jim Jeffers</name>
     <email>spammersshouldnt@donttrustthisguy.com</email>
   </author>
 
+  
+  <entry>
+    <id>http://donttrustthisguy.com/two-rules-for-better-css</id>
+    <link type="text/html" rel="alternate" href="http://donttrustthisguy.com/two-rules-for-better-css"/>
+    <title>Two Rules for Writing Better CSS</title>
+    <updated>2013-01-16T00:00:00-07:00</updated>
+    <author>
+      <name>Jim Jeffers</name>
+      <uri>http://jimjeffers.com/</uri>
+    </author>
+    <content type="html">&lt;p&gt;This might seem obvious but it&amp;#8217;s difficult for many to practice. There are really just two good rules to have very effective and efficient CSS.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Only use class selectors.&lt;/li&gt;
+
+&lt;li&gt;Don&amp;#8217;t scope any rules unless you&amp;#8217;re namespacing an entire module.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That&amp;#8217;s really it. Overly simplified? Perhaps. But this is what you need to remember: class level selectors are flexible and perform well. The only selectors more performant are ID based selectors. However, giving every styled object an ID is impractical.&lt;/p&gt;
+
+&lt;p&gt;Class level selectors are also extremely flexible. You can repeatedly use them as much as you&amp;#8217;d like and providing a specific type of appearance to a given object is as simple as adding a class or two. Thus you have predictable knowledge of how to apply your UI without deferring to convoluted nested tags of markup to recreate outcomes created by complex scoped and tag-based selectors.&lt;/p&gt;
+
+&lt;p&gt;Follow these two rules alone and you will find your CSS is much easier to work with in the long run. Yes, you need to add more classes to the elements in your markup. But that provides greater clarity to your future self and others who work on the project later.&lt;/p&gt;</content>
+  </entry>
   
   <entry>
     <id>http://donttrustthisguy.com/health-gadgets</id>
