@@ -6,9 +6,22 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Thu, 17 Jan 2013 11:26:02 -0700</pubDate>
-    <lastBuildDate>Thu, 17 Jan 2013 11:26:02 -0700</lastBuildDate>
+    <pubDate>Thu, 17 Jan 2013 11:30:27 -0700</pubDate>
+    <lastBuildDate>Thu, 17 Jan 2013 11:30:27 -0700</lastBuildDate>
 
+    
+    <item>
+      <title>Writing on the iPad</title>
+      <link>http://donttrustthisguy.com/writing-on-the-ipad</link>
+      <pubDate>Thu, 17 Jan 2013 00:00:00 -0700</pubDate>
+      <author>Jim Jeffers</author>
+      <guid>http://donttrustthisguy.com/writing-on-the-ipad</guid>
+      <description>&lt;p&gt;One of the silliest things you&amp;#8217;ll hear about the iPad is that it doesn&amp;#8217;t have a physical keyboard. Ironically, I think all of those statements come from folks who haven&amp;#8217;t used an iPad for an extended period of time.&lt;/p&gt;
+
+&lt;p&gt;Most of my notes at conferences and other free writing I do happens on my iPad. It&amp;#8217;s an extremely easy and distraction free way to sit down and write.&lt;/p&gt;
+
+&lt;p&gt;I agree, the iPad is not the place I would go to edit code (though some may disagree), but for getting thoughts recorded into words, the iPad is definitely my tool of choice. Virtual keyboards work amazing and it&amp;#8217;s just one less thing I have to carry around or spend money on.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Two Rules for Writing Better CSS</title>

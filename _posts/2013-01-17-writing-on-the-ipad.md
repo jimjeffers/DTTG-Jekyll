@@ -2,7 +2,7 @@
 layout: post
 author: Jim Jeffers
 title: "Writing on the iPad"
-published: false
+published: true
 excerpt:
   Physical keyboards are overrated.
 ---

@@ -4,13 +4,29 @@
   <title>Dont Trust This Guy</title>
   <link href="http://donttrustthisguy.com/"/>
   <link type="application/atom+xml" rel="self" href="http://donttrustthisguy.com/atom.xml"/>
-  <updated>2013-01-17T11:26:02-07:00</updated>
+  <updated>2013-01-17T11:30:27-07:00</updated>
   <id>http://donttrustthisguy.com/</id>
   <author>
     <name>Jim Jeffers</name>
     <email>spammersshouldnt@donttrustthisguy.com</email>
   </author>
 
+  
+  <entry>
+    <id>http://donttrustthisguy.com/writing-on-the-ipad</id>
+    <link type="text/html" rel="alternate" href="http://donttrustthisguy.com/writing-on-the-ipad"/>
+    <title>Writing on the iPad</title>
+    <updated>2013-01-17T00:00:00-07:00</updated>
+    <author>
+      <name>Jim Jeffers</name>
+      <uri>http://jimjeffers.com/</uri>
+    </author>
+    <content type="html">&lt;p&gt;One of the silliest things you&amp;#8217;ll hear about the iPad is that it doesn&amp;#8217;t have a physical keyboard. Ironically, I think all of those statements come from folks who haven&amp;#8217;t used an iPad for an extended period of time.&lt;/p&gt;
+
+&lt;p&gt;Most of my notes at conferences and other free writing I do happens on my iPad. It&amp;#8217;s an extremely easy and distraction free way to sit down and write.&lt;/p&gt;
+
+&lt;p&gt;I agree, the iPad is not the place I would go to edit code (though some may disagree), but for getting thoughts recorded into words, the iPad is definitely my tool of choice. Virtual keyboards work amazing and it&amp;#8217;s just one less thing I have to carry around or spend money on.&lt;/p&gt;</content>
+  </entry>
   
   <entry>
     <id>http://donttrustthisguy.com/two-rules-for-better-css</id>
