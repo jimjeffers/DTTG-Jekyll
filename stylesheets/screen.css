@@ -235,8 +235,12 @@ footer p {
 }
 
 pre {
-  font-size: 0.65em;
+  background: rgba(35,18,12,0.025);
+  border-radius: 10px;
+  font-size: 1em;
   line-height: 1.5em;
+  overflow: auto;
+  padding: 0.5em;
 }
 
 /* GIST OVERRIDES */

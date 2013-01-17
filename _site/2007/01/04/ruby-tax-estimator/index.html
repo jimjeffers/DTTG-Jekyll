@@ -15,6 +15,7 @@
     
     <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/syntax.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="/feed" rel="alternate" type="application/atom+xml" />
     
     <script src="/javascripts/lib.min.js"></script>
@@ -48,79 +49,80 @@
     <p>I got bored a couple of weeks ago and wanted to figure out how much I'd be paying in taxes depending on how much I made.  I wrote this little script in Ruby to give me a basic estimate of how much I'd owe.  You can use it at your own risk or make it better and share it with me!</p>
 <h2>Here is the source:</h2>
 <p>
-<pre name="code" class="ruby">
-# --------------------------------------------------------------------
-# Amounts to analyze taxes for.
-# --------------------------------------------------------------------
-amounts = [40000, 50000, 60000]
-pto = 80 # Specify amount of hours as integer
 
-# --------------------------------------------------------------------
-# Tax schedule for 2006 supplied by IRS
-# (http://www.irs.gov/formspubs/article/0,,id=150856,00.html)
-#
-# Arizona tax information obtained from
-# (http://dab.nfc.usda.gov/pubs/docs/taxformulas/formulas/statecitycounty/taxaz/taxaz.html)
-# --------------------------------------------------------------------
-tax_rates = [0.1, 0.15, 0.25, 0.28, 0.33, 0.35]
-cutoff_levels = [0, 7550, 30650, 74200, 154800, 336550]
-pre_tax_balances = [0, 755, 4220, 15107.5, 37675.5, 97653]
-az_tax_rates = [0.1,0.19]
-az_cutoff = 10000
-work_hours = 52*40-pto
+<div class="highlight"><pre><code class="ruby"><span class="c1"># --------------------------------------------------------------------</span>
+<span class="c1"># Amounts to analyze taxes for.</span>
+<span class="c1"># --------------------------------------------------------------------</span>
+<span class="n">amounts</span> <span class="o">=</span> <span class="o">[</span><span class="mi">40000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">60000</span><span class="o">]</span>
+<span class="n">pto</span> <span class="o">=</span> <span class="mi">80</span> <span class="c1"># Specify amount of hours as integer</span>
 
-# --------------------------------------------------------------------
-# Extend the numeric clas to accomodate formatting.
-# --------------------------------------------------------------------
-class Numeric
-  def to_currency
-    sprintf("$%0.2f", self)
-  end
+<span class="c1"># --------------------------------------------------------------------</span>
+<span class="c1"># Tax schedule for 2006 supplied by IRS</span>
+<span class="c1"># (http://www.irs.gov/formspubs/article/0,,id=150856,00.html)</span>
+<span class="c1">#</span>
+<span class="c1"># Arizona tax information obtained from</span>
+<span class="c1"># (http://dab.nfc.usda.gov/pubs/docs/taxformulas/formulas/statecitycounty/taxaz/taxaz.html)</span>
+<span class="c1"># --------------------------------------------------------------------</span>
+<span class="n">tax_rates</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">28</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">33</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">35</span><span class="o">]</span>
+<span class="n">cutoff_levels</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7550</span><span class="p">,</span> <span class="mi">30650</span><span class="p">,</span> <span class="mi">74200</span><span class="p">,</span> <span class="mi">154800</span><span class="p">,</span> <span class="mi">336550</span><span class="o">]</span>
+<span class="n">pre_tax_balances</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">755</span><span class="p">,</span> <span class="mi">4220</span><span class="p">,</span> <span class="mi">15107</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">37675</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">97653</span><span class="o">]</span>
+<span class="n">az_tax_rates</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mi">19</span><span class="o">]</span>
+<span class="n">az_cutoff</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">work_hours</span> <span class="o">=</span> <span class="mi">52</span><span class="o">*</span><span class="mi">40</span><span class="o">-</span><span class="n">pto</span>
 
-  def to_percent
-    sprintf("%d%", self*100)
-  end
-end
+<span class="c1"># --------------------------------------------------------------------</span>
+<span class="c1"># Extend the numeric clas to accomodate formatting.</span>
+<span class="c1"># --------------------------------------------------------------------</span>
+<span class="k">class</span> <span class="nc">Numeric</span>
+  <span class="k">def</span> <span class="nf">to_currency</span>
+    <span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;$%0.2f&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="p">)</span>
+  <span class="k">end</span>
 
-# --------------------------------------------------------------------
-# Calculate the amounts.
-# --------------------------------------------------------------------
-for amount in amounts
+  <span class="k">def</span> <span class="nf">to_percent</span>
+    <span class="nb">sprintf</span><span class="p">(</span><span class="s2">&quot;%d%&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-  # Determine the federal witholding bracket
-  index = 0
-  for cutoff in cutoff_levels
-    if amount > cutoff then bracket = index end
-    index += 1
-  end
+<span class="c1"># --------------------------------------------------------------------</span>
+<span class="c1"># Calculate the amounts.</span>
+<span class="c1"># --------------------------------------------------------------------</span>
+<span class="k">for</span> <span class="n">amount</span> <span class="k">in</span> <span class="n">amounts</span>
 
-  # Determine the state tax withholding percentage
-  (amount < az_cutoff) ? az_index = 0 : az_index = 1
+  <span class="c1"># Determine the federal witholding bracket</span>
+  <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="n">cutoff</span> <span class="k">in</span> <span class="n">cutoff_levels</span>
+    <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="n">cutoff</span> <span class="k">then</span> <span class="n">bracket</span> <span class="o">=</span> <span class="n">index</span> <span class="k">end</span>
+    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">end</span>
 
-  # Calculate withholding amounts and remaining income
-  tax = (amount-cutoff_levels[bracket])*tax_rates[bracket] + pre_tax_balances[bracket]
-  az_tax = tax * az_tax_rates[az_index]
-  income = amount - tax - az_tax
+  <span class="c1"># Determine the state tax withholding percentage</span>
+  <span class="p">(</span><span class="n">amount</span> <span class="o">&lt;</span> <span class="n">az_cutoff</span><span class="p">)</span> <span class="p">?</span> <span class="n">az_index</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">az_index</span> <span class="o">=</span> <span class="mi">1</span>
 
-  # Print out the results
-  puts "---------------------------------------------------------------"
-  puts "Income Analyses for #{amount.to_currency} w/ #{pto} hours of paid time off "
-  puts "---------------------------------------------------------------"
-  puts "This level of income would put you in the level #{bracket+1} tax bracket which charges #{tax_rates[bracket].to_percent}."
-  puts "In addition this income qualifies for the #{az_tax_rates[az_index]} state income tax level."
-  puts "Total income: #{income.to_currency} after #{tax.to_currency} in federal tax expenses and #{az_tax.to_currency} in state tax expenses.."
-  puts "------------------------------\nPost Tax Income\n------------------------------"
-  puts "Monthly income: #{(income/12).to_currency}"
-  puts "Bi-Weekly income: #{(income/24).to_currency}"
-  puts "------------------------------\nHourly Income\n------------------------------"
-  puts "You are going to work #{work_hours} hours this year."
-  puts "That will make up #{(work_hours.to_f/(365*12)).to_percent} percent of your active time."
-  puts "Before tax your hourly income is #{(amount / work_hours).to_currency} taking paid time off into account."
-  puts "After tax your hourly income is #{(income / work_hours).to_currency} taking paid time off into account."
-  puts "\n\n"
+  <span class="c1"># Calculate withholding amounts and remaining income</span>
+  <span class="n">tax</span> <span class="o">=</span> <span class="p">(</span><span class="n">amount</span><span class="o">-</span><span class="n">cutoff_levels</span><span class="o">[</span><span class="n">bracket</span><span class="o">]</span><span class="p">)</span><span class="o">*</span><span class="n">tax_rates</span><span class="o">[</span><span class="n">bracket</span><span class="o">]</span> <span class="o">+</span> <span class="n">pre_tax_balances</span><span class="o">[</span><span class="n">bracket</span><span class="o">]</span>
+  <span class="n">az_tax</span> <span class="o">=</span> <span class="n">tax</span> <span class="o">*</span> <span class="n">az_tax_rates</span><span class="o">[</span><span class="n">az_index</span><span class="o">]</span>
+  <span class="n">income</span> <span class="o">=</span> <span class="n">amount</span> <span class="o">-</span> <span class="n">tax</span> <span class="o">-</span> <span class="n">az_tax</span>
 
-end
-</pre></pre></p>
+  <span class="c1"># Print out the results</span>
+  <span class="nb">puts</span> <span class="s2">&quot;---------------------------------------------------------------&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Income Analyses for </span><span class="si">#{</span><span class="n">amount</span><span class="o">.</span><span class="n">to_currency</span><span class="si">}</span><span class="s2"> w/ </span><span class="si">#{</span><span class="n">pto</span><span class="si">}</span><span class="s2"> hours of paid time off &quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;---------------------------------------------------------------&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;This level of income would put you in the level </span><span class="si">#{</span><span class="n">bracket</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> tax bracket which charges </span><span class="si">#{</span><span class="n">tax_rates</span><span class="o">[</span><span class="n">bracket</span><span class="o">].</span><span class="n">to_percent</span><span class="si">}</span><span class="s2">.&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;In addition this income qualifies for the </span><span class="si">#{</span><span class="n">az_tax_rates</span><span class="o">[</span><span class="n">az_index</span><span class="o">]</span><span class="si">}</span><span class="s2"> state income tax level.&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Total income: </span><span class="si">#{</span><span class="n">income</span><span class="o">.</span><span class="n">to_currency</span><span class="si">}</span><span class="s2"> after </span><span class="si">#{</span><span class="n">tax</span><span class="o">.</span><span class="n">to_currency</span><span class="si">}</span><span class="s2"> in federal tax expenses and </span><span class="si">#{</span><span class="n">az_tax</span><span class="o">.</span><span class="n">to_currency</span><span class="si">}</span><span class="s2"> in state tax expenses..&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;------------------------------</span><span class="se">\n</span><span class="s2">Post Tax Income</span><span class="se">\n</span><span class="s2">------------------------------&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Monthly income: </span><span class="si">#{</span><span class="p">(</span><span class="n">income</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">to_currency</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Bi-Weekly income: </span><span class="si">#{</span><span class="p">(</span><span class="n">income</span><span class="o">/</span><span class="mi">24</span><span class="p">)</span><span class="o">.</span><span class="n">to_currency</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;------------------------------</span><span class="se">\n</span><span class="s2">Hourly Income</span><span class="se">\n</span><span class="s2">------------------------------&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;You are going to work </span><span class="si">#{</span><span class="n">work_hours</span><span class="si">}</span><span class="s2"> hours this year.&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;That will make up </span><span class="si">#{</span><span class="p">(</span><span class="n">work_hours</span><span class="o">.</span><span class="n">to_f</span><span class="o">/</span><span class="p">(</span><span class="mi">365</span><span class="o">*</span><span class="mi">12</span><span class="p">))</span><span class="o">.</span><span class="n">to_percent</span><span class="si">}</span><span class="s2"> percent of your active time.&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Before tax your hourly income is </span><span class="si">#{</span><span class="p">(</span><span class="n">amount</span> <span class="o">/</span> <span class="n">work_hours</span><span class="p">)</span><span class="o">.</span><span class="n">to_currency</span><span class="si">}</span><span class="s2"> taking paid time off into account.&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;After tax your hourly income is </span><span class="si">#{</span><span class="p">(</span><span class="n">income</span> <span class="o">/</span> <span class="n">work_hours</span><span class="p">)</span><span class="o">.</span><span class="n">to_currency</span><span class="si">}</span><span class="s2"> taking paid time off into account.&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+
+<span class="k">end</span>
+</code></pre>
+</div>
 
   </section>
   
