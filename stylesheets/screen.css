@@ -67,11 +67,11 @@ article h3 {
   margin: 2em 0;
 }
 
-article.post h2 {
+.post h2 {
   margin: 2em 0 1em 0;
 }
 
-article.post {
+.post {
   background: #fff;
     -o-box-shadow: 0 0 5px rgba(0,0,0,0.4);
     -icab-box-shadow: 0 0 5px rgba(0,0,0,0.4);
@@ -90,19 +90,19 @@ article.post {
   z-index: 0;
 }
 
-article.post.onStage {
+.post.onStage {
   z-index: -1;
 }
 
-article.post.offStage {
+.post.offStage {
   z-index: -100;
 }
 
-article.post footer {
+.post footer {
   padding-bottom: 4em;
 }
 
-article.post p {
+.post p {
   margin: 2em 0 2em 0;
 }
 
@@ -241,6 +241,10 @@ pre {
   line-height: 1.5em;
   overflow: auto;
   padding: 0.5em;
+}
+
+code {
+  font-family: courier, monospace;
 }
 
 /* GIST OVERRIDES */
