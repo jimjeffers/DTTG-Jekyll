@@ -6,9 +6,126 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Thu, 17 Jan 2013 11:30:27 -0700</pubDate>
-    <lastBuildDate>Thu, 17 Jan 2013 11:30:27 -0700</lastBuildDate>
+    <pubDate>Fri, 18 Jan 2013 15:44:45 -0700</pubDate>
+    <lastBuildDate>Fri, 18 Jan 2013 15:44:45 -0700</lastBuildDate>
 
+    
+    <item>
+      <title>Bite-sized Strategies for CSS</title>
+      <link>http://donttrustthisguy.com/bite-sized-strategies-for-css</link>
+      <pubDate>Fri, 18 Jan 2013 00:00:00 -0700</pubDate>
+      <author>Jim Jeffers</author>
+      <guid>http://donttrustthisguy.com/bite-sized-strategies-for-css</guid>
+      <description>&lt;p&gt;Practicing restraint with the complexity of CSS selectors is important to building a more maintainable project. Practicing restraint in the rules you write are equally important. It&amp;#8217;s really tempting to write specific selectors to query a specific set of elements and then pile on a stack of CSS rules. But doing so creates two problems:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;You can&amp;#8217;t easily re-use your styles. In effect, you need to come up with an alternate selector that you tack on to the existing rule to apply it to other DOM objects.&lt;/li&gt;
+
+&lt;li&gt;If you need to provide variations of an object you&amp;#8217;ll create a new rule which will likely need additional rules to undo changes in the original rule.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The solution to these problems is bite-sized CSS. Bite sized css involves creating specific classes to describe specific attributes you want to re-apply on different objects. For an example, lets create a simple CSS framework for buttons used throughout a web app UI.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#8217;s say you have a call to action that looks like a big red button with all cap text. A bad practice would be to use a very specific selector and a large set of rules:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='c'&gt;/* BAD */&lt;/span&gt;
+&lt;span class='nf'&gt;#content&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nt'&gt;div&lt;/span&gt;&lt;span class='nf'&gt;#primary&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nt'&gt;section&lt;/span&gt;&lt;span class='nf'&gt;#call-to-action&lt;/span&gt; &lt;span class='nt'&gt;a&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='k'&gt;background-color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;red&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;border&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;radius&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;5px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;font-weight&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;bold&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;display&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;block&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;text-transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;uppercase&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;margin&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt; &lt;span class='m'&gt;1em&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;padding&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;0.25em&lt;/span&gt; &lt;span class='m'&gt;0.5em&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;text&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='k'&gt;color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;white&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;text-decoration&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;none&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;	
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;But what happens when we want to apply a similar button style to our confirm and cancel buttons used throughout the size?&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='c'&gt;/* WORSE! */&lt;/span&gt;
+&lt;span class='nf'&gt;#content&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nt'&gt;div&lt;/span&gt;&lt;span class='nf'&gt;#primary&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nt'&gt;section&lt;/span&gt;&lt;span class='nf'&gt;#call-to-action&lt;/span&gt; &lt;span class='nt'&gt;a&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt;
+&lt;span class='nf'&gt;#content&lt;/span&gt; &lt;span class='nt'&gt;form&lt;/span&gt; &lt;span class='nt'&gt;input&lt;/span&gt;&lt;span class='nc'&gt;.confirm&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt;
+&lt;span class='nf'&gt;#content&lt;/span&gt; &lt;span class='nt'&gt;form&lt;/span&gt; &lt;span class='nt'&gt;input&lt;/span&gt;&lt;span class='nc'&gt;.secondary&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='o'&gt;...&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='c'&gt;/* Overwriting rules we just applied... */&lt;/span&gt;
+&lt;span class='nf'&gt;#content&lt;/span&gt; &lt;span class='nt'&gt;form&lt;/span&gt; &lt;span class='nt'&gt;input&lt;/span&gt;&lt;span class='nc'&gt;.confirm&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt;
+&lt;span class='nf'&gt;#content&lt;/span&gt; &lt;span class='nt'&gt;form&lt;/span&gt; &lt;span class='nt'&gt;input&lt;/span&gt;&lt;span class='nc'&gt;.secondary&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='k'&gt;background&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;blue&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;text-transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;capitalize&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='c'&gt;/* Overwriting rules we just overwrote! */&lt;/span&gt;
+&lt;span class='nf'&gt;#content&lt;/span&gt; &lt;span class='nt'&gt;form&lt;/span&gt; &lt;span class='nt'&gt;input&lt;/span&gt;&lt;span class='nc'&gt;.secondary&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='k'&gt;background&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;grey&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;font-weight&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;normal&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;If we develop a habit of solving problems in CSS like this we wind up no better than where we started. We only make our life harder as each additional use case for an item with a similar style results in us returning to the CSS to extend and create additional selectors and rules rather than simply reapplying them across elements.&lt;/p&gt;
+
+&lt;p&gt;The solution is to use name-spaced classes that can be combined to achieve the desired effect:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='c'&gt;/* GOOD */&lt;/span&gt;
+&lt;span class='nc'&gt;.bitesized-btn&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='k'&gt;background&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;blue&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;border&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;radius&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;5px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;display&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;block&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;text&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='k'&gt;color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;white&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;text-decoration&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;none&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;	
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='nc'&gt;.bitesized-btn-default&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='k'&gt;font-weight&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;bold&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='nc'&gt;.bitesized-btn-secondary&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='k'&gt;background&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;grey&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='nc'&gt;.bitesized-btn-priority&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+	&lt;span class='k'&gt;background&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;red&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;font-weight&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;bold&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;text-transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;uppercase&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='nc'&gt;.bitesized-btn-standalone&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;margin&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt; &lt;span class='m'&gt;1em&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+	&lt;span class='k'&gt;padding&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;0.25em&lt;/span&gt; &lt;span class='m'&gt;0.5em&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;With a set of bite sized classes to manage the presentation of our buttons we can simply add classes on to applicable portions of our markup without creating additional complexity in our CSS.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='c'&gt;&amp;lt;!-- Call to Action --&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;section&lt;/span&gt; &lt;span class='na'&gt;id=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;call-to-action&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+	…
+	&lt;span class='nt'&gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;…&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;bitesized-btn bitesized-btn-priority bitesized-btn-standalone&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;…&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;And then later on when we have a form with dual buttons:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='c'&gt;&amp;lt;!-- Form Buttons --&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;form&amp;gt;&lt;/span&gt;
+	…
+	&lt;span class='nt'&gt;&amp;lt;input&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;bitesized-btn bitesized-btn-default&amp;quot;&lt;/span&gt;
+		&lt;span class='na'&gt;value=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;Save&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;type=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;submit&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class='nt'&gt;&amp;lt;input&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;bitesized-btn bitesized-btn-secondary&amp;quot;&lt;/span&gt;
+	 	&lt;span class='na'&gt;value=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;Cancel&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;type=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;button&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;There are two important things to note:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The type of element we use no longer matters. We could use these classes on an anchor, input, or whatever DOM element we wanted.&lt;/li&gt;
+
+&lt;li&gt;The class names are still semantic. They add value to our markup. Yes it is implied that each class is applying a specific variation to the appearance, but we&amp;#8217;re using meaningful names to do so. We aren&amp;#8217;t using classes named button-red or button-blue. We have primary and secondary intents now clearly labeled throughout the site. If we want to add any specific functionality to our project with javascript we can easily query the default action for any given perform just by querying &lt;code&gt;$(&amp;quot;.bitesized-btn-default&amp;quot;)&lt;/code&gt;.&lt;/li&gt;
+
+&lt;li&gt;The prefix &lt;code&gt;bitesized-&lt;/code&gt; could be replaced with any name you wanted to use for your project. For example, google&amp;#8217;s maia CSS framework prefixes with the &lt;code&gt;maia-&lt;/code&gt; namespace.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Approaching CSS in a bitesized approach provides a clear pattern for success. Each additional use case which causes us to present a different variation of a button will now make our CSS framework more powerful. If we followed the path shown in the earlier example, each additional use case would make our CSS more difficult to modify or maintain.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Writing on the iPad</title>
