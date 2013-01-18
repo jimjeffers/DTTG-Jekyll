@@ -4,7 +4,7 @@ author: Jim Jeffers
 title: "Bite-sized Strategies for CSS"
 published: true
 excerpt:
-  Breaking down selectors into bitesized morsels of functional goodness is key to front-end success!
+  Breaking down selectors into bite-sized morsels of functional goodness is key to front-end success!
 ---
 
 Practicing restraint with the complexity of CSS selectors is important to building a more maintainable project. Practicing restraint in the rules you write are equally important. It's really tempting to write specific selectors to query a specific set of elements and then pile on a stack of CSS rules. But doing so creates two problems:
@@ -19,15 +19,15 @@ Let's say you have a call to action that looks like a big red button with all ca
 {% highlight css %}
 /* BAD */
 #content > div#primary > section#call-to-action a {
-	background-color: red;
-	border-radius: 5px;
-	font-weight: bold;
+  background-color: red;
+  border-radius: 5px;
+  font-weight: bold;
   display: block;
   text-transform: uppercase;
   margin: 0 1em;
-	padding: 0.25em 0.5em;
+  padding: 0.25em 0.5em;
   text-color: white;
-	text-decoration: none;	
+  text-decoration: none;  
 }
 {% endhighlight %}
 
@@ -38,20 +38,20 @@ But what happens when we want to apply a similar button style to our confirm and
 #content > div#primary > section#call-to-action a,
 #content form input.confirm,
 #content form input.secondary {
-	...
+  ...
 }
 
 /* Overwriting rules we just applied... */
 #content form input.confirm,
 #content form input.secondary {
-	background: blue;
-	text-transform: capitalize;
+  background: blue;
+  text-transform: capitalize;
 }
 
 /* Overwriting rules we just overwrote! */
 #content form input.secondary {
-	background: grey;
-	font-weight: normal;
+  background: grey;
+  font-weight: normal;
 }
 {% endhighlight %}
 
@@ -62,30 +62,30 @@ The solution is to use name-spaced classes that can be combined to achieve the d
 {% highlight css %}
 /* GOOD */
 .bitesized-btn {
-	background: blue;
-	border-radius: 5px;
-	display: block;
+  background: blue;
+  border-radius: 5px;
+  display: block;
   text-color: white;
-	text-decoration: none;	
+  text-decoration: none;  
 }
 
 .bitesized-btn-default {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .bitesized-btn-secondary {
-	background: grey;
+  background: grey;
 }
 
 .bitesized-btn-priority {
-	background: red;
-	font-weight: bold;
-	text-transform: uppercase;
+  background: red;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .bitesized-btn-standalone {
   margin: 0 1em;
-	padding: 0.25em 0.5em;
+  padding: 0.25em 0.5em;
 }
 {% endhighlight %}
 
@@ -94,8 +94,8 @@ With a set of bite sized classes to manage the presentation of our buttons we ca
 {% highlight html %}
 <!-- Call to Action -->
 <section id="call-to-action">
-	…
-	<a href="…" class="bitesized-btn bitesized-btn-priority bitesized-btn-standalone">…</a>
+  ...
+  <a class="bitesized-btn bitesized-btn-priority bitesized-btn-standalone">…</a>
 </section>
 {% endhighlight %}
 
@@ -104,11 +104,11 @@ And then later on when we have a form with dual buttons:
 {% highlight html %}
 <!-- Form Buttons -->
 <form>
-	…
-	<input class="bitesized-btn bitesized-btn-default"
-		value="Save" type="submit"/>
-	<input class="bitesized-btn bitesized-btn-secondary"
-	 	value="Cancel" type="button"/>
+  ...
+  <input class="bitesized-btn bitesized-btn-default"
+    value="Save" type="submit"/>
+  <input class="bitesized-btn bitesized-btn-secondary"
+    value="Cancel" type="button"/>
 </form>
 {% endhighlight %}
 
