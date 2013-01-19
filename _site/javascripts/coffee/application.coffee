@@ -32,7 +32,7 @@ domready ->
   
   # We'll only setup the article controller if no archives are present.
   # This way I can preserve scrolling on the Table of Contents page.
-  if !document.querySelector(".archives")
+  if !document.querySelector(".dttg-archive")
     
     # The contained class traps the overflow of the body. This prevents
     # some unwanted horizontal inertial scrolling on iOS.

@@ -25,7 +25,7 @@ header h1 a:visited,
   text-decoration: none;
 }
 
-header#splash h1 {
+.dttg-archive-heading {
   color: #301f15;
 }
 
@@ -111,14 +111,8 @@ cite {
   font-size: 0.75em;
   line-height: 1.5em;
 }
-
-.archives {
-  list-style: none;
-  padding: 0;
-  overflow: hidden;
-}
   
-.archives .date {
+.dttg-archive .date {
   color: #CABFB4;
   display: block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -262,13 +256,13 @@ html .gist .gist-file .gist-meta  {
     line-height: 1.5em;
   }
   
-  .archives li {
+  .dttg-post-item {
     background: rgba(202,191,180,0.1);
     margin: 0.25rem 0;
     padding: 1rem;
   }
   
-  .archives .date {
+  .dttg-archive .date {
     position: relative;
     right: auto;
     top: auto;
@@ -288,7 +282,7 @@ html .gist .gist-file .gist-meta  {
     width: 43px;
   }
   
-  header#splash h1 {
+  .dttg-archive-heading {
     font-size: 4em;
   }
   
@@ -356,7 +350,7 @@ html .gist .gist-file .gist-meta  {
     max-width: 960px;
   }
   
-  header#splash h1 {
+  .dttg-archive-heading {
     font-size: 6em;
   }
   
@@ -374,7 +368,13 @@ html .gist .gist-file .gist-meta  {
     margin: -3em 0 3em 0.7em;
   }
   
-  .archives li {
+  .dttg-archive {
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .dttg-post-item {
     display: block;
     float: left;
     height: 8rem;
@@ -439,7 +439,7 @@ html .gist .gist-file .gist-meta  {
     max-width: 960px;
   }
   
-  header#splash h1 {
+  .dttg-archive-heading {
     font-size: 8em;
   }
   

@@ -6,8 +6,8 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Fri, 18 Jan 2013 18:03:27 -0700</pubDate>
-    <lastBuildDate>Fri, 18 Jan 2013 18:03:27 -0700</lastBuildDate>
+    <pubDate>Fri, 18 Jan 2013 19:51:10 -0700</pubDate>
+    <lastBuildDate>Fri, 18 Jan 2013 19:51:10 -0700</lastBuildDate>
 
     
     <item>
@@ -2035,30 +2035,6 @@ to blur, users will want more control over the information provided to them.  To
 &lt;p&gt;Still, my 'killer' application idea I wanted to launch in January is still festering in my mind and going nowhere as we speak.  My little creative outlet Sumo Creations, likewise, is sitting around not doing much.  Sure, I can attract work but I'm not attracting worth while work.  Not doing cutting edge projects or anything innovative has left me feeling professionally stale and a little burnt out.&lt;/p&gt;
 &lt;p&gt;I have made it my personal goal the rest of this year to focus much more on mastering some of the design and development skills I've been practicing over the many years.  I've been slinging code for over eight years but it was not until recently that I actually started to pay attention to and discover the theories behind programming.  Design is just always something I've had a good eye for; it just came natural.  But now, as of this year I'm actually actively studying and practicing design theories in my new work.  Finally, being out of school for the last six months has given me much more time to think about my world I live in.  I feel as though I've been caught up in a hectic tight bubble unexposed to the true world out there.  In a constant haste from school to job I was not paying attention to what was happening around me.  While I'm happy where I'm at now, I've gained an unsatisfiable appetite for travel.  I hope to write about these things I'm doing and learning on this blog.  It will not be focused - in fact it will hopefully feel as if each post belonged on a completely different website.  My aim is not to be consistent but to be informative.  I like many different things and become fascinated in different fields quite often.  I hope this site will become interesting and insightful to some.  I hope this site may become more helpful to me.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Is Flare9.com the Affordable Website Machine for the Small Business Without a Budget?</title>
-      <link>http://donttrustthisguy.com/2007/04/22/is-flare9-com-the-affordable-website-machine-for-the-small-business-without-a-budget</link>
-      <pubDate>Sun, 22 Apr 2007 00:00:00 -0700</pubDate>
-      <author>Jim Jeffers</author>
-      <guid>http://donttrustthisguy.com/2007/04/22/is-flare9-com-the-affordable-website-machine-for-the-small-business-without-a-budget</guid>
-      <description>&lt;p&gt;If you work as a designer or a developer you might be frequently bombarded with requests from potential clients that go nowhere.  The conversation starts out promising, but you soon realize they want to you to spend a couple weeks to develop a custom website for a measily $500 budget.  When you return with a realistic number above $500 to say the least your point of contact lets you know &quot;they'll get back to you on that.&quot;  And that's that.  A rather passive aggressive manner of parting ways.  The price they can afford is not worth your time, the value you offer is not conducive to what they can afford.  What win/win solution can you create in a situation like this?&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;Enter &lt;a href=&quot;http://www.flare9.com&quot;&gt;Flare9&lt;/a&gt;.  The developers over at &lt;a href=&quot;http://www.obuweb.com&quot;&gt;Obuweb&lt;/a&gt; are hoping to have an answer you've been looking for.  If you have a go nowhere client why not make a good impression by sending them over to their cookie-cutter-website-on-demand web service and get a nice $150 kickback for the referral?  That's the incentive and thought behind the concept.  &lt;a href=&quot;http://www.obuweb.com&quot;&gt;Obuweb&lt;/a&gt; is hoping we developers will send our problem clients and people who aren't able to afford a real website over to their service as out last resort.  Why not?  It's a five minute transition from lose/lose to win/win.  But let's not get ahead of ourselves yet.  It sounds simple enough but is it good for the client and is it good for us?&lt;/p&gt;
-&lt;h3&gt;Is Flare9 a realistic solution?&lt;/h3&gt;
-&lt;p&gt;Looking at the system itself, &lt;a href=&quot;http://www.flare9.com&quot;&gt;Flare9&lt;/a&gt; is a heavily modified version of &lt;a href=&quot;http://www.wordpress.org&quot;&gt;Wordpress&lt;/a&gt; to function as a CMS for many many &lt;a href=&quot;http://www.flare9.com&quot;&gt;Flare9&lt;/a&gt; hosted websites.  Obuweb has made it so that a user can manage all of the content on the website, register a domain name, build forms, and even setup email accounts all from within the heavily modified Wordpress / &lt;a href=&quot;http://www.flare9.com&quot;&gt;Flare9&lt;/a&gt; control panel.  Trying out the demo I felt right at home myself since I'm an avid Wordpress user.  I suspect that any moderately experienced web surfer would be able to catch on to Wordpress's administration in no time.  The modifications &lt;a href=&quot;http://www.flare9.com&quot;&gt;Flare9&lt;/a&gt;incorporated should not cause any problems in terms of usability either.  The WSYWIG editor features some unique elements such as a tabbed menu that allows the user to edit a specific column of content on the page.  It also allows the user to drop in forms they created in &lt;a href=&quot;http://www.flare9.com&quot;&gt;Flare9&lt;/a&gt; form creator utility.&lt;/p&gt;
-&lt;h3&gt;Good, but not perfect.&lt;/h3&gt;
-&lt;p&gt;Looking at the system objectively I would say that &lt;a href=&quot;http://www.flare9.com&quot;&gt;Flare9&lt;/a&gt; is great for small budget clients looking to get online fast and expecting a minimal amount of control over the look and feel of the overall template of the site.  Expecting much more than what is already provided would not be realistic.  I do have a couple of concerns that I could not determine from the demo:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;How do I upload and or change the company logo in the template?&lt;/li&gt;
-&lt;li&gt;The blog post and page manager are sort of intermingled into one.  I could see this causing serious problems for users.  Further modification to the Wordpress admin to place these on separate tabs would do a lot of good from a UI perspective.&lt;/li&gt;
-&lt;li&gt; Turning the blog on or off is not intuitive.  I deleted the blog page, how do I get it back later if I decide I want a blog after all?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;None of these issues are necessarily critical.  I see most complications in the UI just affecting the user's learning curve.  For instance, the blogging terminology in the manage navigation will not make any sense to someone who's never managed a blog before.  More importantly, I don't believe categories, comments, etc. even apply to pages.  Adding or removing the blog in general should be refined so that the user may turn it on or off in the general settings.  Right now it's simply treated as another page.&lt;/p&gt;
-&lt;h3&gt;A solid deal.&lt;/h3&gt;
-&lt;p&gt;Flare9 is a very comprehensive, straightforward, and cost effective solution for getting online with minimal effort, time, and money.  I think that this is a very strong release for an initial offering and would recommend it to anyone who approaches me looking for a low-cost alternative to myself. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;The bottom line: Recommended.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

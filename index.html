@@ -5,14 +5,14 @@ title: The personal blog of Jim Jeffers
   
 <header id="splash">
   <hgroup>
-    <h1>Don't Trust This Guy</h1>
+    <h1 class="dttg-archive-heading">Don't Trust This Guy</h1>
   </hgroup>
 </header>
 
 {% if paginator.posts %}
-  <ul class="archives">
+  <ul class="dttg-archive">
     {% for post in paginator.posts %}
-      <li class="post">
+      <li class="dttg-post-item">
         <article>
           <span class="date">
              <span class="month">{{ post.date | date:'%b' }}</span>
