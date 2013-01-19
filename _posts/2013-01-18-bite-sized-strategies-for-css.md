@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Jim Jeffers
-title: "Bite-sized Strategies for CSS"
+title: "A Bite-sized Strategy for CSS"
 published: true
 excerpt:
   Breaking down selectors into bite-sized morsels of functional goodness is key to front-end success!
