@@ -54,9 +54,9 @@
 <li>If you need to provide variations of an object you&#8217;ll create a new rule which will likely need additional rules to undo changes in the original rule.</li>
 </ol>
 
-<p>The solution to these problems is bite-sized CSS. Bite sized css involves creating specific classes to describe specific attributes you want to re-apply on different objects. For an example, lets create a simple CSS framework for buttons used throughout a web app UI.</p>
+<p>The solution to these problems is bite-sized CSS. This involves creating specific classes to describe specific attributes you want to re-apply on different objects. As an example lets create a simple CSS framework for buttons used throughout the UI of a web application.</p>
 
-<p>Let&#8217;s say you have a call to action that looks like a big red button with all cap text. A bad practice would be to use a very specific selector and a large set of rules:</p>
+<p>Let&#8217;s say you have a call to action that looks like a big red button with uppercase text. A bad practice would be to use a very specific selector and a large set of rules:</p>
 <div class='highlight'><pre><code class='css'><span class='c'>/* BAD */</span>
 <span class='nf'>#content</span> <span class='o'>&gt;</span> <span class='nt'>div</span><span class='nf'>#primary</span> <span class='o'>&gt;</span> <span class='nt'>section</span><span class='nf'>#call-to-action</span> <span class='nt'>a</span> <span class='p'>{</span>
   <span class='k'>background-color</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span>

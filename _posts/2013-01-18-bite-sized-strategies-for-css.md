@@ -12,9 +12,9 @@ Practicing restraint with the complexity of CSS selectors is important to buildi
 1. You can't easily re-use your styles. In effect, you need to come up with an alternate selector that you tack on to the existing rule to apply it to other DOM objects.
 2. If you need to provide variations of an object you'll create a new rule which will likely need additional rules to undo changes in the original rule.
 
-The solution to these problems is bite-sized CSS. Bite sized css involves creating specific classes to describe specific attributes you want to re-apply on different objects. For an example, lets create a simple CSS framework for buttons used throughout a web app UI.
+The solution to these problems is bite-sized CSS. This involves creating specific classes to describe specific attributes you want to re-apply on different objects. As an example lets create a simple CSS framework for buttons used throughout the UI of a web application.
 
-Let's say you have a call to action that looks like a big red button with all cap text. A bad practice would be to use a very specific selector and a large set of rules:
+Let's say you have a call to action that looks like a big red button with uppercase text. A bad practice would be to use a very specific selector and a large set of rules:
 
 {% highlight css %}
 /* BAD */

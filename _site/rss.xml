@@ -6,8 +6,8 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Fri, 18 Jan 2013 17:49:48 -0700</pubDate>
-    <lastBuildDate>Fri, 18 Jan 2013 17:49:48 -0700</lastBuildDate>
+    <pubDate>Fri, 18 Jan 2013 17:58:46 -0700</pubDate>
+    <lastBuildDate>Fri, 18 Jan 2013 17:58:46 -0700</lastBuildDate>
 
     
     <item>
@@ -24,9 +24,9 @@
 &lt;li&gt;If you need to provide variations of an object you&amp;#8217;ll create a new rule which will likely need additional rules to undo changes in the original rule.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;The solution to these problems is bite-sized CSS. Bite sized css involves creating specific classes to describe specific attributes you want to re-apply on different objects. For an example, lets create a simple CSS framework for buttons used throughout a web app UI.&lt;/p&gt;
+&lt;p&gt;The solution to these problems is bite-sized CSS. This involves creating specific classes to describe specific attributes you want to re-apply on different objects. As an example lets create a simple CSS framework for buttons used throughout the UI of a web application.&lt;/p&gt;
 
-&lt;p&gt;Let&amp;#8217;s say you have a call to action that looks like a big red button with all cap text. A bad practice would be to use a very specific selector and a large set of rules:&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s say you have a call to action that looks like a big red button with uppercase text. A bad practice would be to use a very specific selector and a large set of rules:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='c'&gt;/* BAD */&lt;/span&gt;
 &lt;span class='nf'&gt;#content&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nt'&gt;div&lt;/span&gt;&lt;span class='nf'&gt;#primary&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nt'&gt;section&lt;/span&gt;&lt;span class='nf'&gt;#call-to-action&lt;/span&gt; &lt;span class='nt'&gt;a&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
   &lt;span class='k'&gt;background-color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;red&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
