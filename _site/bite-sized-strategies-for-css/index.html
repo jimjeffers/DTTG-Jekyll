@@ -56,7 +56,7 @@
 
 <p>The solution to these problems is bite-sized CSS. This involves creating specific classes to describe specific attributes you want to re-apply on different objects. As an example lets create a simple CSS framework for buttons used throughout the UI of a web application.</p>
 
-<p>Let&#8217;s say you have a call to action that looks like a big red button with uppercase text. A bad practice would be to use a very specific selector and a large set of rules:</p>
+<p>Let&#8217;s say we have a call to action that looks like a big red button with uppercase text. A bad practice would be to use a very specific selector and a large set of rules:</p>
 <div class='highlight'><pre><code class='css'><span class='c'>/* BAD */</span>
 <span class='nf'>#content</span> <span class='o'>&gt;</span> <span class='nt'>div</span><span class='nf'>#primary</span> <span class='o'>&gt;</span> <span class='nt'>section</span><span class='nf'>#call-to-action</span> <span class='nt'>a</span> <span class='p'>{</span>
   <span class='k'>background-color</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span>
@@ -93,7 +93,7 @@
 <span class='p'>}</span>
 </code></pre>
 </div>
-<p>If we develop a habit of solving problems in CSS like this we wind up no better than where we started. We only make our life harder as each additional use case for an item with a similar style results in us returning to the CSS to extend and create additional selectors and rules rather than simply reapplying them across elements.</p>
+<p>Bad habits like this one force us to work against ourselves. We&#8217;ll wind up no better off than where we started. Each additional use case for an item with a similar style results in us returning to the CSS to extend and create additional selectors and rules rather than simply re-applying them across elements.</p>
 
 <p>The solution is to use name-spaced classes that can be combined to achieve the desired effect:</p>
 <div class='highlight'><pre><code class='css'><span class='c'>/* GOOD */</span>
@@ -125,7 +125,7 @@
 <span class='p'>}</span>
 </code></pre>
 </div>
-<p>With a set of bite sized classes to manage the presentation of our buttons we can simply add classes on to applicable portions of our markup without creating additional complexity in our CSS.</p>
+<p>With a set of bite-sized classes to manage the presentation of our buttons we can simply add classes to applicable portions of our markup without creating additional complexity in our CSS.</p>
 <div class='highlight'><pre><code class='html'><span class='c'>&lt;!-- Call to Action --&gt;</span>
 <span class='nt'>&lt;section</span> <span class='na'>id=</span><span class='s'>&quot;call-to-action&quot;</span><span class='nt'>&gt;</span>
   ...
@@ -154,7 +154,7 @@
 <li>The prefix <code>bitesized-</code> could be replaced with any name you wanted to use for your project. For example, google&#8217;s maia CSS framework prefixes with the <code>maia-</code> namespace.</li>
 </ol>
 
-<p>Approaching CSS in a bitesized approach provides a clear pattern for success. Each additional use case which causes us to present a different variation of a button will now make our CSS framework more powerful. If we followed the path shown in the earlier example, each additional use case would make our CSS more difficult to modify or maintain.</p>
+<p>Approaching CSS in a bite-sized approach provides a clear pattern for success. Each additional use case provides a reason to extend our css framework in a meaningful way. Rather than introducing more complexity, we now have a pattern to both solve our problems and render our CSS framework more powerful.</p>
   </section>
   
   <footer>

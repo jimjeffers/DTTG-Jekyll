@@ -14,7 +14,7 @@ Practicing restraint with the complexity of CSS selectors is important to buildi
 
 The solution to these problems is bite-sized CSS. This involves creating specific classes to describe specific attributes you want to re-apply on different objects. As an example lets create a simple CSS framework for buttons used throughout the UI of a web application.
 
-Let's say you have a call to action that looks like a big red button with uppercase text. A bad practice would be to use a very specific selector and a large set of rules:
+Let's say we have a call to action that looks like a big red button with uppercase text. A bad practice would be to use a very specific selector and a large set of rules:
 
 {% highlight css %}
 /* BAD */
@@ -55,7 +55,7 @@ But what happens when we want to apply a similar button style to our confirm and
 }
 {% endhighlight %}
 
-If we develop a habit of solving problems in CSS like this we wind up no better than where we started. We only make our life harder as each additional use case for an item with a similar style results in us returning to the CSS to extend and create additional selectors and rules rather than simply reapplying them across elements.
+Bad habits like this one force us to work against ourselves. We'll wind up no better off than where we started. Each additional use case for an item with a similar style results in us returning to the CSS to extend and create additional selectors and rules rather than simply re-applying them across elements.
 
 The solution is to use name-spaced classes that can be combined to achieve the desired effect:
 
@@ -89,7 +89,7 @@ The solution is to use name-spaced classes that can be combined to achieve the d
 }
 {% endhighlight %}
 
-With a set of bite sized classes to manage the presentation of our buttons we can simply add classes on to applicable portions of our markup without creating additional complexity in our CSS.
+With a set of bite-sized classes to manage the presentation of our buttons we can simply add classes to applicable portions of our markup without creating additional complexity in our CSS.
 
 {% highlight html %}
 <!-- Call to Action -->
@@ -118,4 +118,4 @@ There are two important things to note:
 2. The class names are still semantic. They add value to our markup. Yes it is implied that each class is applying a specific variation to the appearance, but we're using meaningful names to do so. We aren't using classes named button-red or button-blue. We have primary and secondary intents now clearly labeled throughout the site. If we want to add any specific functionality to our project with javascript we can easily query the default action for any given perform just by querying `$(".bitesized-btn-default")`.
 3. The prefix `bitesized-` could be replaced with any name you wanted to use for your project. For example, google's maia CSS framework prefixes with the `maia-` namespace.
 
-Approaching CSS in a bitesized approach provides a clear pattern for success. Each additional use case which causes us to present a different variation of a button will now make our CSS framework more powerful. If we followed the path shown in the earlier example, each additional use case would make our CSS more difficult to modify or maintain.
+Approaching CSS in a bite-sized approach provides a clear pattern for success. Each additional use case provides a reason to extend our css framework in a meaningful way. Rather than introducing more complexity, we now have a pattern to both solve our problems and render our CSS framework more powerful.

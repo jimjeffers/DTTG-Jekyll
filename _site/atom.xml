@@ -4,7 +4,7 @@
   <title>Dont Trust This Guy</title>
   <link href="http://donttrustthisguy.com/"/>
   <link type="application/atom+xml" rel="self" href="http://donttrustthisguy.com/atom.xml"/>
-  <updated>2013-01-18T17:58:46-07:00</updated>
+  <updated>2013-01-18T18:03:27-07:00</updated>
   <id>http://donttrustthisguy.com/</id>
   <author>
     <name>Jim Jeffers</name>
@@ -31,7 +31,7 @@
 
 &lt;p&gt;The solution to these problems is bite-sized CSS. This involves creating specific classes to describe specific attributes you want to re-apply on different objects. As an example lets create a simple CSS framework for buttons used throughout the UI of a web application.&lt;/p&gt;
 
-&lt;p&gt;Let&amp;#8217;s say you have a call to action that looks like a big red button with uppercase text. A bad practice would be to use a very specific selector and a large set of rules:&lt;/p&gt;
+&lt;p&gt;Let&amp;#8217;s say we have a call to action that looks like a big red button with uppercase text. A bad practice would be to use a very specific selector and a large set of rules:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='c'&gt;/* BAD */&lt;/span&gt;
 &lt;span class='nf'&gt;#content&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nt'&gt;div&lt;/span&gt;&lt;span class='nf'&gt;#primary&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nt'&gt;section&lt;/span&gt;&lt;span class='nf'&gt;#call-to-action&lt;/span&gt; &lt;span class='nt'&gt;a&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
   &lt;span class='k'&gt;background-color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;red&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
@@ -68,7 +68,7 @@
 &lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;If we develop a habit of solving problems in CSS like this we wind up no better than where we started. We only make our life harder as each additional use case for an item with a similar style results in us returning to the CSS to extend and create additional selectors and rules rather than simply reapplying them across elements.&lt;/p&gt;
+&lt;p&gt;Bad habits like this one force us to work against ourselves. We&amp;#8217;ll wind up no better off than where we started. Each additional use case for an item with a similar style results in us returning to the CSS to extend and create additional selectors and rules rather than simply re-applying them across elements.&lt;/p&gt;
 
 &lt;p&gt;The solution is to use name-spaced classes that can be combined to achieve the desired effect:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='c'&gt;/* GOOD */&lt;/span&gt;
@@ -100,7 +100,7 @@
 &lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;With a set of bite sized classes to manage the presentation of our buttons we can simply add classes on to applicable portions of our markup without creating additional complexity in our CSS.&lt;/p&gt;
+&lt;p&gt;With a set of bite-sized classes to manage the presentation of our buttons we can simply add classes to applicable portions of our markup without creating additional complexity in our CSS.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='c'&gt;&amp;lt;!-- Call to Action --&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;section&lt;/span&gt; &lt;span class='na'&gt;id=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;call-to-action&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
   ...
@@ -129,7 +129,7 @@
 &lt;li&gt;The prefix &lt;code&gt;bitesized-&lt;/code&gt; could be replaced with any name you wanted to use for your project. For example, google&amp;#8217;s maia CSS framework prefixes with the &lt;code&gt;maia-&lt;/code&gt; namespace.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Approaching CSS in a bitesized approach provides a clear pattern for success. Each additional use case which causes us to present a different variation of a button will now make our CSS framework more powerful. If we followed the path shown in the earlier example, each additional use case would make our CSS more difficult to modify or maintain.&lt;/p&gt;</content>
+&lt;p&gt;Approaching CSS in a bite-sized approach provides a clear pattern for success. Each additional use case provides a reason to extend our css framework in a meaningful way. Rather than introducing more complexity, we now have a pattern to both solve our problems and render our CSS framework more powerful.&lt;/p&gt;</content>
   </entry>
   
   <entry>
