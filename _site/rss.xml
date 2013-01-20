@@ -6,8 +6,8 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Sun, 20 Jan 2013 13:13:38 -0700</pubDate>
-    <lastBuildDate>Sun, 20 Jan 2013 13:13:38 -0700</lastBuildDate>
+    <pubDate>Sun, 20 Jan 2013 14:24:46 -0700</pubDate>
+    <lastBuildDate>Sun, 20 Jan 2013 14:24:46 -0700</lastBuildDate>
 
     
     <item>
@@ -20,9 +20,9 @@
 
 &lt;p&gt;In stark contrast to the many pristine hyper real interfaces we&amp;#8217;ve seen are flat interfaces. The first app with a flat UI that really struck my attention was &lt;a href='http://www.youtube.com/watch?v=sXqXpwyBI1k'&gt;Scorekeeper&lt;/a&gt;. The interface looks deceptively simple, however when actaully using the app, you will find the interface to be incredibly clever. The designer took time to focus on what he wanted to communicate and conveys those messages clearly. He focused on color, sound, timing, transitions, meaning derived from icons, etc..&lt;/p&gt;
 
-&lt;p&gt;The removal of bevels, textures, and shadows frees the designer to focus on what really matters in an interface &amp;#8211; communication. Liberated from obsessing over the opacity of a given texture, the strength of a drop shadow, or the amount of pixels used to show a beveled edge, designers can focus on clarity while maintaining a pleasurable aesthetic. Flat interfaces are afford us time to focus on the questions that really matter: What is simple and complex to interpret in the interface? Does the UI provide the appropriate provide feedback to communicate events to the user? What elements can be stripped away or need to be added in?&lt;/p&gt;
+&lt;p&gt;The removal of bevels, textures, and shadows frees the designer to focus on what really matters in an interface &amp;#8211; communication. Liberated from obsessing over the opacity of a given texture, the strength of a drop shadow, or the amount of pixels used to show a beveled edge, designers can focus on clarity while maintaining a pleasurable aesthetic. Flat interfaces afford us time to focus on the questions that really matter: What is simple and complex to interpret in the interface? Does the UI provide the appropriate feedback to communicate events to the user? What elements can be stripped away or need to be added in?&lt;/p&gt;
 
-&lt;p&gt;While introducing or removing any element from a UI will likely require many considerations, the painstaking time investment of implementing a hyper-real element is stripped from the decision making process. For example days have been spent obsessing over an incredibly cool and glossy loading interface, it may be a difficult decision to strike it from the project once requirements change or the developers realize that loading can be done in the background and thus should be communicated in a manner that doesn&amp;#8217;t block the UI with big glowing progress bar.&lt;/p&gt;
+&lt;p&gt;While introducing or removing any element from a UI will likely require many considerations, the painstaking time investment of implementing a hyper-real element is stripped from the decision making process. For example, if days have been spent obsessing over an incredibly cool and glossy loading interface, it may be a difficult decision to strike it from the project once requirements change or a better solution has been found.&lt;/p&gt;
 
 &lt;p&gt;In short, offsetting the attention directed towards manipulating the visual appearance of interface elements will more often than not lead to a better quality application. This is because the designer will spend more time devoting their effort towards the design decisions that really matter. To see a few more good examples of flat design I recommend checking out &lt;a href='https://itunes.apple.com/us/app/id493536432?mt=8'&gt;hundreds&lt;/a&gt;, &lt;a href='https://itunes.apple.com/us/app/letterpress-word-game/id526619424?mt=8'&gt;letterpress&lt;/a&gt;, &lt;a href='https://itunes.apple.com/us/app/weathercube-gestural-weather/id555306679?mt=8'&gt;weathercube&lt;/a&gt;, &lt;a href='http://www.realmacsoftware.com/clear/'&gt;clear&lt;/a&gt;, and &lt;a href='http://windows.microsoft.com/en-US/windows-8/meet'&gt;windows 8&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
