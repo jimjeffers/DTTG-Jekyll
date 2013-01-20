@@ -31,7 +31,7 @@ Let's say we have a call to action that looks like a big red button with upperca
 }
 {% endhighlight %}
 
-But what happens when we want to apply a similar button style to our confirm and cancel buttons used throughout the size?
+But what happens when we want to apply a similar button style to our confirm and cancel buttons used throughout the site?
 
 {% highlight css %}
 /* WORSE! */
@@ -115,7 +115,7 @@ And then later on when we have a form with dual buttons:
 There are two important things to note:
 
 1. The type of element we use no longer matters. We could use these classes on an anchor, input, or whatever DOM element we wanted.
-2. The class names are still semantic. They add value to our markup. Yes it is implied that each class is applying a specific variation to the appearance, but we're using meaningful names to do so. We aren't using classes named button-red or button-blue. We have primary and secondary intents now clearly labeled throughout the site. If we want to add any specific functionality to our project with javascript we can easily query the default action for any given perform just by querying `$(".bitesized-btn-default")`.
+2. The class names are still semantic. They add value to our markup. Yes it is implied that each class is applying a specific variation to the appearance, but we're using meaningful names to do so. We aren't using classes named button-red or button-blue. We have primary and secondary intents now clearly labeled throughout the site. If we want to add any specific functionality to our project with javascript we can easily query the default action for any given form just by querying `$(".bitesized-btn-default")`.
 3. The prefix `bitesized-` could be replaced with any name you wanted to use for your project. For example, google's maia CSS framework prefixes with the `maia-` namespace.
 
 Approaching CSS in a bite-sized approach provides a clear pattern for success. Each additional use case provides a reason to extend our css framework in a meaningful way. Rather than introducing more complexity, we now have a pattern to both solve our problems and render our CSS framework more powerful.
