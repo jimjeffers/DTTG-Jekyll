@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>When to Split Your Media Queries | DontTrustThisGuy.com</title>
+    <meta name="description" content="The personal blog of Jim Jeffers.">
+    <meta name="keywords"    content="Jim Jeffers, blog">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    
+    <link href="/stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/syntax.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/feed" rel="alternate" type="application/atom+xml" />
+    
+    <script src="/javascripts/lib.min.js"></script>
+    
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3186798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+    <script type="text/javascript" src="http://use.typekit.com/knj2eit.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body id="content">
+    <article class="post">
+  <a href="/" title="Return to the table of contents." id="table_of_contents"><img src="/images/icon_table_of_contents.svg" height="85" width="85"></a>
+  
+  <header>
+      <time datetime="2013-01-21" pubdate="pubdate">January 21, 2013</time>
+      <h1><a href="" title="Permalink for When to Split Your Media Queries">When to Split Your Media Queries</a></h1>
+  </header>
+
+  <section id="body">
+    <p>One problem with using media queries is that you eventually get to a point where you&#8217;re over compensating for the effects of the cascade. Mobile first or desktop first, the problem arises from multiple media queries inheriting from one another.</p>
+
+<p>Let&#8217;s say you&#8217;re on a mobile first project (where the default CSS styles are for mobile devices) which now has media query blocks to support four additional viewport sizes. All four of the additional viewport media queries inherit from the mobile style sheet. If you want to make adjustments to the mobile styles and don&#8217;t want them to effect the rest of your layouts, you&#8217;ll have to overwrite them in one of the other media queries to effectively undo them.</p>
+
+<p>As an example let&#8217;s say we have a site navigation. In our mobile stylesheet we may want to absolutely position this element in the top right corner of the screen. However, in our tablet layout we&#8217;ve found we can simply get the desired effect by floating the element. Finally, in our larger desktop layout we realize we don&#8217;t need to float or position the element:</p>
+<div class='highlight'><pre><code class='css'><span class='c'>/* Seemingly harmless default styles. */</span>
+<span class='nc'>.site-navigation</span> <span class='p'>{</span>
+  <span class='k'>display</span><span class='o'>:</span> <span class='k'>block</span><span class='p'>;</span>
+  <span class='k'>position</span><span class='o'>:</span> <span class='k'>absolute</span><span class='p'>;</span>
+  <span class='k'>top</span><span class='o'>:</span> <span class='m'>0</span><span class='p'>;</span>
+  <span class='k'>right</span><span class='o'>:</span> <span class='m'>0</span><span class='p'>;</span>
+<span class='p'>}</span>
+
+<span class='k'>@media</span> <span class='o'>(</span><span class='nt'>min-width</span><span class='o'>:</span> <span class='nt'>800px</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='nc'>.site-navigation</span> <span class='p'>{</span>
+    <span class='k'>float</span><span class='o'>:</span> <span class='k'>right</span><span class='p'>;</span>
+    <span class='c'>/* BAD: Resetting default styles. */</span>
+    <span class='k'>position</span><span class='o'>:</span> <span class='k'>static</span><span class='p'>;</span>
+    <span class='k'>right</span><span class='o'>:</span> <span class='k'>auto</span><span class='p'>;</span>		
+    <span class='k'>top</span><span class='o'>:</span> <span class='k'>auto</span><span class='p'>;</span>
+  <span class='p'>}</span>
+<span class='p'>}</span>
+
+<span class='k'>@media</span> <span class='o'>(</span><span class='nt'>min-width</span><span class='o'>:</span> <span class='nt'>1024px</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='nc'>.site-navigation</span> <span class='p'>{</span>
+    <span class='k'>margin</span><span class='o'>:</span> <span class='m'>1</span><span class='n'>rem</span> <span class='m'>0</span><span class='p'>;</span>
+    <span class='c'>/* WORSE: Resetting reset styles. */</span>
+    <span class='k'>float</span><span class='o'>:</span> <span class='k'>none</span><span class='p'>;</span>
+  <span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<p>As you can see each of our layouts did not need to inherit from one another. We had to undo our styles each time we moved a level up. This isn&#8217;t always the case but from my experience this can happen very often. Imagine if your entire project was like this. It can become a mess very quickly.</p>
+
+<p>Allowing media queries to inherit from one another creates a situation where your changes to specific viewport are no longer isolated. Fortunately, <a href='http://simurai.com/post/30451824480/media-query-splitting'>Simurai solved this with a technique called &#8220;Media Splitting&#8221;</a>. Here&#8217;s how the our example might look if we used media splitting:</p>
+<div class='highlight'><pre><code class='css'><span class='nc'>.site-navigation</span> <span class='p'>{</span>
+  <span class='k'>display</span><span class='o'>:</span> <span class='k'>block</span><span class='p'>;</span>
+<span class='p'>}</span>
+
+<span class='k'>@media</span> <span class='o'>(</span><span class='nt'>max-width</span><span class='o'>:</span> <span class='nt'>799px</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='nc'>.site-navigation</span> <span class='p'>{</span>
+    <span class='k'>position</span><span class='o'>:</span> <span class='k'>absolute</span><span class='p'>;</span>
+    <span class='k'>top</span><span class='o'>:</span> <span class='m'>0</span><span class='p'>;</span>
+    <span class='k'>right</span><span class='o'>:</span> <span class='m'>0</span><span class='p'>;</span>
+  <span class='p'>}</span>
+<span class='p'>}</span>
+
+<span class='k'>@media</span> <span class='o'>(</span><span class='nt'>min-width</span><span class='o'>:</span> <span class='nt'>800px</span><span class='o'>)</span> <span class='nt'>and</span> <span class='o'>(</span><span class='nt'>max-width</span><span class='o'>:</span> <span class='nt'>1023px</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='nc'>.site-navigation</span> <span class='p'>{</span>
+    <span class='k'>float</span><span class='o'>:</span> <span class='k'>right</span><span class='p'>;</span>
+  <span class='p'>}</span>
+<span class='p'>}</span>
+
+<span class='k'>@media</span> <span class='o'>(</span><span class='nt'>min-width</span><span class='o'>:</span> <span class='nt'>1024px</span><span class='o'>)</span> <span class='p'>{</span>
+  <span class='nc'>.site-navigation</span> <span class='p'>{</span>
+    <span class='k'>margin</span><span class='o'>:</span> <span class='m'>1</span><span class='n'>rem</span> <span class='m'>0</span><span class='p'>;</span>
+  <span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<p>Notice we still have a default block of style for setting the site navigation to display block. Rules that apply across media queries isn&#8217;t necessarily something that should be avoided. But it should only be done when it makes sense. Right now I&#8217;ve found that rules that determine the appearance in terms of display type, font-family, and color tend to be best. In contrast, rules that specify positioning, layout, margins, and even padding are prime candidates for media splitting.</p>
+
+<p>There is an inherited problem with media splitting. Older browsers that don&#8217;t support media queries will never get a full layout to display. That&#8217;s because there will never be a completely default set of styles that aren&#8217;t depending on a media query in some way. <a href='http://adactio.com/journal/5964/'>Jeremy Keith has shared his thoughts on browsers that don&#8217;t support media queries</a>. In short, he&#8217;s made use of CSS pre-processors such as SASS or LESS to build a media query free version of his CSS to serve to IE8 and below. However, <a href='http://adactio.com/journal/5969/'>he doesn&#8217;t necessarily advise doing what he did</a> as his post was really along the lines why we even bother to provide identical experiences to older browser.</p>
+
+<p>So while there isn&#8217;t really a conclusive solution to dealing with this yet. I would advise using media splitting in your projects. To support IE I would come up with a compromise from Jeremy&#8217;s article &#8211; setup a preprocessors to use a default media query block and generate a &#8216;legacy.css&#8217; file which you can server to IE8 with a conditional comment. Now who wants to write a build script for doing just that?</p>
+  </section>
+  
+  <footer>
+    <p><a href="http://donttrustthisguy.com">DontTrustThisGuy.com</a> is authored by Jim Jeffers, a twenty-something web consultant currently residing in Phoenix, AZ. You will find random ramblings, discussions on web technologies, user interface design, programming, business, politics, and anything else that crosses his mind here.</p>
+    <p>All content and images &copy; 2005-2012 <a href="http://jimjeffers.com">Jim Jeffers</a>.</p>
+  </footer>
+</article>
+
+<nav id="posts_nav">
+  <ul>
+    
+    <li id="previous"><a href="/why-flat-interfaces-are-effective" title="Why 'Flat' Interfaces Are Effective"><img src="/images/icon_previous.svg" height="85" width="85"></a></li>
+    
+    
+    <li id="next"><a href="/" title="Table of Contents"><img src="/images/icon_next.svg" height="85" width="85"></a></li>
+    
+  </ul>
+</nav>
+
+    <script src="/javascripts/app.min.js"></script>
+  </body>
+</html>

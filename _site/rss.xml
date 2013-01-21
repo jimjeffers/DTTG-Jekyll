@@ -6,9 +6,82 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Sun, 20 Jan 2013 14:24:46 -0700</pubDate>
-    <lastBuildDate>Sun, 20 Jan 2013 14:24:46 -0700</lastBuildDate>
+    <pubDate>Mon, 21 Jan 2013 16:55:13 -0700</pubDate>
+    <lastBuildDate>Mon, 21 Jan 2013 16:55:13 -0700</lastBuildDate>
 
+    
+    <item>
+      <title>When to Split Your Media Queries</title>
+      <link>http://donttrustthisguy.com/when-to-split-your-media-queries</link>
+      <pubDate>Mon, 21 Jan 2013 00:00:00 -0700</pubDate>
+      <author>Jim Jeffers</author>
+      <guid>http://donttrustthisguy.com/when-to-split-your-media-queries</guid>
+      <description>&lt;p&gt;One problem with using media queries is that you eventually get to a point where you&amp;#8217;re over compensating for the effects of the cascade. Mobile first or desktop first, the problem arises from multiple media queries inheriting from one another.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#8217;s say you&amp;#8217;re on a mobile first project (where the default CSS styles are for mobile devices) which now has media query blocks to support four additional viewport sizes. All four of the additional viewport media queries inherit from the mobile style sheet. If you want to make adjustments to the mobile styles and don&amp;#8217;t want them to effect the rest of your layouts, you&amp;#8217;ll have to overwrite them in one of the other media queries to effectively undo them.&lt;/p&gt;
+
+&lt;p&gt;As an example let&amp;#8217;s say we have a site navigation. In our mobile stylesheet we may want to absolutely position this element in the top right corner of the screen. However, in our tablet layout we&amp;#8217;ve found we can simply get the desired effect by floating the element. Finally, in our larger desktop layout we realize we don&amp;#8217;t need to float or position the element:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='c'&gt;/* Seemingly harmless default styles. */&lt;/span&gt;
+&lt;span class='nc'&gt;.site-navigation&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;display&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;block&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;position&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;absolute&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;top&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;right&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='k'&gt;@media&lt;/span&gt; &lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='nt'&gt;min-width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nt'&gt;800px&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nc'&gt;.site-navigation&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;float&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;right&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='c'&gt;/* BAD: Resetting default styles. */&lt;/span&gt;
+    &lt;span class='k'&gt;position&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;static&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='k'&gt;right&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;auto&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;		
+    &lt;span class='k'&gt;top&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;auto&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='k'&gt;@media&lt;/span&gt; &lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='nt'&gt;min-width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nt'&gt;1024px&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nc'&gt;.site-navigation&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;margin&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;1&lt;/span&gt;&lt;span class='n'&gt;rem&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='c'&gt;/* WORSE: Resetting reset styles. */&lt;/span&gt;
+    &lt;span class='k'&gt;float&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;none&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;As you can see each of our layouts did not need to inherit from one another. We had to undo our styles each time we moved a level up. This isn&amp;#8217;t always the case but from my experience this can happen very often. Imagine if your entire project was like this. It can become a mess very quickly.&lt;/p&gt;
+
+&lt;p&gt;Allowing media queries to inherit from one another creates a situation where your changes to specific viewport are no longer isolated. Fortunately, &lt;a href='http://simurai.com/post/30451824480/media-query-splitting'&gt;Simurai solved this with a technique called &amp;#8220;Media Splitting&amp;#8221;&lt;/a&gt;. Here&amp;#8217;s how the our example might look if we used media splitting:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nc'&gt;.site-navigation&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;display&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;block&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='k'&gt;@media&lt;/span&gt; &lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='nt'&gt;max-width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nt'&gt;799px&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nc'&gt;.site-navigation&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;position&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;absolute&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='k'&gt;top&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='k'&gt;right&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='k'&gt;@media&lt;/span&gt; &lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='nt'&gt;min-width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nt'&gt;800px&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='nt'&gt;and&lt;/span&gt; &lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='nt'&gt;max-width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nt'&gt;1023px&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nc'&gt;.site-navigation&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;float&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;right&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+
+&lt;span class='k'&gt;@media&lt;/span&gt; &lt;span class='o'&gt;(&lt;/span&gt;&lt;span class='nt'&gt;min-width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nt'&gt;1024px&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nc'&gt;.site-navigation&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;margin&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;1&lt;/span&gt;&lt;span class='n'&gt;rem&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Notice we still have a default block of style for setting the site navigation to display block. Rules that apply across media queries isn&amp;#8217;t necessarily something that should be avoided. But it should only be done when it makes sense. Right now I&amp;#8217;ve found that rules that determine the appearance in terms of display type, font-family, and color tend to be best. In contrast, rules that specify positioning, layout, margins, and even padding are prime candidates for media splitting.&lt;/p&gt;
+
+&lt;p&gt;There is an inherited problem with media splitting. Older browsers that don&amp;#8217;t support media queries will never get a full layout to display. That&amp;#8217;s because there will never be a completely default set of styles that aren&amp;#8217;t depending on a media query in some way. &lt;a href='http://adactio.com/journal/5964/'&gt;Jeremy Keith has shared his thoughts on browsers that don&amp;#8217;t support media queries&lt;/a&gt;. In short, he&amp;#8217;s made use of CSS pre-processors such as SASS or LESS to build a media query free version of his CSS to serve to IE8 and below. However, &lt;a href='http://adactio.com/journal/5969/'&gt;he doesn&amp;#8217;t necessarily advise doing what he did&lt;/a&gt; as his post was really along the lines why we even bother to provide identical experiences to older browser.&lt;/p&gt;
+
+&lt;p&gt;So while there isn&amp;#8217;t really a conclusive solution to dealing with this yet. I would advise using media splitting in your projects. To support IE I would come up with a compromise from Jeremy&amp;#8217;s article &amp;#8211; setup a preprocessors to use a default media query block and generate a &amp;#8216;legacy.css&amp;#8217; file which you can server to IE8 with a conditional comment. Now who wants to write a build script for doing just that?&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Why 'Flat' Interfaces Are Effective</title>
