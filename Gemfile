@@ -11,7 +11,7 @@ gem 'thin'
 group :development do
   gem 'compass'
   gem 'foreman'
-  gem 'jekyll'
+  gem "jekyll", "~> 1.0.2"
   gem 'jekyll-svg-plugin'
   # gem 'gsl'
 end

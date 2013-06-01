@@ -1,4 +1,4 @@
-exclude: Gemfile, Gemfile.lock, Procfile, grunt.js, README.md, *.rb, *.yml, config.ru, newrelic.yml
+exclude: ["Gemfile", "Gemfile.lock", "Procfile", "grunt.js", "README.md", "*.rb", "*.yml", "config.ru", "newrelic.yml"]
 paginate: 120
 permalink: /:title
 pygments: true
