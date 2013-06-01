@@ -69,8 +69,7 @@
   <span class='k'>text</span><span class='o'>-</span><span class='k'>color</span><span class='o'>:</span> <span class='nb'>white</span><span class='p'>;</span>
   <span class='k'>text-decoration</span><span class='o'>:</span> <span class='k'>none</span><span class='p'>;</span>  
 <span class='p'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>But what happens when we want to apply a similar button style to our confirm and cancel buttons used throughout the site?</p>
 <div class='highlight'><pre><code class='css'><span class='c'>/* WORSE! */</span>
 <span class='nf'>#content</span> <span class='o'>&gt;</span> <span class='nt'>div</span><span class='nf'>#primary</span> <span class='o'>&gt;</span> <span class='nt'>section</span><span class='nf'>#call-to-action</span> <span class='nt'>a</span><span class='o'>,</span>
@@ -91,8 +90,7 @@
   <span class='k'>background</span><span class='o'>:</span> <span class='n'>grey</span><span class='p'>;</span>
   <span class='k'>font-weight</span><span class='o'>:</span> <span class='k'>normal</span><span class='p'>;</span>
 <span class='p'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>Bad habits like this one force us to work against ourselves. We&#8217;ll wind up no better off than where we started. Each additional use case for an item with a similar style results in us returning to the CSS to extend and create additional selectors and rules rather than simply re-applying them across elements.</p>
 
 <p>The solution is to use name-spaced classes that can be combined to achieve the desired effect:</p>
@@ -123,16 +121,14 @@
   <span class='k'>margin</span><span class='o'>:</span> <span class='m'>0</span> <span class='m'>1em</span><span class='p'>;</span>
   <span class='k'>padding</span><span class='o'>:</span> <span class='m'>0.25em</span> <span class='m'>0.5em</span><span class='p'>;</span>
 <span class='p'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>With a set of bite-sized classes to manage the presentation of our buttons we can simply add classes to applicable portions of our markup without creating additional complexity in our CSS.</p>
 <div class='highlight'><pre><code class='html'><span class='c'>&lt;!-- Call to Action --&gt;</span>
 <span class='nt'>&lt;section</span> <span class='na'>id=</span><span class='s'>&quot;call-to-action&quot;</span><span class='nt'>&gt;</span>
   ...
   <span class='nt'>&lt;a</span> <span class='na'>class=</span><span class='s'>&quot;bitesized-btn bitesized-btn-priority bitesized-btn-standalone&quot;</span><span class='nt'>&gt;</span>…<span class='nt'>&lt;/a&gt;</span>
 <span class='nt'>&lt;/section&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>And then later on when we have a form with dual buttons:</p>
 <div class='highlight'><pre><code class='html'><span class='c'>&lt;!-- Form Buttons --&gt;</span>
 <span class='nt'>&lt;form&gt;</span>
@@ -142,8 +138,7 @@
   <span class='nt'>&lt;input</span> <span class='na'>class=</span><span class='s'>&quot;bitesized-btn bitesized-btn-secondary&quot;</span>
     <span class='na'>value=</span><span class='s'>&quot;Cancel&quot;</span> <span class='na'>type=</span><span class='s'>&quot;button&quot;</span><span class='nt'>/&gt;</span>
 <span class='nt'>&lt;/form&gt;</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>There are two important things to note:</p>
 
 <ol>

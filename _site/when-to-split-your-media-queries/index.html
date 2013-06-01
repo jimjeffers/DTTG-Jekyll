@@ -76,8 +76,7 @@
     <span class='k'>float</span><span class='o'>:</span> <span class='k'>none</span><span class='p'>;</span>
   <span class='p'>}</span>
 <span class='p'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>As you can see each of our layouts did not need to inherit from one another. We had to undo our styles each time we moved a level up. This isn&#8217;t always the case but from my experience this can happen very often. Imagine if your entire project was like this. It can become a mess very quickly.</p>
 
 <p>Allowing media queries to inherit from one another creates a situation where your changes to specific viewport are no longer isolated. Fortunately, <a href='http://simurai.com/post/30451824480/media-query-splitting'>Simurai solved this with a technique called &#8220;Media Splitting&#8221;</a>. Here&#8217;s how the our example might look if we used media splitting:</p>
@@ -104,8 +103,7 @@
     <span class='k'>margin</span><span class='o'>:</span> <span class='m'>1</span><span class='n'>rem</span> <span class='m'>0</span><span class='p'>;</span>
   <span class='p'>}</span>
 <span class='p'>}</span>
-</code></pre>
-</div>
+</code></pre></div>
 <p>Notice we still have a default block of style for setting the site navigation to display block. Rules that apply across media queries isn&#8217;t necessarily something that should be avoided. But it should only be done when it makes sense. Right now I&#8217;ve found that rules that determine the appearance in terms of display type, font-family, and color tend to be best. In contrast, rules that specify positioning, layout, margins, and even padding are prime candidates for media splitting.</p>
 
 <p>There is an inherited problem with media splitting. Older browsers that don&#8217;t support media queries will never get a full layout to display. That&#8217;s because there will never be a completely default set of styles that aren&#8217;t depending on a media query in some way. <a href='http://adactio.com/journal/5964/'>Jeremy Keith has shared his thoughts on browsers that don&#8217;t support media queries</a>. In short, he&#8217;s made use of CSS pre-processors such as SASS or LESS to build a media query free version of his CSS to serve to IE8 and below. However, <a href='http://adactio.com/journal/5969/'>he doesn&#8217;t necessarily advise doing what he did</a> as his post was really along the lines why we even bother to provide identical experiences to older browser.</p>
@@ -125,7 +123,7 @@
     <li id="previous"><a href="/why-flat-interfaces-are-effective" title="Why 'Flat' Interfaces Are Effective"><img src="/images/icon_previous.svg" height="85" width="85"></a></li>
     
     
-    <li id="next"><a href="/" title="Table of Contents"><img src="/images/icon_next.svg" height="85" width="85"></a></li>
+    <li id="next"><a href="/writing-for-the-sake-of-writing" title="Writing for the Sake of Writing."><img src="/images/icon_next.svg" height="85" width="85"></a></li>
     
   </ul>
 </nav>

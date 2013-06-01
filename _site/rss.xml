@@ -6,14 +6,35 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Wed, 23 Jan 2013 12:40:58 -0700</pubDate>
-    <lastBuildDate>Wed, 23 Jan 2013 12:40:58 -0700</lastBuildDate>
+    <pubDate>Sat, 01 Jun 2013 15:36:17 -0700</pubDate>
+    <lastBuildDate>Sat, 01 Jun 2013 15:36:17 -0700</lastBuildDate>
 
+    
+    <item>
+      <title>Writing for the Sake of Writing.</title>
+      <link>http://donttrustthisguy.com/writing-for-the-sake-of-writing</link>
+      <pubDate>Sat, 01 Jun 2013 00:00:00 -0700</pubDate>
+      <author>Jim Jeffers</author>
+      <guid>http://donttrustthisguy.com/writing-for-the-sake-of-writing</guid>
+      <description>&lt;p&gt;From now on I&amp;#8217;ve committed to writing at least 10 minutes a day. The subject matter doesn&amp;#8217;t matter. The purpose doesn&amp;#8217;t matter. The idea is just to write and if it turns out being useful for my blog or some other purpose so be it.&lt;/p&gt;
+
+&lt;p&gt;The fact of the matter is that it&amp;#8217;s difficult to adopt productive habits. We often use our positive self-bias to set goals that are just too ambitious for ourselves to follow through on. You would be surprised just how easy it is to get too ambitious with setting goals.&lt;/p&gt;
+
+&lt;p&gt;Last year while I was attending B.J. Fogg&amp;#8217;s mobile health conference we had a group discussion about his tiny habits program. The guy sitting next to me at my table told me about how he had set a goal to drink a glass of water after he woke up every morning. He found it to be incredibly hard to follow through on. Do you believe that? Setting a goal to drink a glass of water when you wake is actually pretty difficult to turn into a habit. As a result the fellow revised his goal to take two sips of water every morning upon waking.&lt;/p&gt;
+
+&lt;p&gt;If you make your goal challenging, as easy as it might seem, you will grow tired of it too quickly as it&amp;#8217;s not part of your routine. B.J. found that a lot of people set a goal to do 10 pushups every morning. He urged them to reduce the goal to simply 1 or 2 pushups every morning.&lt;/p&gt;
+
+&lt;p&gt;If you wake up and it seems like no problem, you&amp;#8217;ll do it. If you wake up with a challenging goal you might do it once or twice. But after that you&amp;#8217;ll just simply not feel like it. You need to make goals that are so easy that you won&amp;#8217;t succumb to your own laziness.&lt;/p&gt;
+
+&lt;p&gt;That&amp;#8217;s why I&amp;#8217;m setting a goal to write for 10 minutes. If I set a goal to write a blog post every day it won&amp;#8217;t happen. It sounds easy but it&amp;#8217;s not. I have to think about what I&amp;#8217;m going to write about, I have to re-read it, edit it, revise it, post it, read it again on the blog, find more problems, edit, revise, post, edit, revise, post. A simple blog post can end up taking an hour or two out of my day. And as a result I write less often.&lt;/p&gt;
+
+&lt;p&gt;That&amp;#8217;s a bad habit. If I simply write with no end goal in mind I&amp;#8217;ll grow a catalog of ideas and improve my writing. This blog and the rest of my writing for the sake of writing regularly as a habit. Looking at it this way, writing can become another form of productive procrastination.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>When to Split Your Media Queries</title>
       <link>http://donttrustthisguy.com/when-to-split-your-media-queries</link>
-      <pubDate>Mon, 21 Jan 2013 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 21 Jan 2013 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/when-to-split-your-media-queries</guid>
       <description>&lt;p&gt;One problem with using media queries is that you eventually get to a point where you&amp;#8217;re over compensating for the effects of the cascade. Mobile first or desktop first, the problem arises from multiple media queries inheriting from one another.&lt;/p&gt;
@@ -46,8 +67,7 @@
     &lt;span class='k'&gt;float&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;none&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
   &lt;span class='p'&gt;}&lt;/span&gt;
 &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;As you can see each of our layouts did not need to inherit from one another. We had to undo our styles each time we moved a level up. This isn&amp;#8217;t always the case but from my experience this can happen very often. Imagine if your entire project was like this. It can become a mess very quickly.&lt;/p&gt;
 
 &lt;p&gt;Allowing media queries to inherit from one another creates a situation where your changes to specific viewport are no longer isolated. Fortunately, &lt;a href='http://simurai.com/post/30451824480/media-query-splitting'&gt;Simurai solved this with a technique called &amp;#8220;Media Splitting&amp;#8221;&lt;/a&gt;. Here&amp;#8217;s how the our example might look if we used media splitting:&lt;/p&gt;
@@ -74,8 +94,7 @@
     &lt;span class='k'&gt;margin&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;1&lt;/span&gt;&lt;span class='n'&gt;rem&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
   &lt;span class='p'&gt;}&lt;/span&gt;
 &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Notice we still have a default block of style for setting the site navigation to display block. Rules that apply across media queries isn&amp;#8217;t necessarily something that should be avoided. But it should only be done when it makes sense. Right now I&amp;#8217;ve found that rules that determine the appearance in terms of display type, font-family, and color tend to be best. In contrast, rules that specify positioning, layout, margins, and even padding are prime candidates for media splitting.&lt;/p&gt;
 
 &lt;p&gt;There is an inherited problem with media splitting. Older browsers that don&amp;#8217;t support media queries will never get a full layout to display. That&amp;#8217;s because there will never be a completely default set of styles that aren&amp;#8217;t depending on a media query in some way. &lt;a href='http://adactio.com/journal/5964/'&gt;Jeremy Keith has shared his thoughts on browsers that don&amp;#8217;t support media queries&lt;/a&gt;. In short, he&amp;#8217;s made use of CSS pre-processors such as SASS or LESS to build a media query free version of his CSS to serve to IE8 and below. However, &lt;a href='http://adactio.com/journal/5969/'&gt;he doesn&amp;#8217;t necessarily advise doing what he did&lt;/a&gt; as his post was really along the lines why we even bother to provide identical experiences to older browser.&lt;/p&gt;
@@ -86,7 +105,7 @@
     <item>
       <title>Why 'Flat' Interfaces Are Effective</title>
       <link>http://donttrustthisguy.com/why-flat-interfaces-are-effective</link>
-      <pubDate>Sat, 19 Jan 2013 00:00:00 -0700</pubDate>
+      <pubDate>Sat, 19 Jan 2013 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/why-flat-interfaces-are-effective</guid>
       <description>&lt;p&gt;If you&amp;#8217;ve ever browsed &lt;a href='http://dribbble.com'&gt;dribbble&lt;/a&gt; you&amp;#8217;ve probably left inspired with many ideas for icons and user interfaces. The overwhelming majority of shots you&amp;#8217;ll see trend toward &lt;a href='http://dribbble.com/shots/902906-Travel-Magazine?list=popular&amp;amp;offset=44'&gt;hyper&lt;/a&gt;-&lt;a href='http://dribbble.com/shots/902104-Melting-Reflections?list=popular&amp;amp;offset=7'&gt;real&lt;/a&gt;. That&amp;#8217;s not a bad thing at all, but it does tend to show where most of the designers&amp;#8217; effort is being utilized.&lt;/p&gt;
@@ -103,7 +122,7 @@
     <item>
       <title>A Bite-sized Strategy for CSS</title>
       <link>http://donttrustthisguy.com/bite-sized-strategies-for-css</link>
-      <pubDate>Fri, 18 Jan 2013 00:00:00 -0700</pubDate>
+      <pubDate>Fri, 18 Jan 2013 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/bite-sized-strategies-for-css</guid>
       <description>&lt;p&gt;Practicing restraint with the complexity of CSS selectors is important to building a more maintainable project. Practicing restraint in the rules you write are equally important. It&amp;#8217;s really tempting to write specific selectors to query a specific set of elements and then pile on a stack of CSS rules. But doing so creates two problems:&lt;/p&gt;
@@ -129,8 +148,7 @@
   &lt;span class='k'&gt;text&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='k'&gt;color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;white&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
   &lt;span class='k'&gt;text-decoration&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;none&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;  
 &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;But what happens when we want to apply a similar button style to our confirm and cancel buttons used throughout the site?&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='c'&gt;/* WORSE! */&lt;/span&gt;
 &lt;span class='nf'&gt;#content&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nt'&gt;div&lt;/span&gt;&lt;span class='nf'&gt;#primary&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nt'&gt;section&lt;/span&gt;&lt;span class='nf'&gt;#call-to-action&lt;/span&gt; &lt;span class='nt'&gt;a&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt;
@@ -151,8 +169,7 @@
   &lt;span class='k'&gt;background&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;grey&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
   &lt;span class='k'&gt;font-weight&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;normal&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
 &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Bad habits like this one force us to work against ourselves. We&amp;#8217;ll wind up no better off than where we started. Each additional use case for an item with a similar style results in us returning to the CSS to extend and create additional selectors and rules rather than simply re-applying them across elements.&lt;/p&gt;
 
 &lt;p&gt;The solution is to use name-spaced classes that can be combined to achieve the desired effect:&lt;/p&gt;
@@ -183,16 +200,14 @@
   &lt;span class='k'&gt;margin&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt; &lt;span class='m'&gt;1em&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
   &lt;span class='k'&gt;padding&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;0.25em&lt;/span&gt; &lt;span class='m'&gt;0.5em&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
 &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;With a set of bite-sized classes to manage the presentation of our buttons we can simply add classes to applicable portions of our markup without creating additional complexity in our CSS.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='c'&gt;&amp;lt;!-- Call to Action --&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;section&lt;/span&gt; &lt;span class='na'&gt;id=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;call-to-action&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
   ...
   &lt;span class='nt'&gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;bitesized-btn bitesized-btn-priority bitesized-btn-standalone&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;…&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And then later on when we have a form with dual buttons:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='c'&gt;&amp;lt;!-- Form Buttons --&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;form&amp;gt;&lt;/span&gt;
@@ -202,8 +217,7 @@
   &lt;span class='nt'&gt;&amp;lt;input&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;bitesized-btn bitesized-btn-secondary&amp;quot;&lt;/span&gt;
     &lt;span class='na'&gt;value=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;Cancel&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;type=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;button&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;There are two important things to note:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -220,7 +234,7 @@
     <item>
       <title>Writing on the iPad</title>
       <link>http://donttrustthisguy.com/writing-on-the-ipad</link>
-      <pubDate>Thu, 17 Jan 2013 00:00:00 -0700</pubDate>
+      <pubDate>Thu, 17 Jan 2013 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/writing-on-the-ipad</guid>
       <description>&lt;p&gt;One of the silliest things you&amp;#8217;ll hear about the iPad is that it doesn&amp;#8217;t have a physical keyboard. Ironically, I think all of those statements come from folks who haven&amp;#8217;t used an iPad for an extended period of time.&lt;/p&gt;
@@ -233,7 +247,7 @@
     <item>
       <title>Two Rules for Writing Better CSS</title>
       <link>http://donttrustthisguy.com/two-rules-for-better-css</link>
-      <pubDate>Wed, 16 Jan 2013 00:00:00 -0700</pubDate>
+      <pubDate>Wed, 16 Jan 2013 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/two-rules-for-better-css</guid>
       <description>&lt;p&gt;This might seem obvious but it&amp;#8217;s difficult for many to practice. There are really just two good rules to have very effective and efficient CSS.&lt;/p&gt;
@@ -254,7 +268,7 @@
     <item>
       <title>Health Gadgets</title>
       <link>http://donttrustthisguy.com/health-gadgets</link>
-      <pubDate>Tue, 15 Jan 2013 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 15 Jan 2013 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/health-gadgets</guid>
       <description>&lt;p&gt;In business they have a saying, &amp;#8220;What gets measured, gets improved.&amp;#8221; Over the holiday period I decided to take that to heart and have made a handful of purchases that I&amp;#8217;d recommend to anyone who wants to get a better snapshot of their health.&lt;/p&gt;
@@ -289,7 +303,7 @@
     <item>
       <title>Programming in 2013</title>
       <link>http://donttrustthisguy.com/programming-in-2013</link>
-      <pubDate>Mon, 14 Jan 2013 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 14 Jan 2013 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/programming-in-2013</guid>
       <description>&lt;p&gt;I wouldn&amp;#8217;t say this list is really exciting by any means. But I thought I&amp;#8217;d share the languages I&amp;#8217;m continuing to focus on this year:&lt;/p&gt;
@@ -510,7 +524,7 @@
     <item>
       <title>Personifying the Impersonal</title>
       <link>http://donttrustthisguy.com/personifying-the-impersonal</link>
-      <pubDate>Thu, 16 Feb 2012 00:00:00 -0700</pubDate>
+      <pubDate>Thu, 16 Feb 2012 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/personifying-the-impersonal</guid>
       <description>&lt;p&gt;The element of play is extremely important when designing tangible interfaces. I firmly believe in the notion that there is an aesthetic for physical interactions we embed in our software. While devices (phones, tablets, computers, gizmos, etc.) have an aesthetic and character to each their own, the software running the device does as well. Its character is not how it looks, but how it feels, and how it seems to behave. Software can transform a device into a living creature that interacts with us, or it can simply render a device into paper&amp;#8217;s digital counterpart. Think about it. What could be more interesting?&lt;/p&gt;
@@ -525,7 +539,7 @@
     <item>
       <title>The Future is in the Client</title>
       <link>http://donttrustthisguy.com/the-future-is-in-the-client</link>
-      <pubDate>Wed, 01 Feb 2012 00:00:00 -0700</pubDate>
+      <pubDate>Wed, 01 Feb 2012 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/the-future-is-in-the-client</guid>
       <description>&lt;p&gt;We&amp;#8217;ve crossed a major tipping point when it comes to designing services that rely on software. The client (front-end) is now essentially the star of the show. If you don&amp;#8217;t know what that means I can explain. When you use any product that uses the web you have a client and a server. The client is your computer, your phone, your iPad, or other mobile device that you use to interact with the software. The server is the network of computers that store and transmit the data to you.&lt;/p&gt;
@@ -542,7 +556,7 @@
     <item>
       <title>Mobile UX: Specific can be Better Than Simple</title>
       <link>http://donttrustthisguy.com/specific_can_be_better</link>
-      <pubDate>Wed, 25 Jan 2012 00:00:00 -0700</pubDate>
+      <pubDate>Wed, 25 Jan 2012 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/specific_can_be_better</guid>
       <description>&lt;p&gt;It&amp;#8217;s not a fad, smart phones and tablets aren&amp;#8217;t going away anytime soon. But the way we used to approach our projects has. If you&amp;#8217;re designing an online service you now have many possible touch points. The web browser, once considered the only way, is just one of many and it may not even be ideal. When designing for mobile devices you&amp;#8217;ll be faced with a whole boatload of considerations and decisions that didn&amp;#8217;t exist before. Will we need a native app or a web app? What type of form factor will we use? What infrastructure does the platform (android, iOS, windows phone) provide? How do users on that platform typically behave? What does the user of an iOS device (i.e. more animation and polish) expect vs. the user of an Android device (i.e. more technical control)?&lt;/p&gt;
@@ -569,7 +583,7 @@
     <item>
       <title>Energy Level</title>
       <link>http://donttrustthisguy.com/energy-level</link>
-      <pubDate>Mon, 23 Jan 2012 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 23 Jan 2012 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/energy-level</guid>
       <description>&lt;p&gt;Work sucks when you know you need to do it. But work is easy and effortless when you want to do it. I&amp;#8217;ve found that I dread the weeks or days that I feel under pressure to get work done. It&amp;#8217;s easy to get overwhelmed when too many obligations stack up. Every minute of the day you&amp;#8217;re not tending to these obligations feels like a burden. It feels like you can never just get to work when you need to.&lt;/p&gt;
@@ -588,7 +602,7 @@
     <item>
       <title>No Nothing</title>
       <link>http://donttrustthisguy.com/no-nothing</link>
-      <pubDate>Sun, 22 Jan 2012 00:00:00 -0700</pubDate>
+      <pubDate>Sun, 22 Jan 2012 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/no-nothing</guid>
       <description>&lt;p&gt;No wordpress.&lt;br /&gt; No related posts.&lt;br /&gt; No comments.&lt;br /&gt; No SEO.&lt;br /&gt; No share this.&lt;br /&gt; No Like Button.&lt;br /&gt; No tweet stream.&lt;br /&gt; No crazy permalinks.&lt;br /&gt; No CSS frameworks.&lt;br /&gt; No bloated HTML files.&lt;/p&gt;
@@ -599,7 +613,7 @@
     <item>
       <title>The Art and Zen of Writing CSS</title>
       <link>http://donttrustthisguy.com/2010/03/07/the-art-and-zen-of-writing-css</link>
-      <pubDate>Sun, 07 Mar 2010 00:00:00 -0700</pubDate>
+      <pubDate>Sun, 07 Mar 2010 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2010/03/07/the-art-and-zen-of-writing-css</guid>
       <description>&lt;p&gt;I've been writing pure html/css layouts for well over eight years now. While I've found best practices in the form of convention and documentation to be useful. They don't prevent some of my CSS nightmares from reoccurring. They merely make them less painful. My solution is to follow guiding principles in the way I write stylesheets. These principles form a foundation for writing stylesheets that will be easier to work in as the project grows.&lt;/p&gt;
@@ -877,7 +891,7 @@ function ensureAboveEachOther(onTop,onBottom,spacing){
     <item>
       <title>Getting Started With Encouraged Commentary</title>
       <link>http://donttrustthisguy.com/2009/01/10/getting-started-with-encouraged-commentary</link>
-      <pubDate>Sat, 10 Jan 2009 00:00:00 -0700</pubDate>
+      <pubDate>Sat, 10 Jan 2009 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2009/01/10/getting-started-with-encouraged-commentary</guid>
       <description>&lt;p&gt;Since interest in this idea has taken off so much I revised the encouraged commentary script so that it would be more flexible for public use. You can toggle on or off pretty much and of the main features.&lt;/p&gt;
@@ -893,7 +907,7 @@ function ensureAboveEachOther(onTop,onBottom,spacing){
     <item>
       <title>Encouraged Commentary</title>
       <link>http://donttrustthisguy.com/2009/01/04/encouraged-commentary</link>
-      <pubDate>Sun, 04 Jan 2009 00:00:00 -0700</pubDate>
+      <pubDate>Sun, 04 Jan 2009 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2009/01/04/encouraged-commentary</guid>
       <description>&lt;p&gt;Recently, I've begun an expedition with &lt;a href=&quot;http://jquery.com&quot; title=&quot;The write less do more javascript library.&quot;&gt;jQuery&lt;/a&gt;. My first major experiment has been in improving the commenting system on this blog. Sparked by an email discussion with &lt;a href=&quot;http://theclosetentrepreneur.com&quot; title=&quot;Visit Tomas' blog: The Closet Entrepreneur&quot;&gt;Tomas Carrillo&lt;/a&gt; I've implemented a handful of small interactions which make it much easier for you to get involved in the conversation.&lt;/p&gt;
@@ -924,7 +938,7 @@ function ensureAboveEachOther(onTop,onBottom,spacing){
     <item>
       <title>The Phoenix Light Rail is Here!</title>
       <link>http://donttrustthisguy.com/2008/12/28/the-phoenix-light-rail-is-here</link>
-      <pubDate>Sun, 28 Dec 2008 00:00:00 -0700</pubDate>
+      <pubDate>Sun, 28 Dec 2008 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2008/12/28/the-phoenix-light-rail-is-here</guid>
       <description>&lt;p&gt;Hurray! It's finally here. The mammoth &lt;a href=&quot;http://en.wikipedia.org/wiki/METRO_Light_Rail_(Phoenix)&quot;&gt;1.4 billion dollar light rail project&lt;/a&gt; has finally been completed and opened today. To get you started I created my own map of the light rail route. Why? Well - the Valley Metro's online maps are broken into separate pages making it a little difficult to simply glance at the entire twenty mile route easily. I also included the approximate travel times, fares, hours, and stop frequency in this &lt;a href=&quot;http://donttrustthisguy.com/wp-content/uploads/2008/12/phoenix_lightrail.pdf&quot; title=&quot;Phoenix Light Rail Online Map&quot;&gt;easy to use one page printable map&lt;/a&gt;.&lt;/p&gt;
@@ -1474,7 +1488,7 @@ Difference between natural and acquired talents.
     <item>
       <title>Poplisher: The Beta Issue</title>
       <link>http://donttrustthisguy.com/2008/03/03/poplisher-the-beta-issue</link>
-      <pubDate>Mon, 03 Mar 2008 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 03 Mar 2008 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2008/03/03/poplisher-the-beta-issue</guid>
       <description>&lt;p&gt;My good friend &lt;a href=&quot;http://mmsullivan.com&quot; rel=&quot;friend&quot;&gt;Mike Sullivan&lt;/a&gt; has just provided an invite to his new online publishing community &lt;a href=&quot;http://poplisher.com&quot;&gt;Poplisher&lt;/a&gt;.  Mike is a veteran in the publishing industry and is seeking to create a unique platform that merges online media with print media in interesting ways.&lt;/p&gt;
@@ -1487,7 +1501,7 @@ Difference between natural and acquired talents.
     <item>
       <title>Utilizing Regular Expressions in AS3</title>
       <link>http://donttrustthisguy.com/2008/02/29/utilizing-regular-expressions-in-as3</link>
-      <pubDate>Fri, 29 Feb 2008 00:00:00 -0700</pubDate>
+      <pubDate>Fri, 29 Feb 2008 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2008/02/29/utilizing-regular-expressions-in-as3</guid>
       <description>&lt;p&gt;Regular Expressions are a powerful tool that you can utilize in many different programming languages.  After throwing together the little &lt;a href=&quot;http://twitter.com&quot;&gt;twitter&lt;/a&gt; widget at the top of this page - I was informed by &lt;a href=&quot;http://brianshaler.com/blog/&quot;&gt;Brian Shaler&lt;/a&gt; of a major bug that causing it to crash.  So while reworking the code to fix it I figured I'd add some much needed functionality as well.  You see, just grabbing the feed from twitter does not generate html links for you.  You have to parse your feed and wrap any '@username' responses, or 'http://addresses' into actual hyperlinks yourself.  Here's how I did it.&lt;/p&gt;
@@ -1568,7 +1582,7 @@ private function dropRSS():void {
     <item>
       <title>The 'Best' Kind of Design Exposure!</title>
       <link>http://donttrustthisguy.com/2008/02/29/the-best-kind-of-design-exposure</link>
-      <pubDate>Fri, 29 Feb 2008 00:00:00 -0700</pubDate>
+      <pubDate>Fri, 29 Feb 2008 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2008/02/29/the-best-kind-of-design-exposure</guid>
       <description>&lt;p&gt;Yesterday I was greeted by fantastic news! &lt;a href=&quot;http://www.ndesign-studio.com/&quot; rel=&quot;friend&quot;&gt;Nick La&lt;/a&gt; has selected this site to be featured in the &lt;a href=&quot;http://BestWebGallery.com&quot;&gt;Best Web Gallery&lt;/a&gt;!  Oh and did I mention that my traffic has shot through the roof!&lt;/p&gt;
@@ -1589,7 +1603,7 @@ private function dropRSS():void {
     <item>
       <title>The Threadless Store: Taking the User Experience Off the Screen.</title>
       <link>http://donttrustthisguy.com/2008/02/20/the-threadless-store-taking-the-user-experience-off-the-screen</link>
-      <pubDate>Wed, 20 Feb 2008 00:00:00 -0700</pubDate>
+      <pubDate>Wed, 20 Feb 2008 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2008/02/20/the-threadless-store-taking-the-user-experience-off-the-screen</guid>
       <description>&lt;p&gt;Often when people speak of social media they are referring to a web based software that facilitate socializing-sort-of-behavior of people like &lt;a href=&quot;http://facebook.com&quot;&gt;Facebook&lt;/a&gt;, &lt;a href=&quot;http://twitter.com&quot;&gt;Twitter&lt;/a&gt;, or the more obvious &lt;a href=&quot;http://myspace.com&quot;&gt;MySpace&lt;/a&gt;.  While these services continue to scale up to accommodate more users and more features without generating a profit, &lt;a href=&quot;http://Threadless.com&quot;&gt;Threadless&lt;/a&gt; an online clothing company, has been profiting off their cult following. Enough profit that the company recently transformed from a 'click-and-order' to a 'click-and-mortar' operation.  I paid a visit to their first physical store in Chicago, IL..&lt;/p&gt;
@@ -1625,7 +1639,7 @@ private function dropRSS():void {
     <item>
       <title>How Facebook Messed Up. (in 2006)</title>
       <link>http://donttrustthisguy.com/2008/01/30/how-facebook-messed-up-in-2006</link>
-      <pubDate>Wed, 30 Jan 2008 00:00:00 -0700</pubDate>
+      <pubDate>Wed, 30 Jan 2008 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2008/01/30/how-facebook-messed-up-in-2006</guid>
       <description>&lt;p&gt;Today UIE posted a new podcast &quot;&lt;a href=&quot;http://www.uie.com/brainsparks/2008/01/31/spoolcast-crew-episode-7-the-book-of-face/&quot;&gt;The Book Of Face&lt;/a&gt;&quot; with Phoenix's own &lt;a href=&quot;http://rhjr.net/theblog/2008/01/31/spoolcast-crew-the-book-of-face/&quot;&gt;Robert Hoekman Jr.&lt;/a&gt;.  The show discussed how facebook has been pretty good at &quot;pissing their users off&quot; and made mention of the whole newsfeed debacle.  Back in September of 2006 Facebook first released the daily feed feature and as a result it caused a lot of ruckus.  Shortly after the backlash came to be - I wrote a public note on Facebook about the entire situation.  It was titled &lt;strong&gt;&quot;Why newsfeeds are actually good and how Facebook messed up.&quot;&lt;/strong&gt; So here it is reposted again today on my blog:&lt;/p&gt;
@@ -1653,7 +1667,7 @@ private function dropRSS():void {
     <item>
       <title>Tech Trends for 2008</title>
       <link>http://donttrustthisguy.com/2008/01/25/tech-trends-for-2008</link>
-      <pubDate>Fri, 25 Jan 2008 00:00:00 -0700</pubDate>
+      <pubDate>Fri, 25 Jan 2008 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2008/01/25/tech-trends-for-2008</guid>
       <description>&lt;p&gt;Last week, at my &lt;a href=&quot;http://sitewire.net&quot;&gt;dayjob&lt;/a&gt;, I was asked to share some of my own predictions for the coming year.  I'm no fortune teller by no means.  But I do follow a lot of trends online, so I'm not going to tell you what I think is going to happen.  Rather, I'm going to share with you, six technologies, platforms, concepts, or discussions that I think will become significantly more important this year.&lt;/p&gt;
@@ -1685,7 +1699,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>There Will Be Blood</title>
       <link>http://donttrustthisguy.com/2008/01/18/there-will-be-blood</link>
-      <pubDate>Fri, 18 Jan 2008 00:00:00 -0700</pubDate>
+      <pubDate>Fri, 18 Jan 2008 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2008/01/18/there-will-be-blood</guid>
       <description>&lt;p&gt;Daniel Day Lewis delivers a performance that is equally brilliant and psychologically disturbing.  &lt;a href=&quot;http://paramountvantage.com/blood/&quot;&gt;The film&lt;/a&gt;, based off Upton Sinclair's &quot;&lt;a href=&quot;http://en.wikipedia.org/wiki/Oil%21&quot;&gt;Oil!&lt;/a&gt;&quot;, portrays the life of Lewis's character, an oil tycoon: Daniel Plainview.  This film is not one that clearly tells a story.  Rather, it creeps under your skin and strikes you to force you're own interpretations. As a result, the film's chain of events and subtleties initially confused me, but after further thought I came to some of my own conclusions...&lt;/p&gt;
@@ -1711,7 +1725,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>Simple AJAX Links With Prototype.js</title>
       <link>http://donttrustthisguy.com/2008/01/07/simple-ajax-links-with-prototype-js</link>
-      <pubDate>Mon, 07 Jan 2008 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 07 Jan 2008 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2008/01/07/simple-ajax-links-with-prototype-js</guid>
       <description>&lt;p&gt;Getting my head wrapped around &lt;a href=&quot;http://www.prototypejs.com&quot;&gt;Prototype.js&lt;/a&gt; has been a difficult process. But today I was faced with the simple challenge of creating links that could load external files into divs embedded onto the page.  Nothing fancy but useful nonetheless.  Here's how I did it:&lt;/p&gt;
@@ -1798,7 +1812,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>CSS Commenting With Textmate</title>
       <link>http://donttrustthisguy.com/2008/01/05/css-commenting-with-textmate</link>
-      <pubDate>Sat, 05 Jan 2008 00:00:00 -0700</pubDate>
+      <pubDate>Sat, 05 Jan 2008 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2008/01/05/css-commenting-with-textmate</guid>
       <description>&lt;p&gt;Last month &lt;a href=&quot;http://jinabolton.com&quot;&gt;Jina Bolton&lt;/a&gt; wrote an excellent article about &lt;a href=&quot;http://www.thinkvitamin.com/features/design/creating-sexy-stylesheets/trackback/&quot;&gt;Sexy Stylesheets on Think Vitamin&lt;/a&gt;.  I was particularly impressed with some of the ideas for commenting more efficiently.  The problem was, even after knowing the techniques, I was too lazy to comment consistently.  That's where &lt;a href=&quot;http://macromates.com&quot;&gt;TextMate&lt;/a&gt; came in handy.&lt;/p&gt;
@@ -1825,7 +1839,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>A Refreshed Design for 2008</title>
       <link>http://donttrustthisguy.com/2008/01/01/a-refreshed-design-for-2008</link>
-      <pubDate>Tue, 01 Jan 2008 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 01 Jan 2008 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2008/01/01/a-refreshed-design-for-2008</guid>
       <description>&lt;p&gt;Happy new year! To kick off the start of 2008 I've labored over a new design for DontTrustThisGuy.com.  Writing a custom &lt;a href=&quot;http://wordpress.org/&quot;&gt;WordPress&lt;/a&gt; template, the new version of this site has &lt;a href=&quot;http://microformats.org/&quot;&gt;microformats&lt;/a&gt; strategically mixed-in for your convenience.  Additionally, the site now uses some advanced &lt;a href=&quot;http://www.css3.info/&quot;&gt;CSS3&lt;/a&gt; styling to reward readers who are using more modern browsers, and to encourage those of you who are not, to upgrade.&lt;/p&gt;
@@ -1860,7 +1874,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>My Favorite Music of 2007</title>
       <link>http://donttrustthisguy.com/2007/12/29/my-favorite-music-of-2007</link>
-      <pubDate>Sat, 29 Dec 2007 00:00:00 -0700</pubDate>
+      <pubDate>Sat, 29 Dec 2007 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2007/12/29/my-favorite-music-of-2007</guid>
       <description>&lt;p&gt;2007 was a great year for hardcore music junkies such as myself.  Today, as the year comes to an end, I wanted to highlight some of the best songs to pass through my ear canals.  So here it goes...&lt;/p&gt;
@@ -1928,7 +1942,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>Advocates vs. Practitioners vs. Practicality</title>
       <link>http://donttrustthisguy.com/2007/12/25/advocates-vs-practitioners-vs-practicality</link>
-      <pubDate>Tue, 25 Dec 2007 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 25 Dec 2007 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2007/12/25/advocates-vs-practitioners-vs-practicality</guid>
       <description>&lt;p&gt;New technologies are popping up at a relentless pace today and staying relevant is now more of an issue than ever.  Almost every day there is another new emerging tool along with many advocates promoting how it will change everything. But will it?&lt;/p&gt;
@@ -1943,7 +1957,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>What's on Your Front Page?</title>
       <link>http://donttrustthisguy.com/2007/12/23/what-s-on-your-front-page</link>
-      <pubDate>Sun, 23 Dec 2007 00:00:00 -0700</pubDate>
+      <pubDate>Sun, 23 Dec 2007 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2007/12/23/what-s-on-your-front-page</guid>
       <description>&lt;p&gt;In the process of redesigning this blog I've been stuck on the homepage.  What on Earth should I feature on the homepage?  Who cares what I put on the homepage?  Who is going to the homepage?&lt;/p&gt;
@@ -1974,7 +1988,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>My blog up and down this week.</title>
       <link>http://donttrustthisguy.com/2007/12/08/my-blog-up-and-down-this-week</link>
-      <pubDate>Sat, 08 Dec 2007 00:00:00 -0700</pubDate>
+      <pubDate>Sat, 08 Dec 2007 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2007/12/08/my-blog-up-and-down-this-week</guid>
       <description>&lt;p&gt;If you went to my blog and noticed things were funny or that I'm missing a post you aren't imagining things.  Earlier this week my site got hijacked by some sort of spammer that installed a backdoor in my wordpress install.  For a while you could see all of the files on my site including my configuration files tied to the database powering this blog.  Bad news.&lt;/p&gt;
@@ -1998,7 +2012,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>Geezeo: Get a grip on your finances!</title>
       <link>http://donttrustthisguy.com/2007/11/26/geezeo-get-a-grip-on-your-finances</link>
-      <pubDate>Mon, 26 Nov 2007 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 26 Nov 2007 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2007/11/26/geezeo-get-a-grip-on-your-finances</guid>
       <description>&lt;p&gt;I run my own personal business and have a day job.  So I have double the fun when it comes to monitoring my checking and savings accounts.  On top of that I have credit cards for myself and my business, an auto loan, and a student loan.  Managing all of that can be pretty hectic.  Fortunately, I've discovered an  awesome free web 2.0 service called &lt;a href=&quot;http://www.geezeo.com&quot; target=&quot;_blank&quot;&gt;Geezeo&lt;/a&gt; and all I can say is this thing frickin rocks!&lt;/p&gt;
@@ -2021,7 +2035,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>An Awesome Surprise from The Blakes</title>
       <link>http://donttrustthisguy.com/2007/11/16/an-awesome-surprise-from-the-blakes</link>
-      <pubDate>Fri, 16 Nov 2007 00:00:00 -0700</pubDate>
+      <pubDate>Fri, 16 Nov 2007 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2007/11/16/an-awesome-surprise-from-the-blakes</guid>
       <description>&lt;p&gt;Tonight I popped up my favorite album from last year, &lt;a href=&quot;http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewAlbum?id=264075937&amp;s=143441&quot; title=&quot;Get the Blakes on iTunes&quot;&gt;The Blakes self titled album&lt;/a&gt;, and to my surprise I saw some new cover art come up in the &quot;More from this artist&quot; box in iTunes.  I didn't hear of a new CD coming from them and indeed I was faked out.  It looks like they got picked up by a label due to their popularity and thus have been given the resources to reproduce their debut album in higher quality.  If you already have the Blakes original album this duplicate album is worth picking up as you'll get 4 new tracks from them.  But even better, the entire album now sounds much more vibrant.  This is some high-def Seattle indie grunge rock.  Don't miss it!   My favorite album of 2006 is now my favorite album of 2007.&lt;/p&gt;
@@ -2031,7 +2045,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>Vector Magic:  The coolest thing since sliced bread?</title>
       <link>http://donttrustthisguy.com/2007/11/11/vector-magic-the-coolest-thing-since-sliced-bread</link>
-      <pubDate>Sun, 11 Nov 2007 00:00:00 -0700</pubDate>
+      <pubDate>Sun, 11 Nov 2007 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2007/11/11/vector-magic-the-coolest-thing-since-sliced-bread</guid>
       <description>&lt;p&gt;There are many tools reserved for the lucky few who have the luxury to afford and use Adobe's Creative Suite.  One of them is the livetrace tool in Illustrator.  Using livetrace a photograph does not always work out quite that well, it also eats up all of your system resources to perform traces on highly detailed images.  To that point, when I first saw &lt;a href=&quot;http://vectormagic.stanford.edu&quot;&gt;Vector Magic&lt;/a&gt;, a project from Stanford University, I didn't think much of it at first.  But after using it I can't help but highly recommend it!&lt;/p&gt;
@@ -2054,7 +2068,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>UI12 in Review</title>
       <link>http://donttrustthisguy.com/2007/11/11/ui12-in-review</link>
-      <pubDate>Sun, 11 Nov 2007 00:00:00 -0700</pubDate>
+      <pubDate>Sun, 11 Nov 2007 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2007/11/11/ui12-in-review</guid>
       <description>&lt;p&gt;A week ago from today I was flown out to Boston to attend the &lt;a href=&quot;http://www.uie.com/events/uiconf/2007/&quot;&gt;UI12 conference&lt;/a&gt; held by &lt;a href=&quot;http://www.uie.com&quot;&gt;User Interface Engineering&lt;/a&gt;.  The entire experience was extremely pleasant.  I  saw many great presentations from speakers the likes of &lt;a href=&quot;http://cameronmoll.com/archives/2007/10/the_highly_extensible_interface/&quot;&gt;Cameron Moll&lt;/a&gt;, &lt;a href=&quot;http://www.lukew.com&quot;&gt;Luke Wroblewski&lt;/a&gt;, &lt;a href=&quot;http://www.scottberkun.com&quot;&gt;Scott Berkun&lt;/a&gt;, &lt;a href=&quot;http://www.Gerrymcgovern.com&quot;&gt;Gerry McGovern&lt;/a&gt;, and &lt;a href=&quot;http://www.uie.com/events/uiconf/2007/speakers/#spool&quot;&gt;Jared Spool&lt;/a&gt;.  &lt;/p&gt;
@@ -2170,7 +2184,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>Ruby: Tax Estimator</title>
       <link>http://donttrustthisguy.com/2007/01/04/ruby-tax-estimator</link>
-      <pubDate>Thu, 04 Jan 2007 00:00:00 -0700</pubDate>
+      <pubDate>Thu, 04 Jan 2007 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2007/01/04/ruby-tax-estimator</guid>
       <description>&lt;p&gt;I got bored a couple of weeks ago and wanted to figure out how much I'd be paying in taxes depending on how much I made.  I wrote this little script in Ruby to give me a basic estimate of how much I'd owe.  You can use it at your own risk or make it better and share it with me!&lt;/p&gt;
@@ -2248,15 +2262,13 @@ to blur, users will want more control over the information provided to them.  To
   &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
       <title>Why are we all selling out?</title>
       <link>http://donttrustthisguy.com/2006/11/17/why-are-we-all-selling-out</link>
-      <pubDate>Fri, 17 Nov 2006 00:00:00 -0700</pubDate>
+      <pubDate>Fri, 17 Nov 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/11/17/why-are-we-all-selling-out</guid>
       <description>&lt;p&gt;I recently came accross a this &lt;a href=&quot;http://www.37signals.com/svn/posts/105-dropping-out&quot;&gt;great little note on Signals vs. Noise&lt;/a&gt; about dropping out.  The article summarizes three different stories where professionals in various careers simply dropped out to lead a less complicated life.  The stories spoke bounds to me.  I can't express enough how much I question what it is I do and why.  I look around me and wonder the same about others sometimes.  So many of us aren't doing what we want.  There tends to be a lot of focus on getting by and making more.  Often it won't be out of the norm for me to hear one of my friends say, &quot;I want to be making X amount of dollars by the time im X years old.&quot;&lt;/p&gt;
@@ -2268,7 +2280,7 @@ to blur, users will want more control over the information provided to them.  To
     <item>
       <title>Don't Play To Win.</title>
       <link>http://donttrustthisguy.com/2006/11/07/don-t-play-to-win</link>
-      <pubDate>Tue, 07 Nov 2006 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 07 Nov 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/11/07/don-t-play-to-win</guid>
       <description>&lt;p&gt;Tomorrow morning I will be waking up early to head out to the polls and put in my two cents on how I think things ought to be as I see it.  After all it is my right.  Personally, I haven't been very unhappy with the way things have been going.  Since Bush was re-elected I became totally disillusioned in our society as a whole, not because he is a republican but because of what he has done.&lt;/p&gt;
@@ -2727,7 +2739,7 @@ Then this would be a piece of cake but it's not that easy.  How would you solve 
     <item>
       <title>The Curious Shall Inherent the Earth.</title>
       <link>http://donttrustthisguy.com/2006/03/14/the-curious-shall-inherent-the-earth</link>
-      <pubDate>Tue, 14 Mar 2006 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 14 Mar 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/03/14/the-curious-shall-inherent-the-earth</guid>
       <description>&lt;p&gt;I really enjoyed the speech &lt;a href=&quot;http://www.coudal.com&quot;&gt;Jim Coudal&lt;/a&gt; gave along side Jason Fried of &lt;a href=&quot;http://www.37svn.com&quot;&gt;37Signals&lt;/a&gt; at SXSW Interactive this year.  Jim commented on the shift the creative community is taking.  In the past the focus of our community has been to create and adopt standards.  We needed to determine the best practices so we could perfect our craft.  But now that all has been done.  It's always developing but for the most part we've accomplished a level of standards that allow us to apply our craft effectively.&lt;/p&gt;
@@ -2740,7 +2752,7 @@ Then this would be a piece of cake but it's not that easy.  How would you solve 
     <item>
       <title>Add this to my list of movies to see.</title>
       <link>http://donttrustthisguy.com/2006/02/11/add-this-to-my-list-of-movies-to-see</link>
-      <pubDate>Sat, 11 Feb 2006 00:00:00 -0700</pubDate>
+      <pubDate>Sat, 11 Feb 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/02/11/add-this-to-my-list-of-movies-to-see</guid>
       <description>&lt;a href=&quot;http://www.apple.com/trailers/sony/whywefight/trailer/&quot;&gt;Why We Fight&lt;/a&gt; is a detailed documentary looking at our country and the war machine it has become.</description>
@@ -2749,7 +2761,7 @@ Then this would be a piece of cake but it's not that easy.  How would you solve 
     <item>
       <title>I'm on Rails: Coding Statistics.</title>
       <link>http://donttrustthisguy.com/2006/02/05/im-on-rails-coding-statistics</link>
-      <pubDate>Sun, 05 Feb 2006 00:00:00 -0700</pubDate>
+      <pubDate>Sun, 05 Feb 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/02/05/im-on-rails-coding-statistics</guid>
       <description>&lt;p&gt;I recently coded a basic statistics application for a client that offers a website affiliate program.  I thought it might be worth sharing how easy it is to code this type of software in Rails.  Keep in mind this is extremely basic but never the less a good illustration of how to tackle a cumbersome project relatively easily.&lt;/p&gt;
@@ -2854,7 +2866,7 @@ Once you've logged the stats pulling them via rails is a piece of cake.  I wrote
     <item>
       <title>For once we can agree on something.</title>
       <link>http://donttrustthisguy.com/2006/01/31/for-once-we-can-agree-on-something</link>
-      <pubDate>Tue, 31 Jan 2006 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 31 Jan 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/01/31/for-once-we-can-agree-on-something</guid>
       <description>&lt;p&gt;After watching the State of the Union this evening I finally heard that &lt;a href=&quot;http://www.urbandictionary.com/define.php?term=bodaggit&quot;&gt;bodaggit&lt;/a&gt; (Bush) say a &lt;strong&gt;&lt;em&gt;few&lt;/em&gt;&lt;/strong&gt; things that made sense. Here they are:&lt;/p&gt;
@@ -2874,7 +2886,7 @@ Once you've logged the stats pulling them via rails is a piece of cake.  I wrote
     <item>
       <title>37 Signals Getting Real Workshop Take 2</title>
       <link>http://donttrustthisguy.com/2006/01/31/37-signals-getting-real-workshop-take-2</link>
-      <pubDate>Tue, 31 Jan 2006 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 31 Jan 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/01/31/37-signals-getting-real-workshop-take-2</guid>
       <description>Aw man...the second 37Signals workshop in Chicago for &lt;a href=&quot;http://37signals.com/svn/archives2/the_getting_real_workshop_take_2_sold_out.php&quot;&gt;Getting Real&lt;/a&gt; has already sold out in only 19 hours... I wanted to go :(</description>
@@ -2883,7 +2895,7 @@ Once you've logged the stats pulling them via rails is a piece of cake.  I wrote
     <item>
       <title>The Ultimate Showdown.</title>
       <link>http://donttrustthisguy.com/2006/01/27/the-ultimate-showdown</link>
-      <pubDate>Fri, 27 Jan 2006 00:00:00 -0700</pubDate>
+      <pubDate>Fri, 27 Jan 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/01/27/the-ultimate-showdown</guid>
       <description>&lt;a href=&quot;http://albinoblacksheep.com/flash/showdown&quot;&gt;The Ultimate Showdown&lt;/a&gt; is probably one of the funniest things I've ever seen.  &lt;span style=&quot;text-decoration: line-through;&quot;&gt;Kudos&lt;/span&gt; &lt;strong&gt;mad props&lt;/strong&gt; to &lt;a href=&quot;http://www.iamynnus.com&quot;&gt;Sunny&lt;/a&gt; for sharing that with me. </description>
@@ -2892,7 +2904,7 @@ Once you've logged the stats pulling them via rails is a piece of cake.  I wrote
     <item>
       <title>Dangerous Business Mistakes: Apple</title>
       <link>http://donttrustthisguy.com/2006/01/25/dangerous-business-mistakes-apple</link>
-      <pubDate>Wed, 25 Jan 2006 00:00:00 -0700</pubDate>
+      <pubDate>Wed, 25 Jan 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/01/25/dangerous-business-mistakes-apple</guid>
       <description>&lt;p&gt;I think the biggest advantage to using Apple has always been the fact that you have the hardware and software provider united as one.  It gives them the control to create a more polished experience since the software can be more specialized and tailored to the hardware it runs on.  In contrast, a conventional PC can run on multiple operating systems which is problematic for two reasons: 1.) the OS developer must make his software more versatile so that it can work with most hardware 2.) the hardware manufacturer must work within the operating systems limitations to create custom UI functions that integrate with their technology innovations.  This is where Apple has always had a clear advantage: If they want the hardware to interact with their software in a special way they can just expand the limitations of the operating system.  To my knowledge, it is a luxury no other computer manufacturer has.&lt;/p&gt;
@@ -2905,7 +2917,7 @@ Once you've logged the stats pulling them via rails is a piece of cake.  I wrote
     <item>
       <title>Got respect?</title>
       <link>http://donttrustthisguy.com/2006/01/22/got-respect</link>
-      <pubDate>Sun, 22 Jan 2006 00:00:00 -0700</pubDate>
+      <pubDate>Sun, 22 Jan 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/01/22/got-respect</guid>
       <description>Surprisingly my site got &lt;a href=&quot;http://cssliquid.com/2006/gallery/donttrustthisguycom/&quot;&gt;featured on Liquid designs&lt;/a&gt; a site showcasing liquid layouts.  Very cool especially becuase this is only the half-baked concept.  Thanks guys!</description>
@@ -2914,7 +2926,7 @@ Once you've logged the stats pulling them via rails is a piece of cake.  I wrote
     <item>
       <title>The Samsung Serene: The World's most Elegant Cellphone?</title>
       <link>http://donttrustthisguy.com/2006/01/15/the-samsung-serene-the-world-s-most-elegant-cellphone</link>
-      <pubDate>Sun, 15 Jan 2006 00:00:00 -0700</pubDate>
+      <pubDate>Sun, 15 Jan 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/01/15/the-samsung-serene-the-world-s-most-elegant-cellphone</guid>
       <description>&lt;p&gt;Everyone is raving about the RAZR these days.  Despite the fact that the initial version was first introduced to the market over a year ago, today it is the new trendy phone.  It's stylish thin design caught the attention of most cellphone geeks who paid extra to order the RAZR unlocked and become the only person they knew who had one.  But it's really nothing special today. After all, I have one. I got it for free.  Now everyone is starting to have one.  So what's the cool new phone for 2006?&lt;/p&gt;
@@ -2927,7 +2939,7 @@ Once you've logged the stats pulling them via rails is a piece of cake.  I wrote
     <item>
       <title>Extra Tasty Drink Recipes</title>
       <link>http://donttrustthisguy.com/2006/01/04/extra-tasty-drink-recipes</link>
-      <pubDate>Wed, 04 Jan 2006 00:00:00 -0700</pubDate>
+      <pubDate>Wed, 04 Jan 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/01/04/extra-tasty-drink-recipes</guid>
       <description>&lt;p&gt;I recently became aware of &lt;a href=&quot;http://www.extratasty.com&quot;&gt;extratasty.com&lt;/a&gt;; a website that is basically the &lt;a href=&quot;http://www.flickr.com&quot;&gt;flickr&lt;/a&gt; equivalent for drink recipes.  The best part about the site is how well done and professional it is.  The company developing the site,  skinnycorp, has done an extraordinary job illustrating how you can create an extremely valuable resource for pretty much any topic of content matter.&lt;/p&gt;
@@ -2938,7 +2950,7 @@ Once you've logged the stats pulling them via rails is a piece of cake.  I wrote
     <item>
       <title>Welcome to 2006.</title>
       <link>http://donttrustthisguy.com/2006/01/03/welcome-to-2006</link>
-      <pubDate>Tue, 03 Jan 2006 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 03 Jan 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/01/03/welcome-to-2006</guid>
       <description>&lt;p&gt;&lt;a href=&quot;http://joshuaink.com/blog/590/the-f-bomb-redesigned-for-2006&quot;&gt;John Oxton&lt;/a&gt; welcomes us into 2006 with a &lt;a href=&quot;http://flickr.com/photos/oxton/81633943/&quot;&gt;nice picture&lt;/a&gt; of what we'll continue to see a lot more of in the new year. Shiny floors. I'm guilty of this as well but I'm not quite as bad.  I make no mention of any beta in &lt;a href=&quot;http://www.ziptrac.com&quot;&gt;my ziptrac logo&lt;/a&gt;.&lt;/p&gt;
@@ -2949,7 +2961,7 @@ Once you've logged the stats pulling them via rails is a piece of cake.  I wrote
     <item>
       <title>This is so me... my new years resolution.</title>
       <link>http://donttrustthisguy.com/2006/01/02/this-is-so-me-my-new-years-resolution</link>
-      <pubDate>Mon, 02 Jan 2006 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 02 Jan 2006 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2006/01/02/this-is-so-me-my-new-years-resolution</guid>
       <description>&lt;p&gt;I saw the latest cartoon posted by Sam from exploding dog on Signals vs. Noise.  It's called &lt;a href=&quot;http://37signals.com/svn/archives2/in_the_future_ill_get_stuff_done.php&quot;&gt;In the future I will get things done&lt;/a&gt;. So true...&lt;/p&gt;
@@ -2960,7 +2972,7 @@ Once you've logged the stats pulling them via rails is a piece of cake.  I wrote
     <item>
       <title>Ruby: Extending classes and method chaining.</title>
       <link>http://donttrustthisguy.com/2005/12/31/ruby-extending-classes-and-method-chaining</link>
-      <pubDate>Sat, 31 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Sat, 31 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/31/ruby-extending-classes-and-method-chaining</guid>
       <description>&lt;p&gt;Once you start fooling around with the Ruby language you really do get hooked on just how powerful it is.  I was disappointed when I first found out that the String.capitalize function only formatted the very first letter of a string to a capital letter as this is undesirable when you are formatting something like a street address.  Not to worry though, extending the String class is easy in ruby and writing the function to do it requires only one line of code!&lt;/p&gt;
@@ -2993,7 +3005,7 @@ puts s #=&gt; &quot;6825 W. Galveston St.&quot;
     <item>
       <title>Ruby: Creating destructive methods.</title>
       <link>http://donttrustthisguy.com/2005/12/30/ruby-creating-destructive-methods</link>
-      <pubDate>Fri, 30 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Fri, 30 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/30/ruby-creating-destructive-methods</guid>
       <description>&lt;p&gt;Here's a basic example of using Ruby to create a class with destructive methods.  Though this is not as practical as just typing the actual mathematic operations themselves.  It does illustrate how destructive functions work and how to write them.  Note the 'return self' in each of the destructive methods.  This allows you to perform the method chains, without it the method returns a fixnum by default and the method chaining raises an error.  &lt;strong&gt;If anyone knows of a DRY way to perform this let me know.&lt;/strong&gt;&lt;/p&gt;
@@ -3035,7 +3047,7 @@ c.clear!.add!(5).multiply!(4).calculate #=&gt; 20
     <item>
       <title>Transition to Dreamhost.</title>
       <link>http://donttrustthisguy.com/2005/12/29/transition-to-dreamhost</link>
-      <pubDate>Thu, 29 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Thu, 29 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/29/transition-to-dreamhost</guid>
       <description>&lt;p&gt;Well now all of my current sites are hosted on Dreamhost.  The only way to go from here is to get my own box later on down the road.  Since I had to upload some files all over again I figured I'd install a new version of the &lt;a href=&quot;http://www.huddledmasses.org/2005/10/03/textile-plugin-26-released/&quot;&gt;textile 2.6&lt;/a&gt; plugin that allowed support for the &lt;a href=&quot;http://dev.wp-plugins.org/wiki/GeshiSyntaxColorer&quot;&gt;Geshi&lt;/a&gt; syntax highlighting engine.  Let's do a quick test to see if it worked.&lt;/p&gt;
@@ -3053,7 +3065,7 @@ end
     <item>
       <title>Fast CGI to be Revamped on Apache.</title>
       <link>http://donttrustthisguy.com/2005/12/28/fast-cgi-to-be-revamped-on-apache</link>
-      <pubDate>Wed, 28 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Wed, 28 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/28/fast-cgi-to-be-revamped-on-apache</guid>
       <description>&lt;p&gt;&lt;a href=&quot;http://weblog.rubyonrails.com/articles/2005/12/29/apache-gets-serious-about-fastcgi&quot;&gt;Whoa! Apache decides to officially revamp Fast CGI support.&lt;/a&gt; Ruby on Rails is starting to influence and revive life into once dormant technologies!  Sounds like mod_fcgi will be revamped as mod_proxy_fcgi.&lt;/p&gt;
@@ -3063,7 +3075,7 @@ end
     <item>
       <title>Easy File Uploads with Ruby on Rails.</title>
       <link>http://donttrustthisguy.com/2005/12/27/easy-file-uploads-with-ruby-on-rails</link>
-      <pubDate>Tue, 27 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 27 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/27/easy-file-uploads-with-ruby-on-rails</guid>
       <description>&lt;p&gt;This is nifty... &lt;a href=&quot;http://www.kanthak.net/opensource/file_column/&quot;&gt;check out this&lt;/a&gt; file_column behavior for Ruby on Rails.  Wow that looks damn easy.&lt;/p&gt;
@@ -3073,7 +3085,7 @@ end
     <item>
       <title>Site broken; me put back together soon.</title>
       <link>http://donttrustthisguy.com/2005/12/26/site-broken-me-put-back-together-soon</link>
-      <pubDate>Mon, 26 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 26 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/26/site-broken-me-put-back-together-soon</guid>
       <description>Yeah I messed things up.  Now I'm too tired to finish.  So much for live testing.. oh well it's a personal site I can do whatever I want.</description>
@@ -3082,7 +3094,7 @@ end
     <item>
       <title>DTTG Design in Progress.</title>
       <link>http://donttrustthisguy.com/2005/12/26/donttrustthisguy-com-design-in-progress</link>
-      <pubDate>Mon, 26 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 26 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/26/donttrustthisguy-com-design-in-progress</guid>
       <description>&lt;p&gt;If you're reading this your feedback is required.  I'm redesigning my blog by heavily hacking up Squible to the point I probably won't be able to upgrade past 2.5 alpha. Oh well so be it.  Here's what I'm doing.
@@ -3100,7 +3112,7 @@ end
     <item>
       <title>Upgrade: Wordpress 2.0 (rc3)</title>
       <link>http://donttrustthisguy.com/2005/12/25/upgrade-wordpress-2-0-rc3</link>
-      <pubDate>Sun, 25 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Sun, 25 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/25/upgrade-wordpress-2-0-rc3</guid>
       <description>I lost a couple of comments today but thought I'd give my blog a Christmas present by updating to the latest build of Wordpress 2.0.  Unfortunately, the upgrade script did not work as planned so I did a lazy dump, dropped all of my tables, and reinstalled wordpress from scratch.  Here are a couple of key improvements I've noticed:
@@ -3129,7 +3141,7 @@ I think Wordpress is definitely the benchmark for how all other CSM apps will be
     <item>
       <title>Blogging in Style: Beseku</title>
       <link>http://donttrustthisguy.com/2005/12/17/blogging-in-style-beseku</link>
-      <pubDate>Sat, 17 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Sat, 17 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/17/blogging-in-style-beseku</guid>
       <description>&lt;p&gt;I recently stumbled across another &lt;a href=&quot;http://www.beseku.com&quot;&gt;excellent blog&lt;/a&gt;.  In this case, it's a blogfolio, showcasing portfolio of work in a blog format, for Ben Sekulowicz-Barclay.  I think Ben has don an excellent job keeping it simple and clear.  I love the lime green / dark grey / white color scheme but what makes this site really interesting is the fact that there's no navigation whatsoever.  No tags, no category listing, no archive lists. Just content.  I really like it because his design makes it work.  It only takes a few minutes to realize how easy it is to find anything on his site.&lt;/p&gt;
@@ -3140,7 +3152,7 @@ I think Wordpress is definitely the benchmark for how all other CSM apps will be
     <item>
       <title>myGoogle?</title>
       <link>http://donttrustthisguy.com/2005/12/14/mygoogle</link>
-      <pubDate>Wed, 14 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Wed, 14 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/14/mygoogle</guid>
       <description>&lt;p&gt;Google is everywhere these days so changing their homepage might not be as big of a deal as it sounds.  After all, when is the last time you actually went to Google without already typing in your search phrase via another web form or tool?  &lt;/p&gt;
@@ -3156,7 +3168,7 @@ I think Wordpress is definitely the benchmark for how all other CSM apps will be
     <item>
       <title>Ruby On Rails 1.0 Is Here!</title>
       <link>http://donttrustthisguy.com/2005/12/13/ruby-on-rails-1-0-is-here</link>
-      <pubDate>Tue, 13 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 13 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/13/ruby-on-rails-1-0-is-here</guid>
       <description>&lt;p&gt;Today &lt;a href=&quot;http://www.rubyonrails.org/&quot;&gt;Ruby on Rails 1.0&lt;/a&gt; was finally released.  There were two final release candidates that popped up over the last two weeks so I'm not surprised to see it here today.  But what is surprising is the entire redesign of the Rails website.  Check out &lt;a href=&quot;http://weblog.rubyonrails.org/articles/2005/12/13/rails-1-0-party-like-its-one-oh-oh&quot;&gt;David's post&lt;/a&gt; to learn more about 1.0!&lt;/p&gt;
@@ -3167,7 +3179,7 @@ I think Wordpress is definitely the benchmark for how all other CSM apps will be
     <item>
       <title>Blogging in Style: Ordered List</title>
       <link>http://donttrustthisguy.com/2005/12/13/blogging-in-style-ordered-list</link>
-      <pubDate>Tue, 13 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Tue, 13 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/13/blogging-in-style-ordered-list</guid>
       <description>I'm going to be working on re-theming this blog shortly so I'm looking for some good inspiration.  If I find anything I like I'll be sure to share it with you along with my two cents.  So with  that here's my first go:
@@ -3179,7 +3191,7 @@ This is the blog of Steve Smith who created the awesome &lt;a href=&quot;http://
     <item>
       <title>Hello world!</title>
       <link>http://donttrustthisguy.com/2005/12/12/hello-world</link>
-      <pubDate>Mon, 12 Dec 2005 00:00:00 -0700</pubDate>
+      <pubDate>Mon, 12 Dec 2005 00:00:00 -0800</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/2005/12/12/hello-world</guid>
       <description>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</description>
