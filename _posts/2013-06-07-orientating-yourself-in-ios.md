@@ -8,7 +8,7 @@ excerpt:
   orientations in your iOS app. Here's the run down.
 ---
 
-Working with device orientation is essential when building apps on a tablet. Users simply expect your app to work in all orientations. The only exception to his expectation are games. And, while the subject seems basic, how to detect and respond to the orientation of the device isn't clear. I've seen people recommend multiple ways to determine the screen's orientation:
+Working with device orientation is essential when building apps on a tablet. Users simply expect your app to work in all orientations. Games are the only apps typically exempt from this expectation. And, while the subject seems basic, how to detect and respond to the orientation of the device isn't clear. I've seen people recommend multiple ways to determine the screen's orientation:
 
 You can access the `UIDeviceOrientation *orientation` via the current device itself:
 

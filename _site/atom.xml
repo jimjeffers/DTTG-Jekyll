@@ -4,7 +4,7 @@
   <title>Dont Trust This Guy</title>
   <link href="http://donttrustthisguy.com/"/>
   <link type="application/atom+xml" rel="self" href="http://donttrustthisguy.com/atom.xml"/>
-  <updated>2013-06-08T00:08:41-07:00</updated>
+  <updated>2013-06-08T00:11:20-07:00</updated>
   <id>http://donttrustthisguy.com/</id>
   <author>
     <name>Jim Jeffers</name>
@@ -21,7 +21,7 @@
       <name>Jim Jeffers</name>
       <uri>http://jimjeffers.com/</uri>
     </author>
-    <content type="html">&lt;p&gt;Working with device orientation is essential when building apps on a tablet. Users simply expect your app to work in all orientations. The only exception to his expectation are games. And, while the subject seems basic, how to detect and respond to the orientation of the device isn&amp;#8217;t clear. I&amp;#8217;ve seen people recommend multiple ways to determine the screen&amp;#8217;s orientation:&lt;/p&gt;
+    <content type="html">&lt;p&gt;Working with device orientation is essential when building apps on a tablet. Users simply expect your app to work in all orientations. Games are the only apps typically exempt from this expectation. And, while the subject seems basic, how to detect and respond to the orientation of the device isn&amp;#8217;t clear. I&amp;#8217;ve seen people recommend multiple ways to determine the screen&amp;#8217;s orientation:&lt;/p&gt;
 
 &lt;p&gt;You can access the &lt;code&gt;UIDeviceOrientation *orientation&lt;/code&gt; via the current device itself:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='c1'&gt;// Not necessary for screen redrawing&lt;/span&gt;
