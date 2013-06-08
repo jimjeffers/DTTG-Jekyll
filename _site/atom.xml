@@ -4,7 +4,7 @@
   <title>Dont Trust This Guy</title>
   <link href="http://donttrustthisguy.com/"/>
   <link type="application/atom+xml" rel="self" href="http://donttrustthisguy.com/atom.xml"/>
-  <updated>2013-06-07T23:54:43-07:00</updated>
+  <updated>2013-06-07T23:57:30-07:00</updated>
   <id>http://donttrustthisguy.com/</id>
   <author>
     <name>Jim Jeffers</name>
@@ -47,13 +47,13 @@
 &lt;span class='n'&gt;UIInterfaceOrientationLandscapeRight&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='n'&gt;UIDeviceOrientationLandscapeLeft&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Where UIDeviceOrientation provides six different options that represent the actual orientation of the device in 3D space. In regards to redrawing your layout, you probably won&amp;#8217;t need to know this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='n'&gt;UIDeviceOrientationUnknown&lt;/span&gt;            &lt;span class='c1'&gt;// Can&amp;#39;t be determined&lt;/span&gt;
-&lt;span class='n'&gt;UIDeviceOrientationPortrait&lt;/span&gt;           &lt;span class='c1'&gt;// Home button facing down&lt;/span&gt;
-&lt;span class='n'&gt;UIDeviceOrientationPortraitUpsideDown&lt;/span&gt; &lt;span class='c1'&gt;// Home button facing up&lt;/span&gt;
-&lt;span class='n'&gt;UIDeviceOrientationLandscapeLeft&lt;/span&gt;      &lt;span class='c1'&gt;// Home button facing right&lt;/span&gt;
-&lt;span class='n'&gt;UIDeviceOrientationLandscapeRight&lt;/span&gt;     &lt;span class='c1'&gt;// Home button facing left&lt;/span&gt;
-&lt;span class='n'&gt;UIDeviceOrientationFaceUp&lt;/span&gt;             &lt;span class='c1'&gt;// Flat with screen facing up&lt;/span&gt;
-&lt;span class='n'&gt;UIDeviceOrientationFaceDown&lt;/span&gt;           &lt;span class='c1'&gt;// Flat with screen facing down&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='n'&gt;UIDeviceOrientationUnknown&lt;/span&gt;                    &lt;span class='c1'&gt;// Can&amp;#39;t be determined&lt;/span&gt;
+&lt;span class='n'&gt;UIDeviceOrientationPortrait&lt;/span&gt;                   &lt;span class='c1'&gt;// Home button facing down&lt;/span&gt;
+&lt;span class='n'&gt;UIDeviceOrientationPortraitUpsideDown&lt;/span&gt;         &lt;span class='c1'&gt;// Home button facing up&lt;/span&gt;
+&lt;span class='n'&gt;UIDeviceOrientationLandscapeLeft&lt;/span&gt;              &lt;span class='c1'&gt;// Home button facing right&lt;/span&gt;
+&lt;span class='n'&gt;UIDeviceOrientationLandscapeRight&lt;/span&gt;             &lt;span class='c1'&gt;// Home button facing left&lt;/span&gt;
+&lt;span class='n'&gt;UIDeviceOrientationFaceUp&lt;/span&gt;                     &lt;span class='c1'&gt;// Flat with screen facing up&lt;/span&gt;
+&lt;span class='n'&gt;UIDeviceOrientationFaceDown&lt;/span&gt;                   &lt;span class='c1'&gt;// Flat with screen facing down&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id='how_can_i_determine_the_interface_orientation'&gt;How can I Determine the Interface Orientation?&lt;/h2&gt;
 

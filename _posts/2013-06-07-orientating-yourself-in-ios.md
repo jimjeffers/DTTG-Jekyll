@@ -42,13 +42,13 @@ UIInterfaceOrientationLandscapeRight == UIDeviceOrientationLandscapeLeft
 Where UIDeviceOrientation provides six different options that represent the actual orientation of the device in 3D space. In regards to redrawing your layout, you probably won't need to know this:
 
 {% highlight objective-c %}
-UIDeviceOrientationUnknown            // Can't be determined
-UIDeviceOrientationPortrait           // Home button facing down
-UIDeviceOrientationPortraitUpsideDown // Home button facing up
-UIDeviceOrientationLandscapeLeft      // Home button facing right
-UIDeviceOrientationLandscapeRight     // Home button facing left
-UIDeviceOrientationFaceUp             // Flat with screen facing up
-UIDeviceOrientationFaceDown           // Flat with screen facing down
+UIDeviceOrientationUnknown                    // Can't be determined
+UIDeviceOrientationPortrait                   // Home button facing down
+UIDeviceOrientationPortraitUpsideDown         // Home button facing up
+UIDeviceOrientationLandscapeLeft              // Home button facing right
+UIDeviceOrientationLandscapeRight             // Home button facing left
+UIDeviceOrientationFaceUp                     // Flat with screen facing up
+UIDeviceOrientationFaceDown                   // Flat with screen facing down
 {% endhighlight %}
 
 ## How can I Determine the Interface Orientation?
