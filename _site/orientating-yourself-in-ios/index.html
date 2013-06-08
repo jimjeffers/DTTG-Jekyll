@@ -49,13 +49,16 @@
     <p>Working with device orientation is essential when building apps on a tablet. Users expect your app to work in all orientations and only games can pull off portrait or landscape only modes. And while the subject seems basic, how to detect and respond to the orientation of the device is not always clear. Since I&#8217;ve started developing in iOS I&#8217;ve seen multiple different ways to figure out the orientation of the screen:</p>
 
 <p>You can access the <code>UIDeviceOrientation *orientation</code> via the current device itself:</p>
-<div class='highlight'><pre><code class='objective-c'><span class='p'>[[</span><span class='n'>UIDevice</span> <span class='n'>currentDevice</span><span class='p'>]</span> <span class='n'>orientation</span><span class='p'>]</span>
+<div class='highlight'><pre><code class='objective-c'><span class='c1'>// Not necessary for screen redrawing</span>
+<span class='p'>[[</span><span class='n'>UIDevice</span> <span class='n'>currentDevice</span><span class='p'>]</span> <span class='n'>orientation</span><span class='p'>]</span>
 </code></pre></div>
 <p>You can access the <code>UIInterfaceOrientation *interfaceOrientation </code>via the sharedApplication:</p>
-<div class='highlight'><pre><code class='objective-c'><span class='p'>[[</span><span class='n'>UIApplication</span> <span class='n'>sharedApplication</span><span class='p'>]</span> <span class='n'>statusBarOrientation</span><span class='p'>]</span>
+<div class='highlight'><pre><code class='objective-c'><span class='c1'>// Reliable but not recommended</span>
+<span class='p'>[[</span><span class='n'>UIApplication</span> <span class='n'>sharedApplication</span><span class='p'>]</span> <span class='n'>statusBarOrientation</span><span class='p'>]</span>
 </code></pre></div>
 <p>Or you can simply pull the <code>UIInterfaceOrientation *interfaceOrientation</code> from within your view controller as a standard property provided to you from the SDK:</p>
-<div class='highlight'><pre><code class='objective-c'><span class='n'>self</span><span class='p'>.</span><span class='n'>interfaceOrientation</span>
+<div class='highlight'><pre><code class='objective-c'><span class='c1'>// BEST METHOD (most of the time)</span>
+<span class='n'>self</span><span class='p'>.</span><span class='n'>interfaceOrientation</span>
 </code></pre></div>
 <h2 id='whats_the_difference_between_device_and_interface_orientations'>What&#8217;s the difference between Device and Interface Orientations?</h2>
 

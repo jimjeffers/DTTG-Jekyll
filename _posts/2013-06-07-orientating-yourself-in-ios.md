@@ -13,18 +13,21 @@ Working with device orientation is essential when building apps on a tablet. Use
 You can access the `UIDeviceOrientation *orientation` via the current device itself:
 
 {% highlight objective-c %}
+// Not necessary for screen redrawing
 [[UIDevice currentDevice] orientation]
 {% endhighlight %}
 
 You can access the `UIInterfaceOrientation *interfaceOrientation `via the sharedApplication:
 
 {% highlight objective-c %}
+// Reliable but not recommended
 [[UIApplication sharedApplication] statusBarOrientation]
 {% endhighlight %}
 
 Or you can simply pull the `UIInterfaceOrientation *interfaceOrientation` from within your view controller as a standard property provided to you from the SDK:
 
 {% highlight objective-c %}
+// BEST METHOD (most of the time)
 self.interfaceOrientation
 {% endhighlight %}
 

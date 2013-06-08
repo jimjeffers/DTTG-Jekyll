@@ -4,7 +4,7 @@
   <title>Dont Trust This Guy</title>
   <link href="http://donttrustthisguy.com/"/>
   <link type="application/atom+xml" rel="self" href="http://donttrustthisguy.com/atom.xml"/>
-  <updated>2013-06-08T00:03:27-07:00</updated>
+  <updated>2013-06-08T00:04:50-07:00</updated>
   <id>http://donttrustthisguy.com/</id>
   <author>
     <name>Jim Jeffers</name>
@@ -24,13 +24,16 @@
     <content type="html">&lt;p&gt;Working with device orientation is essential when building apps on a tablet. Users expect your app to work in all orientations and only games can pull off portrait or landscape only modes. And while the subject seems basic, how to detect and respond to the orientation of the device is not always clear. Since I&amp;#8217;ve started developing in iOS I&amp;#8217;ve seen multiple different ways to figure out the orientation of the screen:&lt;/p&gt;
 
 &lt;p&gt;You can access the &lt;code&gt;UIDeviceOrientation *orientation&lt;/code&gt; via the current device itself:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='p'&gt;[[&lt;/span&gt;&lt;span class='n'&gt;UIDevice&lt;/span&gt; &lt;span class='n'&gt;currentDevice&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='n'&gt;orientation&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='c1'&gt;// Not necessary for screen redrawing&lt;/span&gt;
+&lt;span class='p'&gt;[[&lt;/span&gt;&lt;span class='n'&gt;UIDevice&lt;/span&gt; &lt;span class='n'&gt;currentDevice&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='n'&gt;orientation&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You can access the &lt;code&gt;UIInterfaceOrientation *interfaceOrientation &lt;/code&gt;via the sharedApplication:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='p'&gt;[[&lt;/span&gt;&lt;span class='n'&gt;UIApplication&lt;/span&gt; &lt;span class='n'&gt;sharedApplication&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='n'&gt;statusBarOrientation&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='c1'&gt;// Reliable but not recommended&lt;/span&gt;
+&lt;span class='p'&gt;[[&lt;/span&gt;&lt;span class='n'&gt;UIApplication&lt;/span&gt; &lt;span class='n'&gt;sharedApplication&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='n'&gt;statusBarOrientation&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or you can simply pull the &lt;code&gt;UIInterfaceOrientation *interfaceOrientation&lt;/code&gt; from within your view controller as a standard property provided to you from the SDK:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='n'&gt;self&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='n'&gt;interfaceOrientation&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='c1'&gt;// BEST METHOD (most of the time)&lt;/span&gt;
+&lt;span class='n'&gt;self&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='n'&gt;interfaceOrientation&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id='whats_the_difference_between_device_and_interface_orientations'&gt;What&amp;#8217;s the difference between Device and Interface Orientations?&lt;/h2&gt;
 
