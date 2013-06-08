@@ -10,19 +10,19 @@ excerpt:
 
 Working with device orientation is essential when building apps on a tablet. Users expect your app to work in all orientations and only games can pull off portrait or landscape only modes. And while the subject seems basic, how to detect and respond to the orientation of the device is not always clear. Since I've started developing in iOS I've seen multiple different ways to figure out the orientation of the screen:
 
-1. You can access the `UIDeviceOrientation *orientation` via the current device itself:
+You can access the `UIDeviceOrientation *orientation` via the current device itself:
 
 {% highlight objective-c %}
 [[UIDevice currentDevice] orientation]
 {% endhighlight %}
 
-2. You can access the `UIInterfaceOrientation *interfaceOrientation `via the sharedApplication:
+You can access the `UIInterfaceOrientation *interfaceOrientation `via the sharedApplication:
 
 {% highlight objective-c %}
 [[UIApplication sharedApplication] statusBarOrientation]
 {% endhighlight %}
 
-3. Or you can simply pull the `UIInterfaceOrientation *interfaceOrientation` from within your view controller as a standard property provided to you from the SDK:
+Or you can simply pull the `UIInterfaceOrientation *interfaceOrientation` from within your view controller as a standard property provided to you from the SDK:
 
 {% highlight objective-c %}
 self.interfaceOrientation
