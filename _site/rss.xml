@@ -6,8 +6,8 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Sat, 08 Jun 2013 00:04:50 -0700</pubDate>
-    <lastBuildDate>Sat, 08 Jun 2013 00:04:50 -0700</lastBuildDate>
+    <pubDate>Sat, 08 Jun 2013 00:08:41 -0700</pubDate>
+    <lastBuildDate>Sat, 08 Jun 2013 00:08:41 -0700</lastBuildDate>
 
     
     <item>
@@ -16,13 +16,13 @@
       <pubDate>Fri, 07 Jun 2013 00:00:00 -0700</pubDate>
       <author>Jim Jeffers</author>
       <guid>http://donttrustthisguy.com/orientating-yourself-in-ios</guid>
-      <description>&lt;p&gt;Working with device orientation is essential when building apps on a tablet. Users expect your app to work in all orientations and only games can pull off portrait or landscape only modes. And while the subject seems basic, how to detect and respond to the orientation of the device is not always clear. Since I&amp;#8217;ve started developing in iOS I&amp;#8217;ve seen multiple different ways to figure out the orientation of the screen:&lt;/p&gt;
+      <description>&lt;p&gt;Working with device orientation is essential when building apps on a tablet. Users simply expect your app to work in all orientations. The only exception to his expectation are games. And, while the subject seems basic, how to detect and respond to the orientation of the device isn&amp;#8217;t clear. I&amp;#8217;ve seen people recommend multiple ways to determine the screen&amp;#8217;s orientation:&lt;/p&gt;
 
 &lt;p&gt;You can access the &lt;code&gt;UIDeviceOrientation *orientation&lt;/code&gt; via the current device itself:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='c1'&gt;// Not necessary for screen redrawing&lt;/span&gt;
 &lt;span class='p'&gt;[[&lt;/span&gt;&lt;span class='n'&gt;UIDevice&lt;/span&gt; &lt;span class='n'&gt;currentDevice&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='n'&gt;orientation&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;You can access the &lt;code&gt;UIInterfaceOrientation *interfaceOrientation &lt;/code&gt;via the sharedApplication:&lt;/p&gt;
+&lt;p&gt;Or you can access the &lt;code&gt;UIInterfaceOrientation *interfaceOrientation &lt;/code&gt;via the sharedApplication:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='c1'&gt;// Reliable but not recommended&lt;/span&gt;
 &lt;span class='p'&gt;[[&lt;/span&gt;&lt;span class='n'&gt;UIApplication&lt;/span&gt; &lt;span class='n'&gt;sharedApplication&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt; &lt;span class='n'&gt;statusBarOrientation&lt;/span&gt;&lt;span class='p'&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;

@@ -8,7 +8,7 @@ excerpt:
   orientations in your iOS app. Here's the run down.
 ---
 
-Working with device orientation is essential when building apps on a tablet. Users expect your app to work in all orientations and only games can pull off portrait or landscape only modes. And while the subject seems basic, how to detect and respond to the orientation of the device is not always clear. Since I've started developing in iOS I've seen multiple different ways to figure out the orientation of the screen:
+Working with device orientation is essential when building apps on a tablet. Users simply expect your app to work in all orientations. The only exception to his expectation are games. And, while the subject seems basic, how to detect and respond to the orientation of the device isn't clear. I've seen people recommend multiple ways to determine the screen's orientation:
 
 You can access the `UIDeviceOrientation *orientation` via the current device itself:
 
@@ -17,7 +17,7 @@ You can access the `UIDeviceOrientation *orientation` via the current device its
 [[UIDevice currentDevice] orientation]
 {% endhighlight %}
 
-You can access the `UIInterfaceOrientation *interfaceOrientation `via the sharedApplication:
+Or you can access the `UIInterfaceOrientation *interfaceOrientation `via the sharedApplication:
 
 {% highlight objective-c %}
 // Reliable but not recommended
