@@ -1,16 +1,14 @@
 ---
 layout: post
 author: Jim Jeffers
-title: "Orientating Yourself in iOS."
+title: "Orientating Yourself in iOS"
 published: true
 excerpt:
   It's easy to mess up when attempting to detect interface
   orientations in your iOS app. Here's the run down.
 ---
 
-Working with device orientation is essential when building apps on a tablet. Users expect your app to work in all orientations and only games can pull off portrait or landscape only modes.
-
-But detecting and responding to the orientation of the device is not always clear. Since I've started developing in iOS I've seen multiple different ways to access the device orientation:
+Working with device orientation is essential when building apps on a tablet. Users expect your app to work in all orientations and only games can pull off portrait or landscape only modes. And while the subject seems basic, how to detect and respond to the orientation of the device is not always clear. Since I've started developing in iOS I've seen multiple different ways to figure out the orientation of the screen:
 
 1. You can access the `UIDeviceOrientation *orientation` via the current device itself:
 
@@ -35,22 +33,22 @@ self.interfaceOrientation
 The short answer is that you'll probably only care about  UIInterfaceOrientation. UIInterfaceOrientation only covers the possible orientations for the screen in regards to drawing:
 
 {% highlight objective-c %}
-UIInterfaceOrientationPortrait = UIDeviceOrientationPortrait
-UIInterfaceOrientationPortraitUpsideDown =  UIDeviceOrientationPortraitUpsideDown
-UIInterfaceOrientationLandscapeLeft =   UIDeviceOrientationLandscapeRight
-UIInterfaceOrientationLandscapeRight = UIDeviceOrientationLandscapeLeft
+UIInterfaceOrientationPortrait == UIDeviceOrientationPortrait
+UIInterfaceOrientationPortraitUpsideDown == UIDeviceOrientationPortraitUpsideDown
+UIInterfaceOrientationLandscapeLeft == UIDeviceOrientationLandscapeRight
+UIInterfaceOrientationLandscapeRight == UIDeviceOrientationLandscapeLeft
 {% endhighlight %}
 
 Where UIDeviceOrientation provides six different options that represent the actual orientation of the device in 3D space. In regards to redrawing your layout, you probably won't need to know this:
 
 {% highlight objective-c %}
-UIDeviceOrientationUnknown = Can't be determined
-UIDeviceOrientationPortrait = Home button facing down
-UIDeviceOrientationPortraitUpsideDown = Home button facing up
-UIDeviceOrientationLandscapeLeft = Home button facing right
-UIDeviceOrientationLandscapeRight = Home button facing left
-UIDeviceOrientationFaceUp = Device is flat, with screen facing up
-UIDeviceOrientationFaceDown = Device is flat, with screen facing down
+UIDeviceOrientationUnknown            // Can't be determined
+UIDeviceOrientationPortrait           // Home button facing down
+UIDeviceOrientationPortraitUpsideDown // Home button facing up
+UIDeviceOrientationLandscapeLeft      // Home button facing right
+UIDeviceOrientationLandscapeRight     // Home button facing left
+UIDeviceOrientationFaceUp             // Flat with screen facing up
+UIDeviceOrientationFaceDown           // Flat with screen facing down
 {% endhighlight %}
 
 ## How can I Determine the Interface Orientation?
@@ -72,18 +70,18 @@ UIDeviceOrientationIsPortrait(UIDeviceOrientation orientation)
 A lot of problem, A LOT, run into an issue where the macros mentioned above always return true for portrait or vice versa. This is likely because `self.interfaceOrientation` is `NULL` when a view initially loads. You will not have access to the current orientation in your view controller until it is about to be presented. This means you will want to handle any interface drawing in the `viewWillAppear:` or `viewDidAppear:` methods.
 
 {% highlight objective-c %}
--(void)viewDidLoad:(BOOL)animated {
+-(void)viewDidLoad {
   self.interfaceOrientation // NULL
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-  self.interfaceOrientation // UIInterfaceOrientationLandscapeLeft, etc.
+  self.interfaceOrientation // UIInterfaceOrientationLandscapeLeft
 }
 {% endhighlight %}
 
 ## Which method works best?
 
-First off, I recommend avoiding UIDeviceOrientation unless you're doing something really specific, in which case you must have a reason to want to use UIDeviceOrientation. If you don't know why you're using UIDeviceOrientation you probably shouldn't be using it.
+First off, I recommend avoiding `UIDeviceOrientation` unless you're doing something really specific, in which case you must have a reason to want to use `UIDeviceOrientation`. If you don't know why you're using `UIDeviceOrientation` you probably shouldn't be using it.
 
 Second, if you're working within a `UIViewController` or subclass of `UIViewController` I would rely on the `self.interfaceOrientation` property. This is what Apple wants you to use and it's also the most convenient.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Jim Jeffers
-title: "Writing for the Sake of Writing."
+title: "Writing for the Sake of Writing"
 published: true
 excerpt:
   Writing with a purpose becomes work. Writing for no reason becomes

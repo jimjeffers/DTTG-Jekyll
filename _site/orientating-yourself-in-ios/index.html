@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Orientating Yourself in iOS. | DontTrustThisGuy.com</title>
+    <title>Orientating Yourself in iOS | DontTrustThisGuy.com</title>
     <meta name="description" content="The personal blog of Jim Jeffers.">
     <meta name="keywords"    content="Jim Jeffers, blog">
     
@@ -42,13 +42,11 @@
 
   <header>
       <time datetime="2013-06-07" pubdate="pubdate">June 07, 2013</time>
-      <h1><a href="" title="Permalink for Orientating Yourself in iOS.">Orientating Yourself in iOS.</a></h1>
+      <h1><a href="" title="Permalink for Orientating Yourself in iOS">Orientating Yourself in iOS</a></h1>
   </header>
 
   <section id="body">
-    <p>Working with device orientation is essential when building apps on a tablet. Users expect your app to work in all orientations and only games can pull off portrait or landscape only modes.</p>
-
-<p>But detecting and responding to the orientation of the device is not always clear. Since I&#8217;ve started developing in iOS I&#8217;ve seen multiple different ways to access the device orientation:</p>
+    <p>Working with device orientation is essential when building apps on a tablet. Users expect your app to work in all orientations and only games can pull off portrait or landscape only modes. And while the subject seems basic, how to detect and respond to the orientation of the device is not always clear. Since I&#8217;ve started developing in iOS I&#8217;ve seen multiple different ways to figure out the orientation of the screen:</p>
 
 <ol>
 <li>You can access the <code>UIDeviceOrientation *orientation</code> via the current device itself:</li>
@@ -68,19 +66,19 @@
 <h2 id='whats_the_difference_between_device_and_interface_orientations'>What&#8217;s the difference between Device and Interface Orientations?</h2>
 
 <p>The short answer is that you&#8217;ll probably only care about UIInterfaceOrientation. UIInterfaceOrientation only covers the possible orientations for the screen in regards to drawing:</p>
-<div class='highlight'><pre><code class='objective-c'><span class='n'>UIInterfaceOrientationPortrait</span> <span class='o'>=</span> <span class='n'>UIDeviceOrientationPortrait</span>
-<span class='n'>UIInterfaceOrientationPortraitUpsideDown</span> <span class='o'>=</span>  <span class='n'>UIDeviceOrientationPortraitUpsideDown</span>
-<span class='n'>UIInterfaceOrientationLandscapeLeft</span> <span class='o'>=</span>   <span class='n'>UIDeviceOrientationLandscapeRight</span>
-<span class='n'>UIInterfaceOrientationLandscapeRight</span> <span class='o'>=</span> <span class='n'>UIDeviceOrientationLandscapeLeft</span>
+<div class='highlight'><pre><code class='objective-c'><span class='n'>UIInterfaceOrientationPortrait</span> <span class='o'>==</span> <span class='n'>UIDeviceOrientationPortrait</span>
+<span class='n'>UIInterfaceOrientationPortraitUpsideDown</span> <span class='o'>==</span> <span class='n'>UIDeviceOrientationPortraitUpsideDown</span>
+<span class='n'>UIInterfaceOrientationLandscapeLeft</span> <span class='o'>==</span> <span class='n'>UIDeviceOrientationLandscapeRight</span>
+<span class='n'>UIInterfaceOrientationLandscapeRight</span> <span class='o'>==</span> <span class='n'>UIDeviceOrientationLandscapeLeft</span>
 </code></pre></div>
 <p>Where UIDeviceOrientation provides six different options that represent the actual orientation of the device in 3D space. In regards to redrawing your layout, you probably won&#8217;t need to know this:</p>
-<div class='highlight'><pre><code class='objective-c'><span class='n'>UIDeviceOrientationUnknown</span> <span class='o'>=</span> <span class='n'>Can</span><span class='err'>&#39;</span><span class='n'>t</span> <span class='n'>be</span> <span class='n'>determined</span>
-<span class='n'>UIDeviceOrientationPortrait</span> <span class='o'>=</span> <span class='n'>Home</span> <span class='n'>button</span> <span class='n'>facing</span> <span class='n'>down</span>
-<span class='n'>UIDeviceOrientationPortraitUpsideDown</span> <span class='o'>=</span> <span class='n'>Home</span> <span class='n'>button</span> <span class='n'>facing</span> <span class='n'>up</span>
-<span class='n'>UIDeviceOrientationLandscapeLeft</span> <span class='o'>=</span> <span class='n'>Home</span> <span class='n'>button</span> <span class='n'>facing</span> <span class='n'>right</span>
-<span class='n'>UIDeviceOrientationLandscapeRight</span> <span class='o'>=</span> <span class='n'>Home</span> <span class='n'>button</span> <span class='n'>facing</span> <span class='n'>left</span>
-<span class='n'>UIDeviceOrientationFaceUp</span> <span class='o'>=</span> <span class='n'>Device</span> <span class='n'>is</span> <span class='n'>flat</span><span class='p'>,</span> <span class='n'>with</span> <span class='n'>screen</span> <span class='n'>facing</span> <span class='n'>up</span>
-<span class='n'>UIDeviceOrientationFaceDown</span> <span class='o'>=</span> <span class='n'>Device</span> <span class='n'>is</span> <span class='n'>flat</span><span class='p'>,</span> <span class='n'>with</span> <span class='n'>screen</span> <span class='n'>facing</span> <span class='n'>down</span>
+<div class='highlight'><pre><code class='objective-c'><span class='n'>UIDeviceOrientationUnknown</span>            <span class='c1'>// Can&#39;t be determined</span>
+<span class='n'>UIDeviceOrientationPortrait</span>           <span class='c1'>// Home button facing down</span>
+<span class='n'>UIDeviceOrientationPortraitUpsideDown</span> <span class='c1'>// Home button facing up</span>
+<span class='n'>UIDeviceOrientationLandscapeLeft</span>      <span class='c1'>// Home button facing right</span>
+<span class='n'>UIDeviceOrientationLandscapeRight</span>     <span class='c1'>// Home button facing left</span>
+<span class='n'>UIDeviceOrientationFaceUp</span>             <span class='c1'>// Flat with screen facing up</span>
+<span class='n'>UIDeviceOrientationFaceDown</span>           <span class='c1'>// Flat with screen facing down</span>
 </code></pre></div>
 <h2 id='how_can_i_determine_the_interface_orientation'>How can I Determine the Interface Orientation?</h2>
 
@@ -96,17 +94,17 @@
 <h2 id='when_can_i_determine_the_orientation'>When can I determine the orientation?</h2>
 
 <p>A lot of problem, A LOT, run into an issue where the macros mentioned above always return true for portrait or vice versa. This is likely because <code>self.interfaceOrientation</code> is <code>NULL</code> when a view initially loads. You will not have access to the current orientation in your view controller until it is about to be presented. This means you will want to handle any interface drawing in the <code>viewWillAppear:</code> or <code>viewDidAppear:</code> methods.</p>
-<div class='highlight'><pre><code class='objective-c'><span class='k'>-</span><span class='p'>(</span><span class='kt'>void</span><span class='p'>)</span><span class='nf'>viewDidLoad:</span><span class='p'>(</span><span class='kt'>BOOL</span><span class='p'>)</span><span class='nv'>animated</span> <span class='p'>{</span>
+<div class='highlight'><pre><code class='objective-c'><span class='k'>-</span><span class='p'>(</span><span class='kt'>void</span><span class='p'>)</span><span class='nf'>viewDidLoad</span> <span class='p'>{</span>
   <span class='n'>self</span><span class='p'>.</span><span class='n'>interfaceOrientation</span> <span class='c1'>// NULL</span>
 <span class='p'>}</span>
 
 <span class='k'>-</span><span class='p'>(</span><span class='kt'>void</span><span class='p'>)</span><span class='nf'>viewWillAppear:</span><span class='p'>(</span><span class='kt'>BOOL</span><span class='p'>)</span><span class='nv'>animated</span> <span class='p'>{</span>
-  <span class='n'>self</span><span class='p'>.</span><span class='n'>interfaceOrientation</span> <span class='c1'>// UIInterfaceOrientationLandscapeLeft, etc.</span>
+  <span class='n'>self</span><span class='p'>.</span><span class='n'>interfaceOrientation</span> <span class='c1'>// UIInterfaceOrientationLandscapeLeft</span>
 <span class='p'>}</span>
 </code></pre></div>
 <h2 id='which_method_works_best'>Which method works best?</h2>
 
-<p>First off, I recommend avoiding UIDeviceOrientation unless you&#8217;re doing something really specific, in which case you must have a reason to want to use UIDeviceOrientation. If you don&#8217;t know why you&#8217;re using UIDeviceOrientation you probably shouldn&#8217;t be using it.</p>
+<p>First off, I recommend avoiding <code>UIDeviceOrientation</code> unless you&#8217;re doing something really specific, in which case you must have a reason to want to use <code>UIDeviceOrientation</code>. If you don&#8217;t know why you&#8217;re using <code>UIDeviceOrientation</code> you probably shouldn&#8217;t be using it.</p>
 
 <p>Second, if you&#8217;re working within a <code>UIViewController</code> or subclass of <code>UIViewController</code> I would rely on the <code>self.interfaceOrientation</code> property. This is what Apple wants you to use and it&#8217;s also the most convenient.</p>
 
@@ -125,7 +123,7 @@
 <nav id="posts_nav">
   <ul>
     
-    <li id="previous"><a href="/writing-for-the-sake-of-writing" title="Writing for the Sake of Writing."><img src="/images/icon_previous.svg" height="85" width="85"></a></li>
+    <li id="previous"><a href="/writing-for-the-sake-of-writing" title="Writing for the Sake of Writing"><img src="/images/icon_previous.svg" height="85" width="85"></a></li>
     
     
     <li id="next"><a href="/" title="Table of Contents"><img src="/images/icon_next.svg" height="85" width="85"></a></li>
