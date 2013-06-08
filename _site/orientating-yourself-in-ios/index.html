@@ -78,8 +78,8 @@
 
 <p>While you could simply use equality operators in an if statement to compare the current orientation against the possible orientation types listed above, Apple has provided some nice macros to help you. Just remember that <code>UIDeviceOrientation</code> and <code>UIInterfaceOrientation</code> have their own macros. Do not mix and match the different orientation enums. The compiler in XCode should provide you with plenty of warnings if you do.</p>
 <div class='highlight'><pre><code class='objective-c'><span class='c1'>// For UIInterfaceOrientations</span>
-<span class='n'>UIInterfaceOrientationIsLandscape</span><span class='p'>()</span>
-<span class='n'>UIInterfaceOrientationIsPortrait</span><span class='p'>()</span>
+<span class='n'>UIInterfaceOrientationIsLandscape</span><span class='p'>(</span><span class='n'>UIInterfaceOrientation</span> <span class='n'>orientation</span><span class='p'>)</span>
+<span class='n'>UIInterfaceOrientationIsPortrait</span><span class='p'>(</span><span class='n'>UIInterfaceOrientation</span> <span class='n'>orientation</span><span class='p'>)</span>
 
 <span class='c1'>// For UIDeviceOrientations</span>
 <span class='n'>UIDeviceOrientationIsLandscape</span><span class='p'>(</span><span class='n'>UIDeviceOrientation</span> <span class='n'>orientation</span><span class='p'>)</span>

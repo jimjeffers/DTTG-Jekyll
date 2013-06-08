@@ -4,7 +4,7 @@
   <title>Dont Trust This Guy</title>
   <link href="http://donttrustthisguy.com/"/>
   <link type="application/atom+xml" rel="self" href="http://donttrustthisguy.com/atom.xml"/>
-  <updated>2013-06-07T23:59:07-07:00</updated>
+  <updated>2013-06-08T00:00:51-07:00</updated>
   <id>http://donttrustthisguy.com/</id>
   <author>
     <name>Jim Jeffers</name>
@@ -53,8 +53,8 @@
 
 &lt;p&gt;While you could simply use equality operators in an if statement to compare the current orientation against the possible orientation types listed above, Apple has provided some nice macros to help you. Just remember that &lt;code&gt;UIDeviceOrientation&lt;/code&gt; and &lt;code&gt;UIInterfaceOrientation&lt;/code&gt; have their own macros. Do not mix and match the different orientation enums. The compiler in XCode should provide you with plenty of warnings if you do.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='c1'&gt;// For UIInterfaceOrientations&lt;/span&gt;
-&lt;span class='n'&gt;UIInterfaceOrientationIsLandscape&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
-&lt;span class='n'&gt;UIInterfaceOrientationIsPortrait&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;span class='n'&gt;UIInterfaceOrientationIsLandscape&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;UIInterfaceOrientation&lt;/span&gt; &lt;span class='n'&gt;orientation&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;span class='n'&gt;UIInterfaceOrientationIsPortrait&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;UIInterfaceOrientation&lt;/span&gt; &lt;span class='n'&gt;orientation&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
 
 &lt;span class='c1'&gt;// For UIDeviceOrientations&lt;/span&gt;
 &lt;span class='n'&gt;UIDeviceOrientationIsLandscape&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;UIDeviceOrientation&lt;/span&gt; &lt;span class='n'&gt;orientation&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;

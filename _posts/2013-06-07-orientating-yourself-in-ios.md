@@ -57,8 +57,8 @@ While you could simply use equality operators in an if statement to compare the 
 
 {% highlight objective-c %}
 // For UIInterfaceOrientations
-UIInterfaceOrientationIsLandscape()
-UIInterfaceOrientationIsPortrait()
+UIInterfaceOrientationIsLandscape(UIInterfaceOrientation orientation)
+UIInterfaceOrientationIsPortrait(UIInterfaceOrientation orientation)
 
 // For UIDeviceOrientations
 UIDeviceOrientationIsLandscape(UIDeviceOrientation orientation)
