@@ -30,7 +30,7 @@ self.interfaceOrientation
 
 ## What's the difference between Device and Interface Orientations?
 
-The short answer is that you'll probably only care about  UIInterfaceOrientation. UIInterfaceOrientation only covers the possible orientations for the screen in regards to drawing:
+The short answer is that you'll probably only care about `UIInterfaceOrientation`. `UIInterfaceOrientation` only covers the possible orientations for the screen in regards to drawing:
 
 {% highlight objective-c %}
 UIInterfaceOrientationPortrait == UIDeviceOrientationPortrait
@@ -39,7 +39,7 @@ UIInterfaceOrientationLandscapeLeft == UIDeviceOrientationLandscapeRight
 UIInterfaceOrientationLandscapeRight == UIDeviceOrientationLandscapeLeft
 {% endhighlight %}
 
-Where UIDeviceOrientation provides six different options that represent the actual orientation of the device in 3D space. In regards to redrawing your layout, you probably won't need to know this:
+Where `UIDeviceOrientation` provides six different options that represent the actual orientation of the device in 3D space. When redrawing your layout, you probably won't need to know all of these:
 
 {% highlight objective-c %}
 UIDeviceOrientationUnknown                    // Can't be determined

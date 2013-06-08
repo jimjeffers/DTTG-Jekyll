@@ -6,8 +6,8 @@
     <atom:link href="http://donttrustthisguy.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>The personal blog of Jim Jeffers.</description>
     <language>en-us</language>
-    <pubDate>Sat, 08 Jun 2013 00:00:51 -0700</pubDate>
-    <lastBuildDate>Sat, 08 Jun 2013 00:00:51 -0700</lastBuildDate>
+    <pubDate>Sat, 08 Jun 2013 00:03:27 -0700</pubDate>
+    <lastBuildDate>Sat, 08 Jun 2013 00:03:27 -0700</lastBuildDate>
 
     
     <item>
@@ -29,13 +29,13 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id='whats_the_difference_between_device_and_interface_orientations'&gt;What&amp;#8217;s the difference between Device and Interface Orientations?&lt;/h2&gt;
 
-&lt;p&gt;The short answer is that you&amp;#8217;ll probably only care about UIInterfaceOrientation. UIInterfaceOrientation only covers the possible orientations for the screen in regards to drawing:&lt;/p&gt;
+&lt;p&gt;The short answer is that you&amp;#8217;ll probably only care about &lt;code&gt;UIInterfaceOrientation&lt;/code&gt;. &lt;code&gt;UIInterfaceOrientation&lt;/code&gt; only covers the possible orientations for the screen in regards to drawing:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='n'&gt;UIInterfaceOrientationPortrait&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='n'&gt;UIDeviceOrientationPortrait&lt;/span&gt;
 &lt;span class='n'&gt;UIInterfaceOrientationPortraitUpsideDown&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='n'&gt;UIDeviceOrientationPortraitUpsideDown&lt;/span&gt;
 &lt;span class='n'&gt;UIInterfaceOrientationLandscapeLeft&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='n'&gt;UIDeviceOrientationLandscapeRight&lt;/span&gt;
 &lt;span class='n'&gt;UIInterfaceOrientationLandscapeRight&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='n'&gt;UIDeviceOrientationLandscapeLeft&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Where UIDeviceOrientation provides six different options that represent the actual orientation of the device in 3D space. In regards to redrawing your layout, you probably won&amp;#8217;t need to know this:&lt;/p&gt;
+&lt;p&gt;Where &lt;code&gt;UIDeviceOrientation&lt;/code&gt; provides six different options that represent the actual orientation of the device in 3D space. When redrawing your layout, you probably won&amp;#8217;t need to know all of these:&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='objective-c'&gt;&lt;span class='n'&gt;UIDeviceOrientationUnknown&lt;/span&gt;                    &lt;span class='c1'&gt;// Can&amp;#39;t be determined&lt;/span&gt;
 &lt;span class='n'&gt;UIDeviceOrientationPortrait&lt;/span&gt;                   &lt;span class='c1'&gt;// Home button facing down&lt;/span&gt;
 &lt;span class='n'&gt;UIDeviceOrientationPortraitUpsideDown&lt;/span&gt;         &lt;span class='c1'&gt;// Home button facing up&lt;/span&gt;

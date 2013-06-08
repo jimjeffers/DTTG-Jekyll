@@ -59,13 +59,13 @@
 </code></pre></div>
 <h2 id='whats_the_difference_between_device_and_interface_orientations'>What&#8217;s the difference between Device and Interface Orientations?</h2>
 
-<p>The short answer is that you&#8217;ll probably only care about UIInterfaceOrientation. UIInterfaceOrientation only covers the possible orientations for the screen in regards to drawing:</p>
+<p>The short answer is that you&#8217;ll probably only care about <code>UIInterfaceOrientation</code>. <code>UIInterfaceOrientation</code> only covers the possible orientations for the screen in regards to drawing:</p>
 <div class='highlight'><pre><code class='objective-c'><span class='n'>UIInterfaceOrientationPortrait</span> <span class='o'>==</span> <span class='n'>UIDeviceOrientationPortrait</span>
 <span class='n'>UIInterfaceOrientationPortraitUpsideDown</span> <span class='o'>==</span> <span class='n'>UIDeviceOrientationPortraitUpsideDown</span>
 <span class='n'>UIInterfaceOrientationLandscapeLeft</span> <span class='o'>==</span> <span class='n'>UIDeviceOrientationLandscapeRight</span>
 <span class='n'>UIInterfaceOrientationLandscapeRight</span> <span class='o'>==</span> <span class='n'>UIDeviceOrientationLandscapeLeft</span>
 </code></pre></div>
-<p>Where UIDeviceOrientation provides six different options that represent the actual orientation of the device in 3D space. In regards to redrawing your layout, you probably won&#8217;t need to know this:</p>
+<p>Where <code>UIDeviceOrientation</code> provides six different options that represent the actual orientation of the device in 3D space. When redrawing your layout, you probably won&#8217;t need to know all of these:</p>
 <div class='highlight'><pre><code class='objective-c'><span class='n'>UIDeviceOrientationUnknown</span>                    <span class='c1'>// Can&#39;t be determined</span>
 <span class='n'>UIDeviceOrientationPortrait</span>                   <span class='c1'>// Home button facing down</span>
 <span class='n'>UIDeviceOrientationPortraitUpsideDown</span>         <span class='c1'>// Home button facing up</span>
